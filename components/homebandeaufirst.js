@@ -1,19 +1,16 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import Menu from "./Menu";
 import usePageYOffset from "../hooks/usePagesYOffset";
 import useWindowSize from "../hooks/useWindowSize";
 import useScrollDirection from "../hooks/useScrollDirection";
 
 
-const homebandeaufirst = () => {
+const HomeBandeauFirst = () => {
 
   const [topSvgContainer, setTopSvgContainer] = useState(0)
   const [widthSvgContainer, setWidthSvgContainer] = useState(0)
   const [bandeauHeight, setBandeauHeight] = useState(0)
-  const [queueOneWidth, setQueueOneWidth] = useState(0)
-
 
   const svgContainer = useRef(null)
   const bandeau = useRef(null)
@@ -685,4 +682,4 @@ const BandeauDiv = styled.div`
   
 `
 
-export default homebandeaufirst;
+export default HomeBandeauFirst;

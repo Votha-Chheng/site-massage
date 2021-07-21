@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 import Link from "next/Link";
 import styled from "styled-components";
 import Footer from "../components/footer";
-import Menu from "../components/menu";
+import MenuHead from "../components/menuhead";
 import MomentumScrollProvider from "../context/MomentumScrollContext";
 
 const infospratiques = () => {
   return (
     <PageWrapper>        
-      <div className="menu">
-        <Menu/>
+      <div>
+        <MenuHead/>
       </div>
       <MomentumScrollProvider easing={0.075}>
         <Link href='/'>Accueil</Link>

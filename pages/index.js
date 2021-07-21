@@ -9,12 +9,13 @@ import Footer from '../components/footer'
 import HomeBandeauFirst from '../components/homebandeaufirst'
 import HomeBandeauSecond from '../components/homebandeausecond'
 import MomentumScrollProvider from '../context/MomentumScrollContext'
-import Menu from '../components/menu'
 import { motion } from 'framer-motion'
 import HomeBandeauThird from '../components/homebandeauthird'
 import HomeBandeauFourth from '../components/homebandeaufourth'
 import HomeBandeauFifth from '../components/homebandeaufifth'
 import HomeBandeauSixth from '../components/homebandeausixth'
+import MenuHead from '../components/menuhead'
+
 
 export default function Home({sound, changeSound}) {
 
@@ -35,8 +36,8 @@ export default function Home({sound, changeSound}) {
           <i className="fas fa-volume-up fa-2x" style={{display :`${sound ? "block" :"none"}`}}/>
           <i className="fas fa-volume-mute fa-2x" style={{display :`${!sound ? "block" :"none"}`}}/>
         </div>
-        <motion.div ref={menuRef} className="menu" initial={{opacity: 0}} animate={{opacity:1}} transition={{opacity : {delay:8.5}}}>
-          <Menu/>
+        <motion.div ref={menuRef} className="menu-container" initial={{opacity: 0}} animate={{opacity:1}} transition={{opacity : {delay:8.5}}}>
+          <MenuHead/>
         </motion.div>
 
         <MomentumScrollProvider easing={0.075}>
@@ -82,7 +83,7 @@ const Wrapper = styled.div`
     position : relative;
     height: 100%;
   }
-  .menu{
+  .menu-container{
     position: fixed;
     top : 0;
     left : 0;

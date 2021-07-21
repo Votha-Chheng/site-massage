@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Link from 'next/Link'
 
-const Menu = ({color}) => {
+const MenuHead = ({color}) => {
   return (
     <Wrapper style={{color}}>
       <Link href="/">
@@ -24,7 +24,7 @@ const Menu = ({color}) => {
   );
 }
 
-Menu.defaultProps = {
+MenuHead.defaultProps = {
   backgroundColor: "transparent",
   color : "white"
 }
@@ -84,4 +84,4 @@ const Wrapper = styled.nav`
 `
 
 
-export default Menu
+export default MenuHead

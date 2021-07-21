@@ -7,7 +7,7 @@ import MassageBandeauFirst from "../components/massagebandeaufirst";
 import MassageBandeauFourth from "../components/massagebandeaufourth";
 import MassageBandeauSecond from "../components/massagebandeausecond";
 import MassageBandeauThird from "../components/massagebandeauthird";
-import Menu from "../components/menu";
+import MenuHead from "../components/menuhead";
 import MomentumScrollProvider from "../context/MomentumScrollContext";
 
 const massages = ({sound, changeSound}) => {
@@ -22,8 +22,8 @@ const massages = ({sound, changeSound}) => {
           <i className="fas fa-volume-up fa-2x" style={{display :`${sound ? "block" :"none"}`}}/>
           <i className="fas fa-volume-mute fa-2x" style={{display :`${!sound ? "block" :"none"}`}}/>
         </div>
-        <motion.div className="menu" initial={{opacity: 0}} animate={{opacity:1}} transition={{opacity : {delay:1.5}}}>
-          <Menu/>
+        <motion.div className="menu-container" initial={{opacity: 0}} animate={{opacity:1}} transition={{opacity : {delay:1.5}}}>
+          <MenuHead/>
         </motion.div>
 
         <MomentumScrollProvider easing={0.075}>
@@ -78,7 +78,7 @@ const PageWrapper = styled.div`
     font-weight: normal;
     margin: 25px 0px;
   }
-  .menu{
+  .menu-container{
     position: fixed;
     top : 0;
     left : 0;
