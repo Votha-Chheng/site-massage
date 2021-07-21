@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Link from "next/Link";
 import styled from "styled-components";
 import Footer from "../components/footer";
-import Menu from "../components/Menu";
+import Menu from "../components/menu";
 import MomentumScrollProvider from "../context/MomentumScrollContext";
 
 const infospratiques = () => {
