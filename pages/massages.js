@@ -7,7 +7,7 @@ import MassageBandeauFirst from "../components/massagebandeaufirst";
 import MassageBandeauFourth from "../components/massagebandeaufourth";
 import MassageBandeauSecond from "../components/massagebandeausecond";
 import MassageBandeauThird from "../components/massagebandeauthird";
-import Menu from "../components/Menu";
+import Menu from "../components/menu";
 import MomentumScrollProvider from "../context/MomentumScrollContext";
 
 const massages = ({sound, changeSound}) => {
