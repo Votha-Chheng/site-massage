@@ -1,5 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
-import Link from "next/Link";
+import NextLink from "next/link";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import useWindowSize from "../hooks/useWindowSize";
