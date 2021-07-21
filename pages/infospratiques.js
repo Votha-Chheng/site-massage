@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import NextLink from "next/NextLink";
+import Link from "next/link";
 import styled from "styled-components";
 import Footer from "../components/footer";
 import MenuHead from "../components/menuhead";
@@ -12,7 +12,7 @@ const infospratiques = () => {
         <MenuHead/>
       </div>
       <MomentumScrollProvider easing={0.075}>
-        <NextLink href='/'>Accueil</NextLink>
+        <Link href='/'>Accueil</Link>
         <img src='/images/hero-galet2.jpg' />
       </MomentumScrollProvider>
     </PageWrapper>
