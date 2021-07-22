@@ -41,17 +41,22 @@ export default function Home({sound, changeSound}) {
         </motion.div>
 
         <MomentumScrollProvider easing={0.075}>
-          <div id='super-container' className='super-container'>      
+          <div id='super-container' className='super-container'> 
             <HomeBandeauFirst/>
+            <a href="#bandeau">Cliquer</a>    
             <HomeBandeauSecond/>
             <HomeBandeauThird/>
-            <HomeBandeauFourth/>
+            <div id="bandeau">
+              <HomeBandeauFourth/>
+            </div>
             <HomeBandeauFifth/>
             <HomeBandeauSixth/>
+          </div>
+          <div className="footer-container">
             <Footer/>
           </div>
         </MomentumScrollProvider>
-         
+
       </Wrapper>     
     </div>     
   )
@@ -76,7 +81,6 @@ const Wrapper = styled.div`
     i{
       color:white;
     }
- 
   }
 
   div#super-container{
@@ -99,6 +103,10 @@ const Wrapper = styled.div`
     font-style : italic;
     font-weight: normal;
     margin: 25px 0px;
+  }
+
+  .footer-container{
+    height: 100%;
   }
      
 `

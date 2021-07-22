@@ -115,6 +115,7 @@ const SectionWrap = styled.section`
         i{
           margin-right: 20px;
           height:20px;
+          color:pink;
           transform-origin: center;
           animation: rotation 3s linear infinite;
         }

@@ -1,10 +1,9 @@
 import { motion, useAnimation } from "framer-motion";
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import useWindowSize from "../hooks/useWindowSize";
 
-const HomeCurveSeparation = ({texte, inView, delay, buttonDelay, lien, margin}) => {
+const HomeCurveSeparation = ({texte, inView, delay, buttonDelay, lien, margin, clicked}) => {
   const [curlySvgHeight, setCurlySvgHeight] = useState(0)
 
   const size = useWindowSize()
@@ -64,16 +63,18 @@ const HomeCurveSeparation = ({texte, inView, delay, buttonDelay, lien, margin}) 
 
   return (
     <DivWrapper style={{margin}}>
-      <motion.div
-        className="bouton-contact"
-        initial={{x:"-50%", y:50, opacity:0}} 
-        animate={inView? {x:"-50%", y:0, opacity:1} : ""} 
-        transition={{opacity:{duration:0.5, delay:buttonDelay}, y:{duration:1, delay:buttonDelay-0.01}, scale:{duration:0.3}}} 
-        whileHover={{scale:1.1}}
-        style={{top : `${(curlySvgHeight/3)}px`}}
-        >
-        <a href={`${lien}`}>{texte}</a>
-      </motion.div>
+      <a href={`${lien}`}>
+        <motion.div
+          className="bouton-contact"
+          initial={{x:"-50%", y:50, opacity:0}} 
+          animate={inView? {x:"-50%", y:0, opacity:1} : ""} 
+          transition={{opacity:{duration:0.5, delay:buttonDelay}, y:{duration:1, delay:buttonDelay-0.01}, scale:{duration:0.3}}} 
+          whileHover={{scale:1.1}}
+          style={{top : `${(curlySvgHeight/3)}px`}}
+          >
+          {texte}
+        </motion.div>
+      </a>
       <motion.svg 
         ref={curlySvg} 
         variants={parentSvg} 

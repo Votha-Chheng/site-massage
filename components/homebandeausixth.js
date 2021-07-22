@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import Footer from "./footer";
 
 const HomeBandeauSixth = () => {
 

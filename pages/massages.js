@@ -10,6 +10,7 @@ import MassageBandeauThird from "../components/massagebandeauthird";
 import MenuHead from "../components/menuhead";
 import MomentumScrollProvider from "../context/MomentumScrollContext";
 
+
 const massages = ({sound, changeSound}) => {
   return (
     <div>
@@ -33,10 +34,12 @@ const massages = ({sound, changeSound}) => {
             <MassageBandeauThird/>   
             <MassageBandeauFourth/>
             <MassageBandeauFifth/>
-            <Footer/>
           </div>
+          <div className="footer-container">
+            <Footer/>
+          </div> 
         </MomentumScrollProvider>
-         
+
       </PageWrapper>     
     </div>
   );
@@ -87,6 +90,9 @@ const PageWrapper = styled.div`
   }
   .section-container{
     padding: 25px
+  }
+  .footer-container{
+    height: 100%;
   }
 `
 

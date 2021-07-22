@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Footer from "./footer";
 import HerosMassage from "./herosmassage";
 import HomeCurveSeparation from "./homecurveseparation";
 
