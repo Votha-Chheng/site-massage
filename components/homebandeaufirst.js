@@ -567,7 +567,7 @@ const BandeauDiv = styled.div`
     }
   }
 
-  @media only screen and (max-height: 880px) and (max-width : 768px){
+  @media (max-height: 880px) and (max-width : 768px){
     .svg-container{
       top : 320px !important;
     }
@@ -585,96 +585,62 @@ const BandeauDiv = styled.div`
     }
   }
 
-
-  @media only screen and (max-height: 880px) and (min-width : 768px){
-    .svg-container{
-      top : 250px !important;
-    }
-
+  @media (max-height:860px){
     .title{
-      top : 50px;
-      width : 300px !important;
-      height : 300px !important;
-
-      .h1-container{
-        font-size : 0.75em;
-      }  
-    }
-
-    .conteneur-phrases{
-      bottom: 10% !important;
-    }
-  }
-
-  @media only screen and (max-height: 880px) and (min-width : 1072px){
-    .title{
-      top : 50px;
-      width : 300px !important;
-      height : 300px !important;
-
-      .h1-container{
-        font-size : 0.75em;
-      }  
-    }
-    .svg-container{
-      top : 250px !important;
-      svg{
-        width: 89px;
-        height : 4
-      }
-    }
-
-    .conteneur-phrases{
-      bottom: 5% !important;
-    }
-  }
-  
-
-
-  @media only screen and (max-width: 1072px){
-    .conteneur-phrases{
-      font-size : 2em;
-      width : 420px;
-    }
-    img.bg-image{
-      object-fit : cover;
-    }
-  }
-
-  @media only screen and (max-width: 768px){
-    .svg-container{
-      top : 40%;
-    }
-    .h1-container{
-      font-size : 0.8em;
-    }
-
-    .menu{
-      left : 50% !important;
-      transform : translateX(-50%)
-    }
-    .conteneur-phrases{
-      font-size : 2.5em !important;
+      top : 60px;
       width : 350px;
-      bottom : 220px;
-    }
-
-    .title{
-      max-width : 350px;
-      max-height : 350px;
-      top : 120px !important;
-
-      h1.h1{
-        font-size :3.5em !important;
-        transform : translateY(20px) !important;
+      height : 350px;
+      
+      h1{
+        font-size: 3.7rem !important;
       }
+      
+    }
+    .svg-container{
+      top : 300px !important;
     }
     .slogans{
-      font-size :0.75em !important;
-      .switch-lieux{
-        
-        height : 1.5em !important;
-        
+      height : 110px !important;
+    }
+  }
+
+  @media (max-width:1120px){
+    .bg-image-container{
+      img{
+        height: 100vh !important;
+        width: auto;
+      }
+    }
+  }
+
+  @media (max-width:870px){
+  
+    .slogans{
+      width :100% !important;
+      height : 75px !important;
+
+      div{
+        font-size: 1.5rem !important;
+      }
+    }
+  }
+  @media (max-width:540px){
+  
+    .svg-container{
+      top : 365px !important;
+    }
+    .title{
+      width : 300px !important;
+      height : 300px !important;
+
+      .h1-container{
+        font-size : 0.7em;
+      }  
+    }
+    .conteneur-phrases{
+      bottom: 120px !important;
+      .slogans {
+        height : 110px !important;
       }
     }
   }

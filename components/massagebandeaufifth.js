@@ -25,7 +25,7 @@ const MassageBandeauFifth = () => {
         </div>
 
       </div>
-      <HomeCurveSeparation texte="la réflexologie plantaire en détail" margin="75px 0px 200px"/>
+      <HomeCurveSeparation texte="la réflexologie plantaire en détail" margin="75px 0px 200px" lien="/prestations/#pieds" />
     </SectionWrapper>
   );
 }
@@ -66,5 +66,48 @@ const SectionWrapper = styled.section`
     font-style : italic ;
     text-indent: 30px;
   }
+  @media (max-width: 1320px){
+    .section-container{
+      width: 100% !important;
+    }
+  }
+  @media (max-width: 1150px){
+    .section-container{
+      flex-direction: column !important;
+      align-items: center;
+    }
+  }
+  @media (max-width: 780px){
+    .hero{
+      img{
+        transform: translateY(0px) !important;
+      }
+    }
+  }
+  @media (max-width: 500px){
+  .hero{
+    img{
+      transform: translateY(0%)!important;
+      width: 100vw !important;
+    }
+  } 
+  .hero-top-layer{
+    top:100px !important;
+    opacity:0.9 !important;
+
+    h3{
+      font-size: 1.8rem !important;
+      width: 100vw;
+    }
+    
+  }
+  .foot-img-container{
+    display: none !important;
+  }
+  .texte{
+    font-size: 1.2rem !important;
+  }
+
+}
 `
 export default MassageBandeauFifth;

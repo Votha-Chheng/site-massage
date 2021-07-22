@@ -11,7 +11,6 @@ import MomentumScrollProvider from "../context/MomentumScrollContext";
 const prestations = () => {
 
   const [scrollToPosition, setScrollToPosition] = useState(0)
-  const [clicked, setClicked] = useState(0)
 
   const contactfooter = useRef(null)
   const bougie = useRef(null) 
@@ -37,7 +36,7 @@ const prestations = () => {
       setScrollToPosition(yoga.current.offsetTop)
     }
     if(arrayPath[1]==="bougie"){
-      setScrollToPosition(yoga.current.offsetTop)
+      setScrollToPosition(bougie.current.offsetTop)
     }
     if(arrayPath[1]==="intuitif"){
       setScrollToPosition(intuitif.current.offsetTop)
@@ -83,6 +82,11 @@ const prestations = () => {
       service : "Massage bébé/maman (dès les premiers jours) ",
       temps : "variable",
       description : "Stimule le système immunitaire. Partagez un moment unique qui renforce le lien avec bébé."
+    },
+    {
+      service : "Massage pré-natal",
+      temps : "variable",
+      description : "Pour les femmes enceintes, le massage permet de soulager les douleurs (dos, épaules, jambes lourdes...) et de favoriser une meilleure circulation sanguine."
     }
   ]
 
@@ -192,7 +196,7 @@ const prestations = () => {
             </div>
           </div>
 
-          <HomeCurveSeparation texte="me contacter" lien="/prestations/#contactfooter" margin="0px 0px 50px" sclicked={clicked} />
+          <HomeCurveSeparation texte="me contacter" lien="/prestations/#contactfooter" margin="0px 0px 50px" lien='/prestations/#contactfooter' />
           
           <div className="page-container">
 
@@ -286,6 +290,11 @@ const DivWrapper = styled.div`
   .footer-container{
     height: 100%;
   }
+@media (max-width: 1024px){
+  .service {
+    width: 100%;
+  }
+}
 
 
 `

@@ -27,6 +27,8 @@ function MyApp({ Component, pageProps }) {
         <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet"></link>
         <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet"></link>
         <link href="https://fonts.googleapis.com/css2?family=Meie+Script&display=swap" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet"></link>
         <link rel="stylesheet/css" href='/global.css'/>
         <link rel="icon" href="/images/logoLotus.svg" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"></link>

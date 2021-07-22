@@ -22,17 +22,17 @@ const MassageBandeauFirst = () => {
             <img src="/images/logoLotus.svg" width="75" />
           </div>
           <div>
-            Ainsi, le massage intuitif cherche à installer le mieux être pas seulement dans l'immédiat <b>mais aussi dans la durée</b>. C'est un mas&shy;sage que je pra&shy;tique grâce et avec mon res&shy;senti, mon intuition. <b>Il est personnalisé et adapté à la personne qui le reçoit à l'instant T</b>. 
+            Ainsi, le massage in&shy;tuitif cherche à installer le mieux être pas seul&shy;ement dans l'immé&shy;diat <b>mais aussi dans la durée</b>. C'est un mas&shy;sage que je pra&shy;ti&shy;que grâce et avec mon res&shy;senti, mon intuition. <b>Il est personnalisé et adapté à la personne qui le reçoit à l'instant T</b>. 
           </div>
           <div>
-            Par mon attention, j'ai la facul&shy;té d'entrer en connexion avec le rece&shy;veur, l'harmo&shy;nie du massage se crée grâce à la façon que j'ai de m'ajuster à la respi&shy;ration du massé. <b>Je perçois des in&shy;forma&shy;tions non verbales </b>qui me permet&shy;tent de compren&shy;dre si je dois passer plus de temps sur telles parties du corps afin de le libérer de toutes tensions ou d'uti&shy;liser tel&shy;les tech&shy;niques pour vous ac&shy;compagner à lâcher prise...
+            Par mon attention, j'ai la facul&shy;té d'entrer en con&shy;nexion avec le rece&shy;veur, l'harmo&shy;nie du massage se crée grâce à la façon que j'ai de m'ajuster à la respi&shy;ration du massé. <b>Je per&shy;çois des in&shy;forma&shy;tions non verbales </b>qui me permet&shy;tent de compren&shy;dre si je dois passer plus de temps sur telles parties du corps afin de le libérer de toutes tensions ou d'uti&shy;liser tel&shy;les tech&shy;niques pour vous ac&shy;compagner à lâcher pri&shy;se...
           </div>
           <div>
-            Ce massage person&shy;nalisé et complet à base d’huiles es&shy;sentiel&shy;les biolo&shy;giques, prend en compte <b>l’ap&shy;proche glo&shy;bale de l’être humain</b> et le tou&shy;che dans ses dif&shy;férentes dimen&shy;sions (physique, men&shy;tale, émo&shy;tion&shy;nelle et éner&shy;gé&shy;tique) afin que cel&shy;les-ci soient ré&shy;har&shy;monisées.
+            Ce massage person&shy;nalisé et complet à base d’huiles es&shy;sentiel&shy;les biolo&shy;giques, prend en compte <b>l’ap&shy;proche glo&shy;bale de l’être humain</b> et le tou&shy;che dans ses dif&shy;féren&shy;tes di&shy;men&shy;sions (phy&shy;sique, men&shy;tale, émo&shy;tion&shy;nelle et éner&shy;gé&shy;tique) afin que cel&shy;les-ci soient ré&shy;har&shy;moni&shy;sées.
           </div>
         </div>
       </div> 
-      <HomeCurveSeparation texte="le massage personnalisé en détails" margin="80px 0px 200px" lien="/prestations#massage-perso"/> 
+      <HomeCurveSeparation texte="le massage personnalisé en détails" margin="80px 0px 200px" lien="/prestations#intuitif"/> 
     </SectionWrap>
   );
 }
@@ -85,6 +85,58 @@ const SectionWrap = styled.section`
       width : 100%;
       text-align: center;
       margin: 50px 0px;
+    }
+  }
+
+  @media (max-width: 1120px){
+    .img-citation{
+      img{
+        width: 150px !important;
+      }
+      
+    }
+  }
+
+  @media (max-width: 615px){
+    .img-citation{
+      text-align: center;
+      img{
+        width: 150px !important;
+        float: none;
+        margin: 0px auto;
+      }
+      
+    }
+  }
+  @media (max-width: 500px){
+    .quote{
+      font-size: 1.3rem!important;
+      width: 95% !important;
+    }
+    .texte-container{
+      width: 100%!important;
+      div{
+        
+        font-size: 1.2rem !important;
+      } 
+    }
+    .hero{
+      img{
+        transform: translateY(0px)!important;
+      }
+    } 
+    .hero-top-layer{
+      top:100px !important;
+      opacity:0.9 !important;
+
+      
+
+
+      h3{
+        font-size: 1.8rem !important;
+        width: 100vw;
+      }
+      
     }
   }
 

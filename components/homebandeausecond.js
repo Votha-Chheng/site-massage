@@ -254,7 +254,7 @@ const HomeBandeauSecond = () => {
           </div>
         </div>    
       </InView>
-      <HomeCurveSeparation texte="prendre contact" inView={bandeauInView} delay={15} buttonDelay={17.9}/>
+      <HomeCurveSeparation texte="prendre contact" inView={bandeauInView} delay={15} buttonDelay={17.9} lien='/infospratiques'/>
     </BandeauDiv>
   );
 }
@@ -362,7 +362,26 @@ const BandeauDiv = styled.div`
       }
     }
   }
-
+@media (max-width:840px){
+  .texte-bio{
+    width : 100% !important;
+  }
+  .img-side{
+    display  : none;
+  }
+}
+@media (max-width:540px){
+  .photo-id{
+    float: none !important;
+    margin: 15px 25vw 15px 0px;
+  }
+  .textes{
+    font-size: 1.15rem !important;
+  }
+  .slogan-container{
+    font-size: 2rem;
+  }
+}
 `
 
 export default HomeBandeauSecond;

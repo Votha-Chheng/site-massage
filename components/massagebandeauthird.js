@@ -14,18 +14,18 @@ const MassageBandeauThird = () => {
           <div className="texte-container">
             <h3>Le massage de bébé, un mode de communication à découvrir...</h3>
             <div className="texte">
-              L'art du toucher, long&shy;temps tabou dans les pays occi&shy;dentaux, est désor&shy;mais reconnu. Dès la nais&shy;sance, vous pouvez masser votre tout petit pour le sécuriser, l'apaiser et développer ses fa&shy;cultés mo&shy;trices.
+              L'art du toucher, long&shy;temps tabou dans les pays occi&shy;den&shy;taux, est désor&shy;mais recon&shy;nu. Dès la nais&shy;sance, vous pouvez masser votre tout petit pour le sécuriser, l'apaiser et déve&shy;lop&shy;per ses fa&shy;cultés mo&shy;trices.
             </div>
             <div className="texte">
               Le massage peut être consi&shy;déré comme un véri&shy;table langage cor&shy;porel. Il sécurise l'enfant, passant de la cha&shy;leur de l'utérus ma&shy;ternel au monde et récon&shy;for&shy;te les parents souvent dé&shy;sempa&shy;rés, im&shy;pres&shy;sionnés par leur nouveau-né, en leur permet&shy;tant d'entrer en contact avec lui. 
             </div>
             <div className="texte">
-              Il ne faut pas toujours chercher des réponses compli&shy;quées, parfois un bébé pleure tout sim&shy;plement parce qu'il a besoin de caresses. Mas&shy;ser son bébé n'est pas dif&shy;ficile et ce moment privi&shy;légié permet&shy;tra d'instaurer un véri&shy;table échan&shy;ge entre vous et lui. Les béné&shy;fices du massage bébé se mani&shy;festent tant au point de vue phy&shy;sique que psy&shy;chologique.
+              Il ne faut pas toujours chercher des réponses compli&shy;quées, parfois un bébé pleure tout sim&shy;plement parce qu'il a besoin de caresses. Mas&shy;ser son bébé n'est pas dif&shy;ficile et ce moment privi&shy;légié permet&shy;tra d'instaurer un véri&shy;table échan&shy;ge entre vous et lui. Les béné&shy;fices du massage bébé se mani&shy;festent tant au point de vue phy&shy;sique que psy&shy;cholo&shy;gique.
             </div>
           </div>
         </div> 
       </div>
-      <HomeCurveSeparation texte="le massage bébé en détails" margin="75px 0px 175px" />
+      <HomeCurveSeparation texte="le massage bébé en détails" margin="75px 0px 175px" lien="/prestations/#babymassage" />
     </SectionWrapper>
   );
 }
@@ -72,6 +72,35 @@ const SectionWrapper = styled.section`
     }
   }
 
+@media (max-width: 1260px){
+  .hero{
+    img{
+      transform: translateY(-35%) !important;
+    }
+  }
+}
+
+@media (max-width: 500px){
+  .hero{
+    img{
+      transform: translateY(-50%)!important;
+      width: 100vw !important;
+    }
+  } 
+  .hero-top-layer{
+    top:100px !important;
+    opacity:0.9 !important;
+
+    h3{
+      font-size: 1.8rem !important;
+      width: 100vw;
+    }
+    
+  }
+  .texte{
+    font-size: 1.2rem !important;
+  }
+}
 `
 
 export default MassageBandeauThird;

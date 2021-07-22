@@ -22,16 +22,16 @@ const HomeBandeauThird = () => {
             </div>
           </div>
           
-          <div className='container-photo'>
+          <div className='container-photo right'>
             <img src='/images/175659034_364152124945419_4032164191564889065_n.jpg' alt="femme à l'aise" width="500"/>
           </div>
           <div className='textes-container'>
             
             <div className="texte-aside">
               <i className="fas fa-quote-left"/>
-              &nbsp;Ma priorité est de vous mettre à l'aise dès le premier échange et de respecter votre intimité afin que vous puissiez vous détendre, ressentir le lâcher prise pour ainsi profiter du moment dans son intégralité. 
+              &nbsp;Ma priorité est de vous mettre à l'aise dès le premier échange et de res&shy;pecter votre intimité afin que vous puissiez vous détendre, ressentir le lâcher prise pour ainsi profiter du mo&shy;ment dans son intégra&shy;lité. 
               <div className="texte-aside">
-                Il est parfois difficile de se laisser aller auprès d'une nouvelle praticienne, cela peut prendre du temps et se faire sur plusieurs rendez-vous. Je prends le temps nécessaire à chacun <b>car nous passons par la confiance, le confort et la sécurité,</b> sentiments indispensables qui vous permettra de savourer les bienfaits des soins que je vous apporte.
+                Il est parfois difficile de se laisser aller auprès d'une nouvel&shy;le pra&shy;ticien&shy;ne, cela peut pren&shy;dre du temps et se faire sur plusieurs rendez-vous. Je prends le temps néces&shy;saire à chacun <b>car nous pas&shy;sons par la confiance, le confort et la sécurité,</b> sentiments in&shy;dispen&shy;sables qui vous permet&shy;tra de savourer les bien&shy;faits des soins que je vous apporte.
               </div>
             </div>
             <div className="texte-aside">
@@ -146,9 +146,30 @@ const BandeauDiv = styled.div`
           font-family: "Montserrat", sans-serif;
         }
       }
-    }
-    
+    }  
   }
+
+  @media (max-width:1180px){
+    .container-photo.right, .logo-lotus{
+      display: none !important;
+    }
+  }
+  @media (max-width:845px){
+    .textes-container{
+      width: 90% !important;
+      top: 250px !important;
+    }
+  }
+  @media (max-width:650px){
+    .texte-aside{
+      font-size: 1.2rem !important;
+    }
+    .bande-photos{
+      height: 1480px !important;
+    }
+  }
+
+  
   
 `
 export default HomeBandeauThird;

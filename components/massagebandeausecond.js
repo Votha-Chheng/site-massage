@@ -63,7 +63,7 @@ const MassageBandeauSecond = () => {
           </div>
         </div> 
       </div>
-      <HomeCurveSeparation texte="le massage crânien en détails" margin="75px 0px 250px"/>
+      <HomeCurveSeparation texte="le massage crânien en détails" margin="75px 0px 250px" lien="/prestations/#crane"/>
     </SectionWrap>
   );
 }
@@ -137,6 +137,52 @@ const SectionWrap = styled.section`
     }
     to{
       transform: rotateZ(-360deg)
+    }
+  }
+
+  @media (max-width: 1060px){
+    .hero{
+      img{
+        transform: translateY(0) !important;
+      }  
+    }
+    .cranien-container{
+      flex-direction: column;
+      img{
+        align-self: center;
+      }
+    }
+  }
+  @media (max-width: 500px){
+    .container-questions{
+      width:100%;
+      ul{
+        padding-left: 0px;
+        li{
+          font-size: 1.2rem !important;
+          width: 100% !important;
+        }
+      }
+    }
+    .cranien-container{
+      width: 100% !important;
+    }
+    .texte-cranien{
+      font-size: 1.2rem !important; 
+    }
+    .hero{
+      img{
+        transform: translateY(0px)!important;
+      }
+    } 
+    .hero-top-layer{
+      top:100px !important;
+      opacity:0.9 !important;
+      h3{
+        font-size: 1.8rem !important;
+        width: 100vw;
+      }
+      
     }
   }
   

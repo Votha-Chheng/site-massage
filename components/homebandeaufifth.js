@@ -59,10 +59,10 @@ const HomeBandeauFifth = () => {
           <div className="partie-textes">
             <img className="img-car" src="/images/deplacement.svg"/>
             <div className='texte first'>
-              <b>Quoi de mieux de se faire masser sans avoir à se déplacer ?</b> Avec <span className="marque">Baux't des sens</span>, c'est le bien-être et la détente qui viennent chez vous ! C'est pourquoi <b>je me déplace <u>uniquement</u> à domicile, dans les gîtes, les hôtels,</b> ou même au bord de votre piscine. Et ce, <b>avec tout le matériel nécessaire</b> (table de massage, linge, etc...) pour que vous n'ayez à vous occuper de rien. Tout ce qui vous reste donc à faire, c'est vous allonger et vous laisser aller...
+              <b>Quoi de mieux de se faire masser sans avoir à se déplacer ?</b> Avec <span className="marque">Baux't des sens</span>, c'est le bien-être et la détente qui viennent chez vous ! C'est pour&shy;quoi <b>je me déplace <u>uniquement</u> à domicile, dans les gîtes, les hôtels,</b> ou même au bord de votre piscine. Et ce, <b>avec tout le matériel nécessaire</b> (table de massage, linge, etc...) pour que vous n'ayez à vous oc&shy;cuper de rien. Tout ce qui vous reste donc à faire, c'est vous allonger et vous laisser aller...
             </div>
             <div className='texte'>
-              Mes zones de déplacement vont <b>d'Arles et ses alentours</b> jusqu'à <b>St-Martin-de-Crau</b>, ainsi que toute la <b>zone englobant les Alpilles</b> (les Baux-de-Provence, Fontvieille, St-Rémy-de-Provence...).
+              Mes zones de déplace&shy;ment vont <b>d'Arles et ses alen&shy;tours</b> jusqu'à <b>St-Martin-de-Crau</b>, ainsi que toute la <b>zone en&shy;glo&shy;bant les Alpil&shy;les</b> (les Baux-de-Provence, Font&shy;vieille, St-Rémy-de-Provence...).
             </div>
           </div>
           <div className='deplacement-container' style={{cursor:'none', minWidth:`${mapDimension.width}px`, minHeight:`${mapDimension.height}px`}}>
@@ -173,10 +173,27 @@ const SectionWrapper = styled.section`
           right:0;
           top:0px;
           width: 400px;
+          float: right;
         }
       }
       
     }
+  }
+
+  @media (max-width: 850px){
+
+    .deplacement-container{
+      display: none;
+    }
+  }
+  @media (max-width: 600px){
+    .partie-textes{
+      padding: 20px 0px !important;
+    }
+    .texte{
+      font-size: 1.2rem !important;
+    }
+
   }
 `
 

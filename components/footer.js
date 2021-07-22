@@ -170,6 +170,38 @@ const FooterStyle = styled.div`
     border-bottom: 4px solid #285330;
     border-radius: 50%;
   }
+  @media (max-width: 1168px){
+    .part-right{
+      padding-left: 50px !important;
+    }
+  }
+  @media (max-width: 920px){
+    .part-right{
+      padding-left: 150px !important;
+      width: 100% !important;
+      text-align: center !important;
+    }
+    .footer-container{
+      flex-direction: column-reverse !important;
+      align-items: center;
+    }
+  }
+  @media (max-width: 525px){
+    .telephone{
+      font-size: 1.5rem !important;
+    }
+    .part-right{
+      padding-left: 50px !important;
+
+    }
+    .part-left{
+      width: 100% !important;
+    }
+    .presentation{
+      width: 100% !important;
+    }
+
+  }
 `
 
 export default Footer;

@@ -117,9 +117,7 @@ const DivWrapper = styled.div`
       }
     }
   }
-
-
-    
+  
   h3{
     font-family: "Pinyon Script", "script";
     color: #6f3456;
@@ -144,7 +142,37 @@ const DivWrapper = styled.div`
       height : 2px;
       background: black;
     }
+  }
 
+  @media (max-width: 1044px){
+    width: 100%;
+    margin-left: 0px;
+    h3{
+      position: static;
+      filter: contrast(125%);
+      border: none;
+    }
+  }
+  @media (max-width: 850px){
+    ul{
+      padding-left: 0px;
+      li{
+        .titre-temps{
+          flex-direction: column;
+        }
+        .temps{
+          align-self: start !important;
+        }
+        .description{
+          width: 100%;
+        }
+      }
+    }
+  }
+  @media (max-width: 580px){
+    h3{
+      font-size:calc(1.5rem + 2.2vw)  !important;
+    }
   }
 `
 

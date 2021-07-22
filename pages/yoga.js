@@ -25,9 +25,9 @@ const yoga = () => {
                   <img src="/images/yoga-3.jpg" width='450'/>
                 </div>
                 <div className="texte up-texte">
-                  Ma passion pour les pratiques conduisant à la relaxation ne se limite pas aux massages. Pour aller plus loin dans cette optique, je propose des cours d'initiation au <b>hatha yoga</b> basés sur la respiration, la méditation et les étirements.
-                  Ce type de yoga, le plus pratiqué en Occident, permet au pratiquant une maîtrise du corps et des sens à travers la pratique précise et rythmée de postures.
-                  Contrairement à un enchaînement de gymnastique, les postures doivent être maintenues suffisamment longtemps (environ 3 minutes).                 
+                  Ma passion pour les pra&shy;tiques con&shy;dui&shy;sant à la rela&shy;xation ne se limite pas aux massages. Pour al&shy;ler plus loin dans cette optique, je pro&shy;pose des cours d'ini&shy;tiation au <b>hatha yoga</b> basés sur la res&shy;piration, la méditation et les éti&shy;rements.
+                  Ce type de yoga, le plus pra&shy;tiqué en Oc&shy;cident, permet au pra&shy;tiquant une maî&shy;trise du corps et des sens à tra&shy;vers la pra&shy;tique précise et rythmée de pos&shy;tures.
+                  Contraire&shy;ment à un enchaînement de gym&shy;nastique, les postures doivent être maintenues suffisamment long&shy;temps (environ 3 minutes).                 
                 </div>
               </div>
 
@@ -47,8 +47,8 @@ const yoga = () => {
                 <img src="/images/yoga-2.jpeg" width="350" />
               </div>
               <div className="texte">
-                Ces cours s'adressent à tous les débutants ou curieux qui souhaitent découvrir un nouveau moyen de bien-être et de relaxation.
-                Ils se pratiquent en groupe ou individuellement. <b>Il est possible de combiner un cours de yoga et un massage de votre choix (tarifs sur demande)</b>.
+                Ces cours s'adres&shy;sent à tous les débu&shy;tants ou curieux qui sou&shy;haitent dé&shy;couvrir un nou&shy;veau moyen de bien-être et de rela&shy;xation.
+                Il se pra&shy;tique en groupe ou in&shy;divi&shy;duel&shy;lement. <b>Il est pos&shy;sible de com&shy;biner un cours de yoga et un mas&shy;sage de votre choix (tarifs sur de&shy;mande)</b>.
               </div>
               <div className="texte">
                 Grâce au hatha yoga :
@@ -63,7 +63,7 @@ const yoga = () => {
                   </li>
                   <li>
                     <i className="fas fa-fan"/>
-                    On améliore sa respiration et son souffle
+                    On améliore sa respi&shy;ration et son souffle
                   </li>
                   <li>
                     <i className="fas fa-fan"/>
@@ -73,18 +73,7 @@ const yoga = () => {
                 A vos tapis  !!!
               </div>
             </main>
-          </div>
-              
-
-
-              
-              <div>
-              <div>
-
-              </div>
-               
-
-            </div>       
+          </div>       
           <div className="footer-container">
             <Footer/>
           </div>          
@@ -221,6 +210,36 @@ const DivWrapper = styled.div`
       transform: rotateZ(-360deg)
     }
   }
+
+  @media (max-width: 1225px){
+    .img-yoga-container.second{ 
+      float: none !important;
+      text-align: center;
+
+      img{
+        margin: auto;
+      }
+    }
+  }
+
+  @media (max-width: 825px){
+    .img-yoga-container.first{  
+      text-align: center;
+      
+      img{
+        float: none !important;
+        width: 300px;
+      }
+    }
+    .texte{
+      font-size: 1.2rem !important;
+    }
+    .flex-container{
+      justify-content: flex-start !important;
+      width: 100%;
+    }
+  }
+
 `
 
 export default yoga;
