@@ -248,7 +248,7 @@ const HomeBandeauSecond = () => {
                 initial={{opacity : 0, x:"100%"}}
                 animate={bandeauInView? {opacity : 1, x : 0} : ""}
                 transition = {{opacity : {duration : 0.7, delay: 14.2}, x : {duration : 1.5, delay:13.9, ease:"easeOut"}}}>
-                <img src={`${imgSideWidth<380 ? "/images/bouddha-statue.jpg":"/images/bougie-serviette.jpg"}`} alt="accesoires de massage" height={textesBioHeight-30} width={imgSideWidth-70}/>
+                <img src={`${imgSideWidth<380 ? "/images/pexels-anete-lusina-5240637.jpg":"/images/bougie-serviette.jpg"}`} alt="accesoires de massage" height={textesBioHeight-30} width={imgSideWidth-70}/>
               </motion.div>
             </motion.div>
           </div>
