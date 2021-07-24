@@ -1,32 +1,86 @@
-import { useRef, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import {InView} from "react-intersection-observer";
 import styled from "styled-components";
+import { titleAnimation } from "../utils";
 
 const HomeBandeauThird = () => {
+
+  const [titleInView, setTitleInview] = useState(false);
+  
+  const controls = useAnimation()
+
+  useEffect(() => {
+    if(titleInView){
+      controls.start("appear")
+      controls.start("animate")
+    }
+  }, [controls, titleInView])
   
   const bandeauThird = useRef(null)
 
+  const pageAppear = {
+    initial : {
+
+    },
+    animate: {
+      transition: {
+        delayChildren : 1,
+        staggerChildren : 0.4
+      }
+    }
+  }
+  const imgAppear = {
+    initial: {
+      opacity:0, 
+      y:200
+    },
+    animate:{
+      opacity : 1,
+      y: 0,
+      transition:{
+        duration : 1, 
+        ease: "easeOut",
+      }
+    }
+  }
+  const textAppear = {
+    initial: {
+      opacity:0, 
+    },
+    animate:{
+      opacity : 1,
+      transition:{
+        duration : 1.5, 
+        ease: "easeOut",
+        delay : 2.5
+      }
+    }
+  }
+  
+
   return (
     <BandeauDiv ref={bandeauThird}>
-      <InView className='container-page'>
-        <h2 className='title-h2'>Mon approche du bien-être</h2>
-        <div className="bande-photos">
-          <div className='container-photo'>
+      <InView className='container-page' onChange={(inView, entry)=>setTitleInview(inView)}>
+        <motion.h2 variants={titleAnimation} initial="initial" animate={controls} className='title-h2'>Mon approche du bien-être</motion.h2>
+        
+        
+        <motion.div className="bande-photos" variants={pageAppear} initial="initial" animate={controls}>
+          <motion.div className='container-photo' variants={imgAppear} >
             <img src='/images/close-up-relaxed-girl-getting-massage.jpg' alt="femme à l'aise" width="500"/>
             <small>Crédit photo : &copy;freepik</small>
-          </div>
-          <div className="logo-lotus">
+          </motion.div>
+          <motion.div variants={imgAppear } className="logo-lotus">
             <img src="/images/logoLotus.svg" width="100px" height="100px"/>
             <div className="line-container">
               <div className="line"/>
             </div>
-          </div>
+          </motion.div>
           
-          <div className='container-photo right'>
+          <motion.div variants={imgAppear} className='container-photo right'>
             <img src='/images/175659034_364152124945419_4032164191564889065_n.jpg' alt="femme à l'aise" width="500"/>
-          </div>
-          <div className='textes-container'>
-            
+          </motion.div>
+          <motion.div className='textes-container' variants={textAppear}>
             <div className="texte-aside">
               <i className="fas fa-quote-left"/>
               &nbsp;Ma priorité est de vous mettre à l'aise dès le premier échange et de res&shy;pecter votre intimité afin que vous puissiez vous détendre, ressentir le lâcher prise pour ainsi profiter du mo&shy;ment dans son intégra&shy;lité. 
@@ -38,9 +92,9 @@ const HomeBandeauThird = () => {
               Une musique vous incitera à la relaxation ainsi qu'une huile aux odeurs exotique et paradisiaque comme, le monoi, la coco, le jasmin, ou encore la fleur d'oranger. <b>Vous l'aurez compris, il y en aura pour tous les sens...</b>
               <i className="fas fa-quote-right"/>
             </div>
-          </div>
+          </motion.div>
           
-        </div>          
+        </motion.div>          
       </InView>
   
     </BandeauDiv>

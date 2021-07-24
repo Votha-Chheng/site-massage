@@ -113,3 +113,64 @@ export const reCalculateBlocks = (blocks, container) => {
     };
   });
 };
+
+export const titleAnimation = {
+  initial : {
+    opacity : 0,
+    x:-250
+  },
+  appear : {
+    opacity : 1,
+    x : 0,
+    transition : {
+      duration : 1,
+      delay : 0.2
+    }
+  }
+}
+
+export const opacityBandeau = {
+  initial : {
+    opacity : 0,
+    y : 300
+  },
+  animate : {
+    opacity : 1,
+    y : 0,
+    transition: {
+      duration : 1.2,
+      delay : 1,
+      ease: "easeOut"
+    }
+  }
+}
+
+export const heroAnimation = {
+  initial : {
+    opacity : 0,
+    x:"100%"
+  },
+  heroAppear : {
+    opacity : 1,
+    x :0,
+    transition : {
+      duration : 2,
+    }
+  }
+}
+
+export const heroTitleAnimation = {
+  initial : {
+    opacity : 0,
+    x:"-50%",
+    y:"100%"
+  },
+  heroAppear : {
+    opacity : 1,
+    x:"-50%",
+    y:0,
+    transition : {
+      duration : 2,
+    }
+  }
+}

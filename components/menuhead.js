@@ -12,7 +12,16 @@ const MenuHead = ({color}) => {
         </div>
       </a>
         <ul>
-          <li><a href='/massages'>Massages</a></li>
+          <li className="massages-menu">
+            <a href='/massages'>Massages</a>
+            <div className="sub-menu-massages">
+              <div><a href="/prestations/#intuitif">Massage intuitif</a></div>
+              <div> <a href="/prestations/#crane">Massage crânien</a></div>
+              <div><a href="/prestations/#babymassage">Massage bébé</a></div>
+              <div><a href="/prestations/#bougie">Massage bougie</a></div>
+              <div><a href="/prestations/#pieds">Réflexologie</a></div>
+            </div>
+          </li>
           <li><a href='/yoga'>Yoga</a></li>
           <li><a href='/prestations'>Prestations</a></li>
           <li><a href='/infospratiques'>Infos pratiques</a></li>
@@ -58,6 +67,47 @@ const Wrapper = styled.nav`
       color: gold;
     }
   }
+  .massages-menu{
+    .sub-menu-massages{
+      display: none;
+    }
+  }
+  .massages-menu:hover, .sub-menu-massages:hover{
+    position: relative;
+
+    .sub-menu-massages{
+      display: block;
+      font-size: 0.8rem;
+      position: absolute;
+      font-weight: normal;
+      color: black;
+      width: 175px;
+      background-color: aliceblue;
+      left: -50%;
+      top :25px;
+      line-height: 1.8rem;
+
+      &::before{
+        clip-path: polygon(50% 50%, 0% 100%, 100% 100%);
+        content: "";
+        background-color: aliceblue;
+        position: absolute;
+        top: -15px;
+        left: 65px;
+        z-index: 50;
+        width: 50px;
+        height: 15px;
+      }
+
+      div{
+        cursor: pointer;
+        &:hover{
+          color: #798a94;
+        }
+      }
+    }
+  }
+
   .logo{
     font-family: 'Parisienne', 'cursive';
     font-size: 1.5em;

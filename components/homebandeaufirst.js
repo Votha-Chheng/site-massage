@@ -172,7 +172,7 @@ const HomeBandeauFirst = () => {
       <motion.div className='conteneur-phrases' variants={variantsPhrases} initial='initial' animate='animate'>
         <motion.div className='border-top' variants={variantBorderTop}></motion.div>
         <div className='slogans'>
-          <div>Votre instant bien-être</div>
+          <div className="instant-bien">Votre instant bien-être</div>
           <div className='switch-lieux'>
             <div className="queue-1">
               <div className="arles" ref={queueOneRef}>
@@ -389,6 +389,10 @@ const BandeauDiv = styled.div`
     overflow : hidden;
     font-style: italic;
     padding : 0px 10px ;
+    
+    .instant-bien{
+      font-size : 2.5rem;
+    }
 
     .border-top, .border-bottom {
       height : 3px;
@@ -567,25 +571,29 @@ const BandeauDiv = styled.div`
     }
   }
 
-  @media (max-height: 880px) and (max-width : 768px){
-    .svg-container{
-      top : 320px !important;
-    }
-    .title{
-      top : 50px;
-      width : 300px !important;
-      height : 300px !important;
+  @media (max-height: 600px) and (max-width:540px) {
 
-      .h1-container{
-        font-size : 0.75em;
-      }  
-    }
     .conteneur-phrases{
-      bottom: 10px !important;
+      height: 80px !important;
+      bottom: 90px !important;
+      width: 413px !important;
+    }
+    .slogans{
+      width:413px !important;
+      height:80px !important;
+
+
+    }
+  }
+  @media (max-height: 650px){
+    .conteneur-phrases{
+      width: 413px !important;
     }
   }
 
   @media (max-height:860px){
+    height : auto;
+
     .title{
       top : 60px;
       width : 350px;
@@ -625,9 +633,15 @@ const BandeauDiv = styled.div`
     }
   }
   @media (max-width:540px){
-  
+    .instant-bien{
+      font-size: 1rem !important;
+    }
     .svg-container{
-      top : 365px !important;
+      top : 265px !important;
+
+      svg.bg-logo{
+        width: 80px !important;
+      }
     }
     .title{
       width : 300px !important;

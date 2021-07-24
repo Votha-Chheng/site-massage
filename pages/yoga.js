@@ -1,11 +1,63 @@
+import { animate, motion, useAnimation } from "framer-motion";
 import Head from "next/head";
+import { useEffect, useState } from "react";
+import {InView} from "react-intersection-observer";
 import styled from "styled-components";
 import Footer from "../components/footer";
 import HomeCurveSeparation from "../components/homecurveseparation";
 import MenuHead from "../components/menuhead";
 import MomentumScrollProvider from "../context/MomentumScrollContext";
+import { opacityBandeau, titleAnimation } from "../utils";
 
 const yoga = () => {
+  const [sectionInView, setSectionInView] = useState(false)
+  const [partOneInView, setPartOneInView] = useState(false)
+  const [partTwoInView, setPartTwoInView] = useState(false)
+  
+  const controls = useAnimation()
+
+  useEffect(() => {
+    if(sectionInView){
+      controls.start("appear")
+      controls.start("animate")
+    }
+  }, [controls, sectionInView])
+
+  useEffect(() => {
+    if(partOneInView){
+      controls.start("animate")
+      controls.start("ulAppear")
+    }
+  }, [controls, partOneInView])
+
+  const parentList = {
+    initial : {
+
+    },
+    ulAppear : {
+      transition:  {
+        delayChildren : 3.2,
+        staggerChildren : 0.2
+      }
+        
+      
+    }
+  }
+
+  const childList = {
+    initial : {
+      opacity: 0,
+      x : 200
+    },
+    ulAppear : {
+      opacity : 1,
+      x:0,
+      transition : {
+        duration : 0.8,
+      }
+    }
+  }
+
   return (   
     <div>
       <Head>
@@ -17,63 +69,77 @@ const yoga = () => {
           <MenuHead/>
         </div>
         <MomentumScrollProvider easing={0.075}>
-          <div className="page-container">
-            <h2 className="home-titles">Baux't des sens, c'est aussi de l'initiation au yoga...</h2>
-            <main>
-              <div className="partie-haute">
-                <div className="img-yoga-container first">
-                  <img src="/images/yoga-3.jpg" width='450'/>
+          <InView className="page-container" onChange={(inView, entry)=>setSectionInView(inView)} >
+            <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate={controls} >Baux't des sens, c'est aussi de l'initiation au yoga...</motion.h2>
+            <InView onChange={(inView, entry)=>setPartOneInView(inView)}>
+              <motion.main variants={opacityBandeau} initial="initial" animate={controls} >
+                <div className="partie-haute">
+                  <div className="img-yoga-container first">
+                    <img src="/images/yoga-3.jpg" width='450'/>
+                  </div>
+                  <div className="texte up-texte">
+                    Ma passion pour les pra&shy;tiques con&shy;dui&shy;sant à la rela&shy;xation ne se limite pas aux massages. Pour al&shy;ler plus loin dans cette optique, je pro&shy;pose des cours d'ini&shy;tiation au <b>hatha yoga</b> basés sur la res&shy;piration, la méditation et les éti&shy;rements.
+                    Ce type de yoga, le plus pra&shy;tiqué en Oc&shy;cident, permet au pra&shy;tiquant une maî&shy;trise du corps et des sens à tra&shy;vers la pra&shy;tique précise et rythmée de pos&shy;tures.
+                    Contraire&shy;ment à un enchaînement de gym&shy;nastique, les postures doivent être maintenues suffisamment long&shy;temps (environ 3 minutes).                 
+                  </div>
                 </div>
-                <div className="texte up-texte">
-                  Ma passion pour les pra&shy;tiques con&shy;dui&shy;sant à la rela&shy;xation ne se limite pas aux massages. Pour al&shy;ler plus loin dans cette optique, je pro&shy;pose des cours d'ini&shy;tiation au <b>hatha yoga</b> basés sur la res&shy;piration, la méditation et les éti&shy;rements.
-                  Ce type de yoga, le plus pra&shy;tiqué en Oc&shy;cident, permet au pra&shy;tiquant une maî&shy;trise du corps et des sens à tra&shy;vers la pra&shy;tique précise et rythmée de pos&shy;tures.
-                  Contraire&shy;ment à un enchaînement de gym&shy;nastique, les postures doivent être maintenues suffisamment long&shy;temps (environ 3 minutes).                 
-                </div>
-              </div>
 
-              <div className="flex-container">
-                <div className="quote">
-                  <i className="fas fa-quote-left" style={{transform:"scale(1.5) translateY(-10px)", textIndent:"-30px"}}/>
-                  Laissez votre respiration délier les noeuds dans votre corps et votre esprit.
-                  <i className="fas fa-quote-right" style={{transform:"scale(1.5) translateY(5px)", textIndent:"15px"}}/>
+                <div className="flex-container">
+                  <div className="quote">
+                    <i className="fas fa-quote-left" style={{transform:"scale(1.5) translateY(-10px)", textIndent:"-30px"}}/>
+                    Laissez votre respiration délier les noeuds dans votre corps et votre esprit.
+                    <i className="fas fa-quote-right" style={{transform:"scale(1.5) translateY(5px)", textIndent:"15px"}}/>
+                  </div>
                 </div>
-              </div>
-            </main>
-          </div> 
+              </motion.main>
+            </InView>
+            
+          </InView> 
           <HomeCurveSeparation texte="en savoir plus" margin="0px 0px" lien="/prestations/#yoga"/>
-          <div className="page-container">
+          <InView onChange={(inView, entry)=>setPartTwoInView(inView)} className="page-container">
             <main>
-              <div className="img-yoga-container second">
+              <motion.div 
+                className="img-yoga-container second"
+                initial={{opacity:0, x:"-150%"}} 
+                animate={partTwoInView? {opacity:1, x:0} : ""} 
+                transition={{opacity:{delay:0.5, duration:1.5}, x:{delay:0.75, duration:1.5, ease:"easeOut"} }} >
                 <img src="/images/yoga-2.jpeg" width="350" />
-              </div>
-              <div className="texte">
+              </motion.div>
+              <motion.div
+                className="texte"
+                initial={{opacity:0, x:"150%"}} 
+                animate={partTwoInView? {opacity:1, x:0} : ""} 
+                transition={{opacity:{delay:2, duration:0.8}, x:{delay:1, duration:2.5, ease:"easeOut"} }} >
                 Ces cours s'adres&shy;sent à tous les débu&shy;tants ou curieux qui sou&shy;haitent dé&shy;couvrir un nou&shy;veau moyen de bien-être et de rela&shy;xation.
                 Il se pra&shy;tique en groupe ou in&shy;divi&shy;duel&shy;lement. <b>Il est pos&shy;sible de com&shy;biner un cours de yoga et un mas&shy;sage de votre choix (tarifs sur de&shy;mande)</b>.
-              </div>
-              <div className="texte">
+              </motion.div>
+              <motion.div className="texte" 
+                initial={{opacity:0}} 
+                animate={partTwoInView? {opacity:1} : ""} 
+                transition={{opacity:{delay:2.9, duration:0.8}}}>
                 Grâce au hatha yoga :
-                <ul>
-                  <li>
+                <motion.ul variants={parentList} initial="initial" animate={controls} >
+                  <motion.li variants={childList}>
                     <i className="fas fa-fan"/>
                     On travaille l’équilibre physique tout en disciplinant son esprit.
-                  </li>
-                  <li>
+                  </motion.li>
+                  <motion.li variants={childList}>
                     <i className="fas fa-fan"/>
                     On réduit son stress.
-                  </li>
-                  <li>
+                  </motion.li>
+                  <motion.li variants={childList}>
                     <i className="fas fa-fan"/>
                     On améliore sa respi&shy;ration et son souffle
-                  </li>
-                  <li>
+                  </motion.li>
+                  <motion.li variants={childList}>
                     <i className="fas fa-fan"/>
                     On renforce son corps et on améliore sa souplesse
-                  </li>
-                </ul>
+                  </motion.li>
+                </motion.ul>
                 A vos tapis  !!!
-              </div>
+              </motion.div>
             </main>
-          </div>       
+          </InView>       
           <div className="footer-container">
             <Footer/>
           </div>          

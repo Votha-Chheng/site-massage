@@ -1,14 +1,32 @@
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useState } from "react";
+import {InView} from "react-intersection-observer";
 import styled from "styled-components";
+import { heroAnimation, heroTitleAnimation, parentHero } from "../utils";
 
-const HerosMassage = ({title, image, translateUp}) => {
+const HerosMassage = ({title, image, translateUp, heroInView}) => {
+
+  const controls = useAnimation()
+
+  useEffect(() =>{
+    if(heroInView){
+      controls.start("heroAppear")
+    }
+  },[controls, heroInView])
+
   return (
     <DivWrapper className="heros-container">
-      <div className="hero-top-layer">
-        <h3 className="massage-intuitif">{title}</h3>
-      </div>
-      <div className="hero" id="massage-intuitif">
-        <img src={`/images/${image}`} width="100%" style={{transform:`translateY(${translateUp}px)`}} /> 
-      </div>
+
+
+        <motion.div className="hero" variants={heroAnimation} initial="initial" animate={controls} >
+          <img src={`/images/${image}`} width="100%" style={{transform:`translateY(${translateUp}px)`}} /> 
+        </motion.div>
+        <motion.div  variants={heroTitleAnimation} initial="initial" animate={controls} className="hero-top-layer">
+          <h3 className="massage-intuitif">{title}</h3>
+        </motion.div>
+    
+
+      
     </DivWrapper>
   );
 }

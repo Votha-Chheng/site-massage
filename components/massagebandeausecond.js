@@ -1,13 +1,32 @@
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useState } from "react";
+import {InView} from "react-intersection-observer";
 import styled from "styled-components";
+import { opacityBandeau } from "../utils";
 import HerosMassage from "./herosmassage";
 import HomeCurveSeparation from "./homecurveseparation";
 
 const MassageBandeauSecond = () => {
+  const [sectionInView, setSectionInView] = useState(false)
+  const [heroInView, setHeroInView] = useState(false)
+
+  const controls = useAnimation()
+
+  useEffect(() => {
+    if(sectionInView){
+      controls.start("animate")
+    }
+  }, [controls, sectionInView])
+
   return (
     <SectionWrap>
       <div className="page-container">
-        <HerosMassage title="massage crânien" image="pexels-photo-3997989.jpeg" translateUp="-450" />
-        <div className="section-container">
+        <InView onChange={(inView, entry)=>setHeroInView(inView)}>
+          <HerosMassage title="massage crânien" image="pexels-photo-3997989.jpeg" translateUp="-450" heroInView={heroInView}/>
+        </InView>
+        
+        <InView onChange={(inView, entry)=>setSectionInView(inView)}  className="section-container">
+          <motion.div variants={opacityBandeau} initial="initial" animate={controls}> 
           <div className="cranien-container">
             <img src="/images/176067219_2674521086185632_6685018227844772496_n.jpg" width="300" />
             <div className="texte-cranien">
@@ -61,7 +80,8 @@ const MassageBandeauSecond = () => {
               </li>
             </ul>
           </div>
-        </div> 
+          </motion.div>
+        </InView> 
       </div>
       <HomeCurveSeparation texte="le massage crânien en détails" margin="75px 0px 250px" lien="/prestations/#crane"/>
     </SectionWrap>

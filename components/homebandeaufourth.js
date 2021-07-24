@@ -1,23 +1,43 @@
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useState } from "react";
+import {InView} from "react-intersection-observer";
 import styled from "styled-components";
+import { titleAnimation } from "../utils";
 import HorizontalAccordion from "./horizontalaccordion"
 
 const HomeBandeauFourth = () => {
+
+  const [titleInView, setTitleInView] = useState(false);
+  const controls = useAnimation()
+
+  useEffect(() => {
+    if(titleInView){
+      controls.start("appear")
+      controls.start("animate")
+    }
+  }, [controls, titleInView])
+
+
   return (
     <SectionWrapper>
-      <div className='container-section'>
-        <h2 className="home-titles">Mes différentes pratiques</h2>
+      <InView className='container-section' onChange={(inView, entry)=>setTitleInView(inView)} >
+        <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate={controls} >Mes différentes pratiques</motion.h2>
         <div className="accordion-container">
-          <h3 className="categorie"><span>Types de massages</span></h3>
-          <HorizontalAccordion/>  
+          <motion.h3 className="categorie" initial={{opacity:0}} animate={titleInView ? {opacity:1} : ""} transition={{opacity:{delay : 0.5, transition : 4}}} >
+            <span>Types de massages</span>
+          </motion.h3>
+          <motion.div initial={{opacity:0, y:200}} animate={titleInView ? {opacity:1, y :0} : ""} transition={{opacity:{delay : 0.5, duration : 1}, y:{delay : 0.5, duration : 1.2, ease:"easeOut"}}} >
+            <HorizontalAccordion/> 
+          </motion.div>  
         </div> 
-        <h3 className="categorie"><span>Mais aussi...</span></h3>   
-        <div className="container-yoga"> 
+        <motion.h3 className="categorie" initial={{opacity:0}} animate={titleInView ? {opacity:1} : ""} transition={{opacity:{delay : 1.5, transition : 4}}} ><span>Mais aussi...</span></motion.h3>   
+        <motion.div className="container-yoga" initial={{opacity:0, y:"100%"}} animate={titleInView ? {opacity:1, y :0} : ""} transition={{opacity:{delay : 2, duration : 1}, y:{delay : 2, duration : 1.2, ease:"easeOut"}}} > 
           <img
             src='/images/pexels-photo-7593054.jpeg' 
             width = "600" />
             <h3 className="titre">Initiation au yoga</h3>
-        </div>
-      </div>
+        </motion.div>
+      </InView>
       
     </SectionWrapper>
   );

@@ -1,13 +1,31 @@
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useState } from "react";
+import {InView} from "react-intersection-observer";
 import styled from "styled-components";
+import { opacityBandeau } from "../utils";
 import HerosMassage from "./herosmassage";
 import HomeCurveSeparation from "./homecurveseparation";
 
 const MassageBandeauThird = () => {
+  const [sectionInView, setSectionInView] = useState(false)
+  const [heroInView, setHeroInView] = useState(false)
+
+  const controls = useAnimation()
+
+  useEffect(() => {
+    if(sectionInView){
+      controls.start("animate")
+    }
+  }, [controls, sectionInView])
+
   return (
     <SectionWrapper>
-      <HerosMassage image='baby-massage.jpg' title="massage pour bébé" translateUp='-770'/>
-      <div className="section-container"> 
-        <div className="basic-container">
+      <InView onChange={(inView, entry)=>setHeroInView(inView)}>
+        <HerosMassage image='baby-massage.jpg' title="massage pour bébé" translateUp='-770' heroInView={heroInView}/>
+      </InView>
+      
+      <InView className="section-container" onChange={(inView, entry)=>setSectionInView(inView)}> 
+        <motion.div className="basic-container" variants={opacityBandeau} initial="initial" animate={controls} >
           <div className="image-bébé-container">
             <img src="/images/175582685_458024105447520_2106840811191704374_n.jpg" alt="massage bébé" width="500"/>
           </div>
@@ -23,8 +41,8 @@ const MassageBandeauThird = () => {
               Il ne faut pas toujours chercher des réponses compli&shy;quées, parfois un bébé pleure tout sim&shy;plement parce qu'il a besoin de caresses. Mas&shy;ser son bébé n'est pas dif&shy;ficile et ce moment privi&shy;légié permet&shy;tra d'instaurer un véri&shy;table échan&shy;ge entre vous et lui. Les béné&shy;fices du massage bébé se mani&shy;festent tant au point de vue phy&shy;sique que psy&shy;cholo&shy;gique.
             </div>
           </div>
-        </div> 
-      </div>
+        </motion.div> 
+      </InView>
       <HomeCurveSeparation texte="le massage bébé en détails" margin="75px 0px 175px" lien="/prestations/#babymassage" />
     </SectionWrapper>
   );

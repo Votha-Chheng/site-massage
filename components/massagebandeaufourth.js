@@ -1,21 +1,39 @@
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useState } from "react";
+import {InView} from "react-intersection-observer";
 import styled from "styled-components";
+import { opacityBandeau } from "../utils";
 import HerosMassage from "./herosmassage";
 import HomeCurveSeparation from "./homecurveseparation";
 
 const MassageBandeauFourth = () => {
+  const [sectionInView, setSectionInView] = useState(false)
+  const [heroInView, setHeroInView] = useState(false)
+
+  const controls = useAnimation()
+
+  useEffect(() => {
+    if(sectionInView){
+      controls.start("animate")
+    }
+  }, [controls, sectionInView])
+
   return (
     <SectionWrapper>
-      <HerosMassage title="massage à la bougie" image='176187352_2922669511298633_3323829876291585340_n.jpg' translateUp='-400'/>
-      <div className="section-container">
-        <div className="flex-1">
+      <InView onChange={(inView, entry)=>setHeroInView(inView)}>
+        <HerosMassage title="massage à la bougie" image='176187352_2922669511298633_3323829876291585340_n.jpg' translateUp='-400' heroInView={heroInView}/>
+      </InView>
+      
+      <InView onChange={(inView, entry)=>setSectionInView(inView)} className="section-container">
+        <motion.div className="flex-1" initial={{x:-300, opacity:0}} animate={sectionInView? {x:0, opacity:1}:""} transition={{opacity : {duration : 0.75, delay:0.8, ease:"easeOut"}, x : {duration : 1.2, delay:0.8, ease:"easeOut"}}} >
           <div className="bougie-container">
             <img src="/images/massageBougie2.jpg" width="400" height="400" />
           </div>
           <div className="texte">
             Ce type de massage réalisé sur l'ensemble du corps est ré&shy;puté pour sa capacité à dé&shy;ten&shy;dre les muscles et à sup&shy;primer les ten&shy;sions dues au stress. Ori&shy;ginai&shy;re de Thaï&shy;lande, il reste en&shy;core assez mécon&shy;nu en Oc&shy;cident. L’huile est ap&shy;pli&shy;quée sur l’en&shy;semble du corps par de longs mou&shy;vements flui&shy;des. 
           </div>
-        </div>
-        <div className="flex-2">
+        </motion.div>
+        <motion.div className="flex-2" initial={{x:300, opacity:0}} animate={sectionInView? {x:0, opacity:1}:""} transition={{opacity : {duration : 0.75, delay:1.5, ease:"easeOut"}, x : {duration : 1.2, delay:1.5, ease:"easeOut"}}} >
           <div className="texte-container">
             <div className="texte">
               Les bougies de massage sont des bougies spécifiques, 100% naturelles à base de cire végétale ou d’abeil&shy;les et enri&shy;chies en huiles es&shy;sentiel&shy;les, senteurs pro&shy;pices à la dé&shy;con&shy;traction. La fonte de la bougie produit de la cire li&shy;quide qui se transforme en huile de mas&shy;sage hy&shy;dra&shy;tante. Avec un parfum agré&shy;able, des vertus adou&shy;cis&shy;santes et nour&shy;rissantes pour la peau, ce mas&shy;sage est conseil&shy;lé pour les peaux sèches et sen&shy;sibles. De plus, <b>la douce sen&shy;sation de la ci&shy;re tiède sur la peau en fait un mas&shy;sage idéal pour l'hiver</b>. 
@@ -25,11 +43,10 @@ const MassageBandeauFourth = () => {
             </div>
           </div>
             <div className="texte fin">
-              <br/>Bref, effet enveloppant, confort immédiat et sensation de cocooning garantis !
+              Bref, effet enveloppant, confort immédiat et sensation de cocooning garantis !
             </div>
-          
-        </div>
-      </div>
+        </motion.div>
+      </InView>
       <HomeCurveSeparation texte="Le massage à la bougie en détails" margin="75px 0px 200px" lien="/prestations/#bougie"/>
     </SectionWrapper>
   );
@@ -83,6 +100,7 @@ const SectionWrapper = styled.section`
     text-indent: 0px;
     text-align: center;
     line-height: 3.5rem;
+    padding-top: 50px;
   }
 
   .bougie-container{

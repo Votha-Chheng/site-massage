@@ -17,13 +17,21 @@ import HomeBandeauSixth from '../components/homebandeausixth'
 import MenuHead from '../components/menuhead'
 
 
-export default function Home({sound, changeSound}) {
-
-  //const [sound, setSound] = useState(true)
+export default function Home() {
+  const [sound, setSound] = useState(false)
+  const [clicked, setClicked] = useState(false)
 
   const menuRef = useRef(null)
-  const footerRef = useRef(null)
+  const audioRef = useRef(null)
+  
+  const firstClikHandler = ()=>{
+    audioRef.current.play()
+    setClicked(true)
+  }
 
+  const pauseHandler = ()=>{
+    audioRef.current.pause()
+  }
 
   return (
     <div>
@@ -32,20 +40,24 @@ export default function Home({sound, changeSound}) {
       </Head>
         
       <Wrapper>
-        <div className="icone-container" onClick={changeSound}>
-          <i className="fas fa-volume-up fa-2x" style={{display :`${sound ? "block" :"none"}`}}/>
-          <i className="fas fa-volume-mute fa-2x" style={{display :`${!sound ? "block" :"none"}`}}/>
+        <audio src="/KaiEngel-Maree.mp3" ref={audioRef}/>
+        <div className="icone-container" onClick={()=>setSound(prev=>!prev)}>
+          <i className="fas fa-volume-up fa-2x" style={{display :`${sound ? "block" :"none"}`}} onClick={()=>pauseHandler()}/>
+          <i className="fas fa-volume-mute fa-2x" style={{display :`${!sound ? "block" :"none"}`}} onClick={()=>firstClikHandler()}/>
+          <div className="point-music" style={{display:`${clicked? "none" : "flex"}`}}>
+            <img src="/images/arrow-left-svgrepo-com.svg" width="32" />
+            <small>Mettre la musique</small>
+          </div>
+          
         </div>
         <motion.div ref={menuRef} className="menu-container" initial={{opacity: 0}} animate={{opacity:1}} transition={{opacity : {delay:8.5}}}>
           <MenuHead/>
         </motion.div>
 
         <MomentumScrollProvider easing={0.075}>
-        <audio loop autoPlay>
-          <source src="/KaiEngel-Maree.mp3" tye="audio/mp3"/>
-        </audio>
           <div id='super-container' className='super-container'> 
             <HomeBandeauFirst/> 
+
             <HomeBandeauSecond/>
             <HomeBandeauThird/>
             <HomeBandeauFourth/>
@@ -67,6 +79,23 @@ const Wrapper = styled.div`
   overflow : hidden;
   position: relative;
   background-color: #798a94;
+
+  .point-music{
+    position: absolute;
+    top: 0;
+    left: 60px;
+    display: flex;
+
+    small{
+      padding-left: 10px;
+      font-size: 1.1rem;  
+      font-style: italic;
+      color: whitesmoke;
+    }
+    img {
+      animation: leftAndRight ease-in-out 1.5s infinite;
+    }
+  }
 
   .icone-container{
     z-index:15; 
@@ -107,6 +136,17 @@ const Wrapper = styled.div`
 
   .footer-container{
     height: 100%;
+  }
+  @keyframes leftAndRight{
+    0%{
+      transform: translate(8px);
+    }
+    50%{
+      transform: translate(-3px);
+    }
+    100%{
+      transform: translate(8px);
+    }
   }
      
 `

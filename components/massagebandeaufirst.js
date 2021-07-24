@@ -1,37 +1,57 @@
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useState } from "react";
+import {InView} from "react-intersection-observer";
 import styled from "styled-components";
+import { opacityBandeau, titleAnimation } from "../utils";
 import HerosMassage from "./herosmassage";
 import HomeCurveSeparation from "./homecurveseparation";
 
 const MassageBandeauFirst = () => {
+  const [sectionInView, setSectionInView] = useState(false)
+  const [heroInView, setHeroInView] = useState(false)
+
+  const controls = useAnimation()
+
+  useEffect(() => {
+    if(sectionInView){
+      controls.start("animate")
+    }
+  }, [controls, sectionInView])
+
   return (
     <SectionWrap>
-      <h2 className="massages-titles">Types de massage proposés</h2>
-      <HerosMassage title="massage intuitif" image="oil-massage.jpg" translateUp="-150"/>
-      <div className="section-container">
+      <motion.h2 variants={titleAnimation} initial="initial" animate="appear" className="massages-titles">Types de massage proposés</motion.h2>
+        <InView onChange={(inView, entry)=>setHeroInView(inView)}>
+          <HerosMassage title="massage intuitif" image="oil-massage.jpg" translateUp="-150" heroInView={heroInView}/>
+        </InView> 
         
-        <div className='img-citation'>
-          <img src="/images/pexels-daria-sannikova-5221036.jpg" width="450" />
-          <div className="quote">
-            <i className="fas fa-quote-left" style={{transform:"scale(1.5) translateY(-10px)", textIndent:"-30px"}}/>
-            Voir le corps se déposer, pren&shy;dre contact avec lui, l'écouter, s'arrêter, lisser, masser, d'un mou&shy;vement toujours lent. Il se crispe parfois et fait prendre cons&shy;cience, du lien avec l'esprit, des blo&shy;cages émo&shy;tion&shy;nels et af&shy;fec&shy;tifs. C'est là que le chemin com&shy;mence... Par le toucher, il cherche à instal&shy;ler le mieux-être, dans la durée, en libé&shy;rant les ten&shy;sions inu&shy;tiles. Tel est le massage intuitif.
-            <i className="fas fa-quote-right" style={{transform:"scale(1.5) translateY(5px)", textIndent:"20px"}}/> 
+      
+      <InView onChange={(inView, entry)=>setSectionInView(inView)} className="section-container" >
+        <motion.div variants={opacityBandeau} initial="initial" animate={controls} >
+          <div className='img-citation'>
+            <img src="/images/pexels-daria-sannikova-5221036.jpg" width="450" />
+            <div className="quote">
+              <i className="fas fa-quote-left" style={{transform:"scale(1.5) translateY(-10px)", textIndent:"-30px"}}/>
+              Voir le corps se déposer, pren&shy;dre contact avec lui, l'écouter, s'arrêter, lisser, masser, d'un mou&shy;vement toujours lent. Il se crispe parfois et fait prendre cons&shy;cience, du lien avec l'esprit, des blo&shy;cages émo&shy;tion&shy;nels et af&shy;fec&shy;tifs. C'est là que le chemin com&shy;mence... Par le toucher, il cherche à instal&shy;ler le mieux-être, dans la durée, en libé&shy;rant les ten&shy;sions inu&shy;tiles. Tel est le massage intuitif.
+              <i className="fas fa-quote-right" style={{transform:"scale(1.5) translateY(5px)", textIndent:"20px"}}/> 
+            </div>
           </div>
-        </div>
-        <div className="texte-container">
-          <div className="lotus-container">
-            <img src="/images/logoLotus.svg" width="75" />
+          <div className="texte-container">
+            <div className="lotus-container">
+              <img src="/images/logoLotus.svg" width="75" />
+            </div>
+            <div>
+              Ainsi, le massage in&shy;tuitif cherche à installer le mieux être pas seul&shy;ement dans l'immé&shy;diat <b>mais aussi dans la durée</b>. C'est un mas&shy;sage que je pra&shy;ti&shy;que grâce et avec mon res&shy;senti, mon intuition. <b>Il est personnalisé et adapté à la personne qui le reçoit à l'instant T</b>. 
+            </div>
+            <div>
+              Par mon attention, j'ai la facul&shy;té d'entrer en con&shy;nexion avec le rece&shy;veur, l'harmo&shy;nie du massage se crée grâce à la façon que j'ai de m'ajuster à la respi&shy;ration du massé. <b>Je per&shy;çois des in&shy;forma&shy;tions non verbales </b>qui me permet&shy;tent de compren&shy;dre si je dois passer plus de temps sur telles parties du corps afin de le libérer de toutes tensions ou d'uti&shy;liser tel&shy;les tech&shy;niques pour vous ac&shy;compagner à lâcher pri&shy;se...
+            </div>
+            <div>
+              Ce massage person&shy;nalisé et complet à base d’huiles es&shy;sentiel&shy;les biolo&shy;giques, prend en compte <b>l’ap&shy;proche glo&shy;bale de l’être humain</b> et le tou&shy;che dans ses dif&shy;féren&shy;tes di&shy;men&shy;sions (phy&shy;sique, men&shy;tale, émo&shy;tion&shy;nelle et éner&shy;gé&shy;tique) afin que cel&shy;les-ci soient ré&shy;har&shy;moni&shy;sées.
+            </div>
           </div>
-          <div>
-            Ainsi, le massage in&shy;tuitif cherche à installer le mieux être pas seul&shy;ement dans l'immé&shy;diat <b>mais aussi dans la durée</b>. C'est un mas&shy;sage que je pra&shy;ti&shy;que grâce et avec mon res&shy;senti, mon intuition. <b>Il est personnalisé et adapté à la personne qui le reçoit à l'instant T</b>. 
-          </div>
-          <div>
-            Par mon attention, j'ai la facul&shy;té d'entrer en con&shy;nexion avec le rece&shy;veur, l'harmo&shy;nie du massage se crée grâce à la façon que j'ai de m'ajuster à la respi&shy;ration du massé. <b>Je per&shy;çois des in&shy;forma&shy;tions non verbales </b>qui me permet&shy;tent de compren&shy;dre si je dois passer plus de temps sur telles parties du corps afin de le libérer de toutes tensions ou d'uti&shy;liser tel&shy;les tech&shy;niques pour vous ac&shy;compagner à lâcher pri&shy;se...
-          </div>
-          <div>
-            Ce massage person&shy;nalisé et complet à base d’huiles es&shy;sentiel&shy;les biolo&shy;giques, prend en compte <b>l’ap&shy;proche glo&shy;bale de l’être humain</b> et le tou&shy;che dans ses dif&shy;féren&shy;tes di&shy;men&shy;sions (phy&shy;sique, men&shy;tale, émo&shy;tion&shy;nelle et éner&shy;gé&shy;tique) afin que cel&shy;les-ci soient ré&shy;har&shy;moni&shy;sées.
-          </div>
-        </div>
-      </div> 
+        </motion.div>
+      </InView> 
       <HomeCurveSeparation texte="le massage personnalisé en détails" margin="80px 0px 200px" lien="/prestations#intuitif"/> 
     </SectionWrap>
   );

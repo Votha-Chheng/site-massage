@@ -1,30 +1,47 @@
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useState } from "react";
+import {InView} from "react-intersection-observer";
 import styled from "styled-components";
-import Footer from "./footer";
 import HerosMassage from "./herosmassage";
 import HomeCurveSeparation from "./homecurveseparation";
 
 const MassageBandeauFifth = () => {
+  const [sectionInView, setSectionInView] = useState(false)
+  const [heroInView, setHeroInView] = useState(false)
+
+  const controls = useAnimation()
+
+  useEffect(() => {
+    if(sectionInView){
+      controls.start("animate")
+    }
+  }, [controls, sectionInView])
+
+
   return (
     <SectionWrapper>
-      <HerosMassage title="réflexologie" image='foot-massage.jpg' translateUp="-250" />
-      <div className="section-container">
-        <div className="part-left-container">
+      <InView onChange={(inView, entry)=>setHeroInView(inView)}>
+        <HerosMassage title="réflexologie" image='foot-massage.jpg' translateUp="-250" heroInView={heroInView} />
+      </InView>
+      
+      <InView onChange={(inView, entry)=>setSectionInView(inView)} className="section-container">
+        <motion.div className="part-left-container" initial={{opacity:0, x:"-100%"}} animate={sectionInView? {opacity:1, x:0}:""} transition={{opacity:{duration : 0.5, delay:1}, x:{duration:1.25, delay:0.8, ease:"easeOut"}}} >
           <div className="foot-img-container">
             <img src="/images/woman-getting-foot-massage.jpg" height="400"/>
             <small>Crédit photo : &copy; chevanon</small>
           </div>
-        </div>
+        </motion.div>
         
-        <div>
+        <motion.div initial={{opacity:0, x:"100%"}} animate={sectionInView? {opacity:1, x:0}:""} transition={{opacity:{duration : 0.5, delay:1.6}, x:{duration:1.9, delay:0.8, ease:"easeOut"}}}>
           <div className="texte">
             Les pieds sont une partie du corps souvent oubliés pour les soins et le bien-être, alors qu'ils sont souvent très sollicités tout au long de la journée lorsque vous marchez ou que vous restez en position debout prolongée à cause du port des chaussures et du poids qu'ils supportent au quotidien.
           </div>
           <div className="texte">
             C'est là qu'entre en jeu la réflexologie et le massage de la voute plantaire dont les bienfaits ne sont plus à démontrer pour <b>apaiser le stress, soulager des douleurs (du dos, migraine, etc...)</b>, ou tout simplement passer un moment de qualité, agréable et enchanteur.
           </div>
-        </div>
+        </motion.div>
 
-      </div>
+      </InView>
       <HomeCurveSeparation texte="la réflexologie plantaire en détail" margin="75px 0px 200px" lien="/prestations/#pieds" />
     </SectionWrapper>
   );

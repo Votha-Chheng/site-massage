@@ -1,12 +1,17 @@
+import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import {InView} from "react-intersection-observer";
 import styled from "styled-components";
-import usePageYOffset from "../hooks/usePagesYOffset";
+import { titleAnimation } from "../utils";
 import HomeCurveSeparation from "./homecurveseparation";
 
 const HomeBandeauFifth = () => {
   const [mouseEnter, setMouseEnter] = useState(false)
   const [mapDimension, setMapDimension] = useState({width : 0, height : 0})
   const [agrandissement, setAgrandissement] = useState(false)
+  const [titleInView, setTitleInview] = useState(false);
+
+  const controls = useAnimation()
 
 
   const imgZoneRef = useRef(null) 
@@ -35,18 +40,53 @@ const HomeBandeauFifth = () => {
     return()=> document.removeEventListener("mousemove", function(event){getMousePosition(event, agrandirRef)})
   }, [])
 
+  useEffect(() => {
+    if(titleInView){
+      controls.start("appear")
+      controls.start("animate")
+    }
+  }, [controls, titleInView])
+
   const unzoomHandler = ()=>{
     setMouseEnter(false) 
     setAgrandissement(false) 
   }
 
-  console.log(mouseEnter, agrandissement)
+  //Animations
+  const parent = {
+    initial:{
+
+    },
+    animate:{
+      transition: {
+        delayChildren : 0.7,
+        staggerChildren : 0.8
+      }
+    }
+  }
+
+  const childAppear = {
+    initial: {
+      opacity: 0,
+      y : 300
+    },
+    animate:{
+      opacity: 1,
+      y:0,
+      transition: {
+        duration: 1,
+        y : {
+          duration: 1.5,
+        }
+      }
+    }   
+  }
 
   return (
     <SectionWrapper>
-      <div className="container-page">
-        <h2 className="home-titles">Un service uniquement à domicile</h2>
-        <div className="content" ref={imgZoneRef}>
+      <InView className="container-page" onChange={(inView, entry)=> setTitleInview(inView)} >
+        <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate={controls} >Un service uniquement à domicile</motion.h2>
+        <motion.div className="content" ref={imgZoneRef} variants={parent} initial="initial" animate={controls} >
           <div 
             ref={agrandirRef} 
             className="agrandir" 
@@ -57,15 +97,15 @@ const HomeBandeauFifth = () => {
           </div>
           
           <div className="partie-textes">
-            <img className="img-car" src="/images/deplacement.svg"/>
-            <div className='texte first'>
+            <motion.img className="img-car" src="/images/deplacement.svg" variants={childAppear}/>
+            <motion.div className='texte first' variants={childAppear} >
               <b>Quoi de mieux de se faire masser sans avoir à se déplacer ?</b> Avec <span className="marque">Baux't des sens</span>, c'est le bien-être et la détente qui viennent chez vous ! C'est pour&shy;quoi <b>je me déplace <u>uniquement</u> à domicile, dans les gîtes, les hôtels,</b> ou même au bord de votre piscine. Et ce, <b>avec tout le matériel nécessaire</b> (table de massage, linge, etc...) pour que vous n'ayez à vous oc&shy;cuper de rien. Tout ce qui vous reste donc à faire, c'est vous allonger et vous laisser aller...
-            </div>
-            <div className='texte'>
+            </motion.div>
+            <motion.div className='texte' variants={childAppear} >
               Mes zones de déplace&shy;ment vont <b>d'Arles et ses alen&shy;tours</b> jusqu'à <b>St-Martin-de-Crau</b>, ainsi que toute la <b>zone en&shy;glo&shy;bant les Alpil&shy;les</b> (les Baux-de-Provence, Font&shy;vieille, St-Rémy-de-Provence...).
-            </div>
+            </motion.div>
           </div>
-          <div className='deplacement-container' style={{cursor:'none', minWidth:`${mapDimension.width}px`, minHeight:`${mapDimension.height}px`}}>
+          <motion.div className='deplacement-container' style={{cursor:'none', minWidth:`${mapDimension.width}px`, minHeight:`${mapDimension.height}px`}} variants={childAppear} >
             <img 
               className="small-map"
               ref={mapRef}
@@ -86,11 +126,11 @@ const HomeBandeauFifth = () => {
               onMouseLeave={()=>setMouseEnter(false)} 
               onMouseOut={()=>setMouseEnter(false)}
               onClick={()=>unzoomHandler()}/>
-          </div>
+          </motion.div>
           
-        </div>
+        </motion.div>
 
-      </div>
+      </InView>
       <HomeCurveSeparation texte="prendre un rendez-vous" margin="50px 0px 100px"/>
     </SectionWrapper>
 

@@ -1,9 +1,11 @@
+import { motion } from "framer-motion";
 import Head from "next/head";
 import styled from "styled-components";
 import Footer from "../components/footer";
 import HomeCurveSeparation from "../components/homecurveseparation";
 import MenuHead from "../components/menuhead";
 import MomentumScrollProvider from "../context/MomentumScrollContext";
+import { opacityBandeau, titleAnimation } from "../utils";
 
 const infospratiques = () => {
   return (   
@@ -18,9 +20,9 @@ const infospratiques = () => {
         </div>
         <MomentumScrollProvider easing={0.075}>
           <div className="page-container">
-            <h2 className="home-titles">Infos pratiques</h2>
+            <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >Infos pratiques</motion.h2>
 
-            <div id="super-container">
+            <motion.div id="super-container" variants={opacityBandeau} initial="initial" animate="animate" >
               <div className="prestations-container-mini">
                 <div className="layer-white">
                   <h3 className="marque">Baux't des sens</h3>
@@ -86,7 +88,7 @@ const infospratiques = () => {
                 </div>
                 
               </div>
-            </div>
+            </motion.div>
             
           </div>    
           <div className="footer-container">

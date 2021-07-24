@@ -46,7 +46,7 @@ const Footer = () => {
 }
 
 const FooterStyle = styled.div`
-  background-color : #90857d;
+  background-color : #bdb7b2;
   padding : 20px;
   min-height: 500px;
   border-top: 6px double black;
