@@ -32,7 +32,7 @@ export default function Home({sound, changeSound}) {
       </Head>
         
       <Wrapper>
-        <div className="icone-container" onClick={()=>changeSound()}>
+        <div className="icone-container" onClick={changeSound}>
           <i className="fas fa-volume-up fa-2x" style={{display :`${sound ? "block" :"none"}`}}/>
           <i className="fas fa-volume-mute fa-2x" style={{display :`${!sound ? "block" :"none"}`}}/>
         </div>
@@ -41,14 +41,14 @@ export default function Home({sound, changeSound}) {
         </motion.div>
 
         <MomentumScrollProvider easing={0.075}>
+        <audio loop autoPlay>
+          <source src="/KaiEngel-Maree.mp3" tye="audio/mp3"/>
+        </audio>
           <div id='super-container' className='super-container'> 
-            <HomeBandeauFirst/>
-            <a href="#bandeau">Cliquer</a>    
+            <HomeBandeauFirst/> 
             <HomeBandeauSecond/>
             <HomeBandeauThird/>
-            <div id="bandeau">
-              <HomeBandeauFourth/>
-            </div>
+            <HomeBandeauFourth/>
             <HomeBandeauFifth/>
             <HomeBandeauSixth/>
           </div>
