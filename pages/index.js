@@ -24,7 +24,7 @@ export default function Home() {
   const menuRef = useRef(null)
   const audioRef = useRef(null)
   
-  const firstClikHandler = ()=>{
+  const firstClickHandler = ()=>{
     audioRef.current.play()
     setClicked(true)
   }
@@ -43,7 +43,7 @@ export default function Home() {
         <audio src="/KaiEngel-Maree.mp3" ref={audioRef}/>
         <div className="icone-container" onClick={()=>setSound(prev=>!prev)}>
           <i className="fas fa-volume-up fa-2x" style={{display :`${sound ? "block" :"none"}`}} onClick={()=>pauseHandler()}/>
-          <i className="fas fa-volume-mute fa-2x" style={{display :`${!sound ? "block" :"none"}`}} onClick={()=>firstClikHandler()}/>
+          <i className="fas fa-volume-mute fa-2x" style={{display :`${!sound ? "block" :"none"}`}} onClick={()=>firstClickHandler()}/>
           <div className="point-music" style={{display:`${clicked? "none" : "flex"}`}}>
             <img src="/images/arrow-left-svgrepo-com.svg" width="32" />
             <small>Mettre la musique</small>
