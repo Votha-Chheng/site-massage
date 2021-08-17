@@ -254,7 +254,7 @@ const HomeBandeauSecond = () => {
           </div>
         </div>    
       </InView>
-      <HomeCurveSeparation texte="prendre contact" inView={bandeauInView} delay={15} buttonDelay={17.9} lien='/infospratiques'/>
+      <HomeCurveSeparation texte="prendre contact" inView={bandeauInView} delay={15} buttonDelay={15.9} lien='/infospratiques'/>
     </BandeauDiv>
   );
 }

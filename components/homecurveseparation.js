@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import useWindowSize from "../hooks/useWindowSize";
 
-const HomeCurveSeparation = ({texte, inView, delay, buttonDelay, lien, margin, clicked}) => {
+const HomeCurveSeparation = ({texte, inView, delay, buttonDelay, lien, margin}) => {
   const [curlySvgHeight, setCurlySvgHeight] = useState(0)
 
   const size = useWindowSize()
@@ -27,7 +27,7 @@ const HomeCurveSeparation = ({texte, inView, delay, buttonDelay, lien, margin, c
     animate : {
       transition : {
         delayChildren : delay,
-        staggerChildren : 1
+        staggerChildren : 0.25
       }
     }
   }

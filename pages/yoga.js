@@ -96,7 +96,7 @@ const yoga = () => {
             
           </InView> 
           <HomeCurveSeparation texte="en savoir plus" margin="0px 0px" lien="/prestations/#yoga"/>
-          <InView onChange={(inView, entry)=>setPartTwoInView(inView)} className="page-container">
+          <InView onChange={(inView, entry)=>setPartTwoInView(inView)} className="page-container second">
             <main>
               <motion.div 
                 className="img-yoga-container second"
@@ -180,6 +180,9 @@ const DivWrapper = styled.div`
     text-align: center;
   }
 
+  .page-container.second{
+    margin-bottom: 50px;
+  }
   .page-container{
     padding: 50px 25px;
 
