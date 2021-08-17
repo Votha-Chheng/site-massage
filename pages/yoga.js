@@ -61,7 +61,7 @@ const yoga = () => {
   return (   
     <div>
       <Head>
-        <title>Baux't des sens | Initiation au yoga à domicile</title>
+        <title>Baux't des sens | Initiation au yoga à domicile Arles Alpilles</title>
       </Head>
 
       <DivWrapper>

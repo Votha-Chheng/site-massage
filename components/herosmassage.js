@@ -16,17 +16,12 @@ const HerosMassage = ({title, image, translateUp, heroInView}) => {
 
   return (
     <DivWrapper className="heros-container">
-
-
-        <motion.div className="hero" variants={heroAnimation} initial="initial" animate={controls} >
-          <img src={`/images/${image}`} width="100%" style={{transform:`translateY(${translateUp}px)`}} /> 
-        </motion.div>
-        <motion.div  variants={heroTitleAnimation} initial="initial" animate={controls} className="hero-top-layer">
-          <h3 className="massage-intuitif">{title}</h3>
-        </motion.div>
-    
-
-      
+      <motion.div className="hero" variants={heroAnimation} initial="initial" animate={controls} >
+        <img src={`/images/${image}`} width="100%" style={{transform:`translateY(${translateUp}px)`}} /> 
+      </motion.div>
+      <motion.div  variants={heroTitleAnimation} initial="initial" animate={controls} className="hero-top-layer">
+        <h3 className="massage-intuitif">{title}</h3>
+      </motion.div>
     </DivWrapper>
   );
 }

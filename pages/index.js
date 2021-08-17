@@ -1,10 +1,6 @@
 import Head from 'next/head'
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import styled from 'styled-components'
-import useWindowSize from '../hooks/useWindowSize'
-import useScrollDirection from '../hooks/useScrollDirection'
-import {useRouter} from 'next/router'
-import {InView} from 'react-intersection-observer'
 import Footer from '../components/footer'
 import HomeBandeauFirst from '../components/homebandeaufirst'
 import HomeBandeauSecond from '../components/homebandeausecond'
@@ -36,7 +32,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Baux't des sens | Massage à domicile</title>
+        <title>Baux't des sens | Massage à domicile et Yoga Arles Alpilles</title>
       </Head>
         
       <Wrapper>

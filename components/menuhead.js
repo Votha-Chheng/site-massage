@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const MenuHead = ({color}) => {
   return (
-    <Wrapper style={{color}}>
+    <Wrapper style={{color}} role="navigation" aria-label="navigation site Baux't des sens">
       <a href="/">
         <div className="logo">
           <svg width="37" height="20" viewBox="0 0 37 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -15,11 +15,11 @@ const MenuHead = ({color}) => {
           <li className="massages-menu">
             <a href='/massages'>Massages</a>
             <div className="sub-menu-massages">
-              <div><a href="/prestations/#intuitif">Massage intuitif</a></div>
-              <div> <a href="/prestations/#crane">Massage crânien</a></div>
-              <div><a href="/prestations/#babymassage">Massage bébé</a></div>
-              <div><a href="/prestations/#bougie">Massage bougie</a></div>
-              <div><a href="/prestations/#pieds">Réflexologie</a></div>
+              <div><a href="/massages/#intuitif">Massage intuitif</a></div>
+              <div> <a href="/massages/#crane">Massage crânien</a></div>
+              <div><a href="/massages/#babymassage">Massage bébé</a></div>
+              <div><a href="/massages/#bougie">Massage bougie</a></div>
+              <div><a href="/massages/#pieds">Réflexologie</a></div>
             </div>
           </li>
           <li><a href='/yoga'>Yoga</a></li>

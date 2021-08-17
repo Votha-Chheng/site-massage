@@ -110,7 +110,7 @@ const HomeBandeauFifth = () => {
               className="small-map"
               ref={mapRef}
               src="/images/zonedeplacement.jpg" 
-              alt="zones où je me déplace"  
+              alt="zones où je me déplace baux't des sens"  
               onMouseEnter={()=>setMouseEnter(true)} 
               onMouseLeave={()=>setMouseEnter(false)} 
               onMouseEnter={()=>setMouseEnter(true)}
@@ -119,6 +119,7 @@ const HomeBandeauFifth = () => {
             <img 
               className="zoom-map" 
               src="/images/zonedeplacement.jpg" 
+              alt="zones où je me déplace baux't des sens"  
               width="700" 
               height="auto" 
               style={{display:`${agrandissement? "block" :"none"}`, position:"absolute", right:"0", bottom:"0", zIndex:5}}
@@ -213,7 +214,6 @@ const SectionWrapper = styled.section`
           right:0;
           top:0px;
           width: 400px;
-          float: right;
         }
       }
       
@@ -221,7 +221,6 @@ const SectionWrapper = styled.section`
   }
 
   @media (max-width: 850px){
-
     .deplacement-container{
       display: none;
     }

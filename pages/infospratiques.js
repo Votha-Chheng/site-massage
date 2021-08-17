@@ -11,7 +11,7 @@ const infospratiques = () => {
   return (   
     <div>
       <Head>
-        <title>Baux't des sens | Horaires - Contact - Rendez-vous</title>
+        <title>Baux't des sens | Horaires - Contact - Rendez-vous - Arles Alpilles</title>
       </Head>
 
       <DivWrapper>
@@ -28,7 +28,7 @@ const infospratiques = () => {
                   <h3 className="marque">Baux't des sens</h3>
                   <div className="flex-container">
                     <div className="image-frame">
-                      <img src="/images/portrait.jpg" width="200"/>
+                      <img src="/images/portrait.jpg" alt="baux't des sens - Julie" width="200"/>
                     </div>
                     <div className="quote">
                       Les soins que j'apporte sont issus d'une formation où j'ai appris de <b>multiples techni&shy;ques profes&shy;sion&shy;nelles</b>. La qua&shy;lité de mes mas&shy;sages se démar&shy;que par <b>l'intention par&shy;ticulière, la bienveillance et l'é&shy;nergie</b> que j'y mets. Mon but étant de vous ap&shy;porter un moment unique et sur-mesure grâce à mon at&shy;tention, ma dis&shy;poni&shy;bilité et mon écoute.

@@ -61,10 +61,11 @@ const HomeCurveSeparation = ({texte, inView, delay, buttonDelay, lien, margin}) 
     }
   }
 
-  return (
+  return (                                
     <DivWrapper style={{margin}}>
       <a href={`${lien}`}>
         <motion.div
+          tabIndex="0"
           className="bouton-contact"
           initial={{x:"-50%", y:50, opacity:0}} 
           animate={inView? {x:"-50%", y:0, opacity:1} : ""} 

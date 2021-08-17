@@ -1,18 +1,17 @@
 import Head from 'next/head'
-import { useState } from 'react'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
-  const [sound, setSound] = useState(false)
-
-  
 
   return (
     <>
       <Head>
         <meta charSet="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1"/>
-        <meta name="description" content="Baux'T des sens"/>
+        <meta name="description" content="Baux'T des sens massage à domicile et yoga Arles Alpilles & Baux de Provence"/>
+        <meta property="og:title" content="Baux'T des sens, massage à domicile et yoga Arles Alpilles & Baux de Provence." />
+        <meta property="og:image" content="/images/id2.png" />
+        <meta property="og:type" content="website" />
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"/>
@@ -38,7 +37,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <main>
-        <Component {...pageProps} sound={sound} changeSound={()=>setSound(prev=>!prev)}/> 
+        <Component {...pageProps}/> 
       </main>
     </>
   )

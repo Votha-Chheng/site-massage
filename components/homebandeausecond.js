@@ -362,6 +362,11 @@ const BandeauDiv = styled.div`
       }
     }
   }
+@media (max-height:640px){
+  .slogan-container{
+    top: 50px;
+  }
+}
 @media (max-width:840px){
   .texte-bio{
     width : 100% !important;

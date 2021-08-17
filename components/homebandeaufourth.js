@@ -20,7 +20,7 @@ const HomeBandeauFourth = () => {
 
   return (
     <SectionWrapper>
-      <InView className='container-section' onChange={(inView, entry)=>setTitleInView(inView)} >
+      <InView className='container-section' onChange={(inView, entry)=>inView && setTitleInView(true)} >
         <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate={controls} >Mes différentes pratiques</motion.h2>
         <div className="accordion-container">
           <motion.h3 className="categorie" initial={{opacity:0}} animate={titleInView ? {opacity:1} : ""} transition={{opacity:{delay : 0.5, transition : 4}}} >
@@ -31,11 +31,19 @@ const HomeBandeauFourth = () => {
           </motion.div>  
         </div> 
         <motion.h3 className="categorie" initial={{opacity:0}} animate={titleInView ? {opacity:1} : ""} transition={{opacity:{delay : 1.5, transition : 4}}} ><span>Mais aussi...</span></motion.h3>   
-        <motion.div className="container-yoga" initial={{opacity:0, y:"100%"}} animate={titleInView ? {opacity:1, y :0} : ""} transition={{opacity:{delay : 2, duration : 1}, y:{delay : 2, duration : 1.2, ease:"easeOut"}}} > 
+        <motion.div 
+          className="container-yoga" 
+          initial={{opacity:0, y:"100%"}} 
+          animate={titleInView ? {opacity:1, y :0} : ""} 
+          transition={{opacity:{delay : 2, duration : 1}, y:{delay : 2, duration : 1.2, ease:"easeOut"}}} 
+          tabIndex="11"> 
           <img
             src='/images/pexels-photo-7593054.jpeg' 
-            width = "600" />
-            <h3 className="titre">Initiation au yoga</h3>
+            alt="initiation yoga baux't des sens"
+            width = "600"/>
+          <h3 className="titre">
+            Initiation au yoga
+          </h3>
         </motion.div>
       </InView>
       
@@ -56,7 +64,6 @@ const SectionWrapper = styled.section`
       font-family: "Montserrat", sans-serif;  
       font-size: 1.4rem;
       text-align: left;
-      //text-transform: uppercase;
       letter-spacing: 1.5px;
       font-style: italic;
       

@@ -21,13 +21,6 @@ const HomeBandeauFirst = () => {
   const scrollDir = useScrollDirection()
 
   useEffect(() => {
-    //setQueueOneWidth()  
-    console.log(queueOneRef.current.clientWidth)
-  },[])
-
-
-
-  useEffect(() => {
     setWidthSvgContainer(svgContainer.current.clientWidth)
   }, [widthSvgContainer, size])
 
@@ -45,8 +38,8 @@ const HomeBandeauFirst = () => {
     }
   }, [size, bandeauHeight, positionY, scrollDir])
 
-  //Animations
 
+  //Animations
   const underline = {
     initial : {
       x :"-100%",
@@ -170,7 +163,7 @@ const HomeBandeauFirst = () => {
       </motion.div>
 
       <motion.div className='conteneur-phrases' variants={variantsPhrases} initial='initial' animate='animate'>
-        <motion.div className='border-top' variants={variantBorderTop}></motion.div>
+        <motion.div className='border-top' variants={variantBorderTop}/>
         <div className='slogans'>
           <div className="instant-bien">Votre instant bien-être</div>
           <div className='switch-lieux'>
@@ -208,12 +201,12 @@ const HomeBandeauFirst = () => {
         <motion.div className='title' initial={{opacity:"0"}} animate={{opacity:1}} transition={{opacity : {delay:3.8, duration:1.5}}}>
           <motion.div variants={variantsH1} className="h1-container" initial='initial' animate='animate'>
             <div className='first-line'>
-              <motion.h1 variants={children}>
+              <motion.h1 variants={children} role="heading" aria-level="1">
                 Baux't
               </motion.h1>
             </div>
             <div className='second-line'>
-              <motion.h1 variants={children}>
+              <motion.h1 variants={children} role="heading" aria-level="1">
                 Des Sens
               </motion.h1>
             </div>
@@ -617,11 +610,17 @@ const BandeauDiv = styled.div`
       img{
         height: 100vh !important;
         width: auto;
+        margin-left: -10%;
       }
     }
   }
 
   @media (max-width:870px){
+    .bg-image-container{
+      img{
+        margin-left: -40%;
+      }
+    }
   
     .slogans{
       width :100% !important;
@@ -633,6 +632,11 @@ const BandeauDiv = styled.div`
     }
   }
   @media (max-width:540px){
+    .bg-image-container{
+      img{
+        margin-left: -75%;
+      }
+    }
     .instant-bien{
       font-size: 1rem !important;
     }
@@ -658,7 +662,13 @@ const BandeauDiv = styled.div`
       }
     }
   }
-
+  @media (max-width:400px){
+    .bg-image-container{
+      img{
+        margin-left: -100%;
+      }
+    }
+  }
   
 `
 

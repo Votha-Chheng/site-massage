@@ -8,7 +8,7 @@ const PrestationLayout = ({imgUrl, bgPosition, titre, tableau}) => {
       <div className="right"/>
       <div className="down"/>
     </h3>
-    <ul>
+    <ul tabIndex="5">
       {
         tableau.map((element, index)=>
           <li key={index}>

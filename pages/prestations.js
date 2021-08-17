@@ -159,7 +159,7 @@ const prestations = () => {
   return (   
     <div>
       <Head>
-        <title>Baux't des sens | Prestations massages et yoga</title>
+        <title>Baux't des sens | Prestations massages et yoga Arles et Alpilles</title>
       </Head>
 
       <DivWrapper>
@@ -179,7 +179,7 @@ const prestations = () => {
                 <PrestationLayout
                   imgUrl="/images/176246623_287598346073187_2645306858024130844_n.jpg" 
                   bgPosition="10%" 
-                  titre="Les incontournables " 
+                  titre="Les incontournables" 
                   tableau ={tableauClassiques}
                 />
               </motion.div>

@@ -12,8 +12,7 @@ const HorizontalAccordion = () => {
 
   return (
     <DivWrapper>
-      <div className={`photo ${photoHovered==="1"? "hovered" : ""}`}>
-        
+      <div className={`photo ${photoHovered==="1"? "hovered" : ""}`} tabIndex="6">  
         <img 
           src='/images/176156940_1637465016462471_4662970500857421866_n.jpg' 
           width = "600" 
@@ -23,7 +22,7 @@ const HorizontalAccordion = () => {
           style={{transform:`translateX(${(photoHovered !== '') && (photoHovered !=="1") ? "-10" : "0"}%) scale(${(photoHovered ==="1")? "1.3" : "1"})`}}/>
         <h3 className="titre" id="1" onMouseEnter={(event)=>selectedPhotoHandler(event)} >Intuitif</h3>
       </div>
-      <div className={`photo left ${photoHovered==="2"? "hovered" : ""}`}>
+      <div className={`photo left ${photoHovered==="2"? "hovered" : ""}`} tabIndex="7">
         <img
           src='/images/pexels-photo-3997989.jpeg' 
           width = "600" 
@@ -33,7 +32,7 @@ const HorizontalAccordion = () => {
           style={{transform:`translateX(${(photoHovered !== '') && (photoHovered !=="2") ? "-10" : "0"}%) scale(${(photoHovered ==="2")? "1.3" : "1"})`}}/>
         <h3 className="titre" id="2" onMouseEnter={(event)=>selectedPhotoHandler(event)} >Crânien</h3>
       </div>
-      <div className={`photo left ${photoHovered==="3"? "hovered" : ""}`}>
+      <div className={`photo left ${photoHovered==="3"? "hovered" : ""}`} tabIndex="8">
         <img 
           src='/images/photo-1537673156864-5d2c72de7824.jpg' 
           width = "600" 
@@ -43,7 +42,7 @@ const HorizontalAccordion = () => {
           style={{transform:`translateX(${(photoHovered !== '') && (photoHovered !=="3") ? "-10" : "0"}%) scale(${(photoHovered ==="3")? "1.3" : "1"})`}}/>
         <h3 className="titre" id="3" onMouseEnter={(event)=>selectedPhotoHandler(event)} >Pour bébé</h3>
       </div>
-      <div className={`photo left ${photoHovered==="4"? "hovered" : ""}`}> 
+      <div className={`photo left ${photoHovered==="4"? "hovered" : ""}`} tabIndex="9"> 
         <img
           src='/images/massageBougie.jpg' 
           width = "600" 
@@ -53,7 +52,7 @@ const HorizontalAccordion = () => {
           style={{transform:`translateX(${(photoHovered !== '') && (photoHovered !=="4") ? "-10" : "0"}%) scale(${(photoHovered ==="4")? "1.3" : "1"})`}}/>
           <h3 className="titre" id="4" onMouseEnter={(event)=>selectedPhotoHandler(event)} >&Agrave; la bougie</h3>
       </div>
-      <div className={`photo left ${photoHovered==="5"? "hovered" : ""}`}> 
+      <div className={`photo left ${photoHovered==="5"? "hovered" : ""}`} tabIndex="10"> 
         <img
           src='/images/reflexologie.jpg' 
           width = "600" 
