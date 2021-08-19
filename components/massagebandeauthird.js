@@ -8,7 +8,7 @@ import HomeCurveSeparation from "./homecurveseparation";
 
 const MassageBandeauThird = () => {
   const [sectionInView, setSectionInView] = useState(false)
-  const [heroInView, setHeroInView] = useState(false)
+  //const [heroInView, setHeroInView] = useState(false)
 
   const controls = useAnimation()
 
@@ -20,9 +20,9 @@ const MassageBandeauThird = () => {
 
   return (
     <SectionWrapper>
-      <InView onChange={(inView, entry)=>setHeroInView(inView)}>
+      {/* <InView onChange={(inView, entry)=>setHeroInView(inView)}>
         <HerosMassage image='baby-massage.jpg' title="massage pour bébé" translateUp='-770' heroInView={heroInView}/>
-      </InView>
+      </InView> */}
       
       <InView className="section-container" onChange={(inView, entry)=>setSectionInView(inView)}> 
         <motion.div className="basic-container" variants={opacityBandeau} initial="initial" animate={controls} >
@@ -30,7 +30,7 @@ const MassageBandeauThird = () => {
             <img src="/images/175582685_458024105447520_2106840811191704374_n.jpg" alt="massage bébé" width="500"/>
           </div>
           <div className="texte-container">
-            <h3>Le massage de bébé, un mode de communication à découvrir...</h3>
+            <h3>Le massage pour bébé, un mode de communication à découvrir...</h3>
             <div className="texte">
               L'art du toucher, long&shy;temps tabou dans les pays occi&shy;den&shy;taux, est désor&shy;mais recon&shy;nu. Dès la nais&shy;sance, vous pouvez masser votre tout petit pour le sécuriser, l'apaiser et déve&shy;lop&shy;per ses fa&shy;cultés mo&shy;trices.
             </div>
@@ -43,7 +43,7 @@ const MassageBandeauThird = () => {
           </div>
         </motion.div> 
       </InView>
-      <HomeCurveSeparation texte="le massage bébé en détails" margin="75px 0px 175px" lien="/prestations/#babymassage" />
+      <HomeCurveSeparation texte="prendre rendez-vous" margin="75px 0px 175px" lien="/infospratiques" />
     </SectionWrapper>
   );
 }

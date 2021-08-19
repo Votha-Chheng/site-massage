@@ -18,11 +18,26 @@ const MassageBandeauFirst = () => {
     }
   }, [controls, sectionInView])
 
+  
+  useEffect(() => {
+    if(heroInView){
+      controls.start("appear")
+    }
+  }, [controls, heroInView])
+
   return (
     <SectionWrap>
-      <motion.h2 variants={titleAnimation} initial="initial" animate="appear" className="massages-titles">Types de massage proposés</motion.h2>
-        <InView onChange={(inView, entry)=>setHeroInView(inView)}>
-          <HerosMassage title="massage intuitif" image="oil-massage.jpg" translateUp="-150" heroInView={heroInView}/>
+      {/* <motion.h2 variants={titleAnimation} initial="initial" animate="appear" className="massages-titles">Types de massage proposés</motion.h2> */}
+        <InView onChange={(inView, entry)=> inView && setHeroInView(true)}>
+          <motion.h2 
+            className='home-titles' 
+            style={{marginLeft:"20px"}} 
+            variants={titleAnimation} 
+            initial="initial" 
+            animate={controls}>
+            Le massage intuitif
+          </motion.h2>
+          {/* <HerosMassage title="massage intuitif" image="oil-massage.jpg" translateUp="-150" heroInView={heroInView}/> */}
         </InView> 
         
       
@@ -41,24 +56,27 @@ const MassageBandeauFirst = () => {
               <img src="/images/logoLotus.svg" width="75" />
             </div>
             <div>
-              Ainsi, le massage in&shy;tuitif cherche à installer le mieux être pas seul&shy;ement dans l'immé&shy;diat <b>mais aussi dans la durée</b>. C'est un mas&shy;sage que je pra&shy;ti&shy;que grâce et avec mon res&shy;senti, mon intuition. <b>Il est personnalisé et adapté à la personne qui le reçoit à l'instant T</b>. 
+              Ainsi, le massage in&shy;tuitif cherche à installer le mieux être pas seul&shy;ement dans l'immé&shy;diat mais aussi dans la durée. C'est un mas&shy;sage que je pra&shy;ti&shy;que grâce et avec mon res&shy;senti, mon intuition. Il est personnalisé et adapté à la personne qui le reçoit à l'instant T. 
             </div>
             <div>
-              Par mon attention, j'ai la facul&shy;té d'entrer en con&shy;nexion avec le rece&shy;veur, l'harmo&shy;nie du massage se crée grâce à la façon que j'ai de m'ajuster à la respi&shy;ration du massé. <b>Je per&shy;çois des in&shy;forma&shy;tions non verbales </b>qui me permet&shy;tent de compren&shy;dre si je dois passer plus de temps sur telles parties du corps afin de le libérer de toutes tensions ou d'uti&shy;liser tel&shy;les tech&shy;niques pour vous ac&shy;compagner à lâcher pri&shy;se...
+              Par mon attention, j'ai la facul&shy;té d'entrer en con&shy;nexion avec le rece&shy;veur, l'harmo&shy;nie du massage se crée grâce à la façon que j'ai de m'ajuster à la respi&shy;ration du massé. Je per&shy;çois des in&shy;forma&shy;tions non verbales qui me permet&shy;tent de compren&shy;dre si je dois passer plus de temps sur telles parties du corps afin de le libérer de toutes tensions ou d'uti&shy;liser tel&shy;les tech&shy;niques pour vous ac&shy;compagner à lâcher pri&shy;se...
             </div>
             <div>
-              Ce massage person&shy;nalisé et complet à base d’huiles es&shy;sentiel&shy;les biolo&shy;giques, prend en compte <b>l’ap&shy;proche glo&shy;bale de l’être humain</b> et le tou&shy;che dans ses dif&shy;féren&shy;tes di&shy;men&shy;sions (phy&shy;sique, men&shy;tale, émo&shy;tion&shy;nelle et éner&shy;gé&shy;tique) afin que cel&shy;les-ci soient ré&shy;har&shy;moni&shy;sées.
+              Ce massage person&shy;nalisé et complet à base d’huiles es&shy;sentiel&shy;les biolo&shy;giques, prend en compte l’ap&shy;proche glo&shy;bale de l’être humain et le tou&shy;che dans ses dif&shy;féren&shy;tes di&shy;men&shy;sions (phy&shy;sique, men&shy;tale, émo&shy;tion&shy;nelle et éner&shy;gé&shy;tique) afin que cel&shy;les-ci soient ré&shy;har&shy;moni&shy;sées. Tous mes soins sont animés par la philosophie du massage intuitif.
             </div>
           </div>
         </motion.div>
       </InView> 
-      <HomeCurveSeparation texte="le massage personnalisé en détails" margin="80px 0px 200px" lien="/prestations#intuitif"/> 
     </SectionWrap>
   );
 }
 
 const SectionWrap = styled.section`
   padding-top: 50px; 
+
+  .section-container{
+    margin-bottom: 100px;
+  }
 
   .img-citation{
     margin: 0px auto;
@@ -73,13 +91,13 @@ const SectionWrap = styled.section`
 
     .quote{
       color: white;
-      text-shadow: 1px 1px 3px white;
+      text-shadow: 1px 1px 1px grey;
       text-align: justify;
       font-family: 'Playfair Display', serif;
       line-height: 2.8rem;
       padding: 20px;
       color: #ebebeb;
-      font-size: 1.6rem;
+      font-size: 1.75rem;
       width: 75%;
       position: relative;
       font-style : italic ;

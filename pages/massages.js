@@ -66,10 +66,6 @@ const massages = ({sound, changeSound}) => {
       </Head>
         
       <PageWrapper>
-        <div className="icone-container" onClick={()=>changeSound()}>
-          <i className="fas fa-volume-up fa-2x" style={{display :`${sound ? "block" :"none"}`}}/>
-          <i className="fas fa-volume-mute fa-2x" style={{display :`${!sound ? "block" :"none"}`}}/>
-        </div>
         <motion.div className="menu-container" initial={{opacity: 0}} animate={{opacity:1}} transition={{opacity : {delay:1.5}}}>
           <MenuHead/>
         </motion.div>

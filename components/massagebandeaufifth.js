@@ -2,12 +2,14 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import {InView} from "react-intersection-observer";
 import styled from "styled-components";
+import { opacityBandeau } from "../utils";
 import HerosMassage from "./herosmassage";
 import HomeCurveSeparation from "./homecurveseparation";
 
 const MassageBandeauFifth = () => {
   const [sectionInView, setSectionInView] = useState(false)
   const [heroInView, setHeroInView] = useState(false)
+  const [schemaInView, setSchemaInView] = useState(false)
 
   const controls = useAnimation()
 
@@ -20,11 +22,11 @@ const MassageBandeauFifth = () => {
 
   return (
     <SectionWrapper>
-      <InView onChange={(inView, entry)=>setHeroInView(inView)}>
+      {/* <InView onChange={(inView, entry)=>setHeroInView(inView)}>
         <HerosMassage title="réflexologie" image='foot-massage.jpg' translateUp="-250" heroInView={heroInView} />
-      </InView>
+      </InView> */}
       
-      <InView onChange={(inView, entry)=>setSectionInView(inView)} className="section-container">
+      <InView onChange={(inView, entry)=>inView && setSectionInView(true)} className="section-container">
         <motion.div className="part-left-container" initial={{opacity:0, x:"-100%"}} animate={sectionInView? {opacity:1, x:0}:""} transition={{opacity:{duration : 0.5, delay:1}, x:{duration:1.25, delay:0.8, ease:"easeOut"}}} >
           <div className="foot-img-container">
             <img src="/images/woman-getting-foot-massage.jpg" height="400"/>
@@ -32,17 +34,34 @@ const MassageBandeauFifth = () => {
           </div>
         </motion.div>
         
-        <motion.div initial={{opacity:0, x:"100%"}} animate={sectionInView? {opacity:1, x:0}:""} transition={{opacity:{duration : 0.5, delay:1.6}, x:{duration:1.9, delay:0.8, ease:"easeOut"}}}>
+        <motion.div 
+          initial={{opacity:0, x:"100%"}} 
+          animate={sectionInView? {opacity:1, x:0}:""} 
+          transition={{opacity:{duration : 0.5, delay:1.6}, x:{duration:1.9, delay:0.8, ease:"easeOut"}}}>
           <div className="texte">
             Les pieds sont une partie du corps souvent oubliés pour les soins et le bien-être, alors qu'ils sont souvent très sollicités tout au long de la journée lorsque vous marchez ou que vous restez en position debout prolongée à cause du port des chaussures et du poids qu'ils supportent au quotidien.
           </div>
           <div className="texte">
-            C'est là qu'entre en jeu la réflexologie et le massage de la voute plantaire dont les bienfaits ne sont plus à démontrer pour <b>apaiser le stress, soulager des douleurs (du dos, migraine, etc...)</b>, ou tout simplement passer un moment de qualité, agréable et enchanteur.
+            C'est là qu'entre en jeu la réflexologie et le massage de la voute plantaire dont les bienfaits ne sont plus à démontrer pour apaiser le stress, soulager des douleurs (du dos, migraine, etc...), ou tout simplement passer un moment de qualité, agréable et enchanteur.
           </div>
         </motion.div>
-
       </InView>
-      <HomeCurveSeparation texte="la réflexologie plantaire en détail" margin="75px 0px 200px" lien="/prestations/#pieds" />
+      <InView className="schema-pied" onChange={(inView, entry)=> inView && setSchemaInView(true)}>
+        <motion.img
+          src="/images/schema-pied.png" 
+          alt='schema zone du pied rélflexologie'
+          width="340"
+          variants={opacityBandeau}
+          animate={schemaInView?"animate":""}
+          initial="initial" />
+        <motion.small
+          variants={opacityBandeau}
+          animate={schemaInView?"animate":""}
+          initial="initial">
+          Schéma des zones du pied correspondant aux organes</motion.small>
+      </InView>
+      
+      <HomeCurveSeparation texte="prendre rendez-vous" margin="75px 0px 200px" lien="/prestations/#contactfooter" />
     </SectionWrapper>
   );
 }
@@ -82,6 +101,16 @@ const SectionWrapper = styled.section`
     position: relative;
     font-style : italic ;
     text-indent: 30px;
+  }
+  .schema-pied{
+    margin: 0px auto;
+    width: 340px;
+    text-align:center;
+
+    small{
+      font-size: 0.75rem;
+      color: #ffffff;
+    }
   }
   @media (max-width: 1320px){
     .section-container{

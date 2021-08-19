@@ -20,9 +20,9 @@ const MassageBandeauFourth = () => {
 
   return (
     <SectionWrapper>
-      <InView onChange={(inView, entry)=>setHeroInView(inView)}>
+      {/* <InView onChange={(inView, entry)=>setHeroInView(inView)}>
         <HerosMassage title="massage à la bougie" image='176187352_2922669511298633_3323829876291585340_n.jpg' translateUp='-400' heroInView={heroInView}/>
-      </InView>
+      </InView> */}
       
       <InView onChange={(inView, entry)=>setSectionInView(inView)} className="section-container">
         <motion.div className="flex-1" initial={{x:-300, opacity:0}} animate={sectionInView? {x:0, opacity:1}:""} transition={{opacity : {duration : 0.75, delay:0.8, ease:"easeOut"}, x : {duration : 1.2, delay:0.8, ease:"easeOut"}}} >
@@ -36,7 +36,7 @@ const MassageBandeauFourth = () => {
         <motion.div className="flex-2" initial={{x:300, opacity:0}} animate={sectionInView? {x:0, opacity:1}:""} transition={{opacity : {duration : 0.75, delay:1.5, ease:"easeOut"}, x : {duration : 1.2, delay:1.5, ease:"easeOut"}}} >
           <div className="texte-container">
             <div className="texte">
-              Les bougies de massage sont des bougies spécifiques, 100% naturelles à base de cire végétale ou d’abeil&shy;les et enri&shy;chies en huiles es&shy;sentiel&shy;les, senteurs pro&shy;pices à la dé&shy;con&shy;traction. La fonte de la bougie produit de la cire li&shy;quide qui se transforme en huile de mas&shy;sage hy&shy;dra&shy;tante. Avec un parfum agré&shy;able, des vertus adou&shy;cis&shy;santes et nour&shy;rissantes pour la peau, ce mas&shy;sage est conseil&shy;lé pour les peaux sèches et sen&shy;sibles. De plus, <b>la douce sen&shy;sation de la ci&shy;re tiède sur la peau en fait un mas&shy;sage idéal pour l'hiver</b>. 
+              Les bougies de massage sont des bougies spécifiques, 100% naturelles à base de cire végétale ou d’abeil&shy;les et enri&shy;chies en huiles es&shy;sentiel&shy;les, senteurs pro&shy;pices à la dé&shy;con&shy;traction. La fonte de la bougie produit de la cire li&shy;quide qui se transforme en huile de mas&shy;sage hy&shy;dra&shy;tante. Avec un parfum agré&shy;able, des vertus adou&shy;cis&shy;santes et nour&shy;rissantes pour la peau, ce mas&shy;sage est conseil&shy;lé pour les peaux sèches et sen&shy;sibles. De plus, la douce sen&shy;sation de la ci&shy;re tiède sur la peau en fait un mas&shy;sage idéal pour l'hiver. 
             </div>
             <div className="bougie-container">
               <img src="/images/massageBougie.jpg" width="400" height="400"/>
@@ -47,7 +47,7 @@ const MassageBandeauFourth = () => {
             </div>
         </motion.div>
       </InView>
-      <HomeCurveSeparation texte="Le massage à la bougie en détails" margin="75px 0px 200px" lien="/prestations/#bougie"/>
+      <HomeCurveSeparation texte="prendre rendez-vous" margin="75px 0px 200px" lien="/prestations/#bougie"/>
     </SectionWrapper>
   );
 }

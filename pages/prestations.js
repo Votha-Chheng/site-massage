@@ -6,6 +6,9 @@ import {InView} from "react-intersection-observer";
 import styled from "styled-components";
 import Footer from "../components/footer";
 import HomeCurveSeparation from "../components/homecurveseparation";
+import MassageBandeauFourth from "../components/massagebandeaufourth"
+import MassageBandeauThird from "../components/massagebandeauthird";
+import MassageBandeauFifth from "../components/massagebandeaufifth"
 import MenuHead from "../components/menuhead";
 import PrestationLayout from "../components/prestationlayout";
 import MomentumScrollProvider from "../context/MomentumScrollContext";
@@ -19,7 +22,6 @@ const prestations = () => {
   const [thirdInView, setThirdInView] = useState(false)
   const [fourthInView, setFourthInView] = useState(false)
   const [fifthInView, setFifthInView] = useState(false)
-  const [craneInView, setCraneInView] = useState(false)
   const [sixthInView, setSixthInView] = useState(false)
   const [seventhInView, setSeventhInView] = useState(false)
 
@@ -84,7 +86,7 @@ const prestations = () => {
     {
       service : "Massage à la bougie et à l'huile chaude",
       temps : "1h",
-      description : "Idéal pour l'hiver, sensation de cocconing, profond relâchement. Massage ultra hydratant, idéal pour les peaux sèches."
+      description : "Idéal pour l'hiver, sensation de cocooning, profond relâchement. Massage ultra hydratant, idéal pour les peaux sèches."
     }
   ]
 
@@ -92,10 +94,10 @@ const prestations = () => {
     {
       service : "Massage bébé/maman (dès les premiers jours) ",
       temps : "variable",
-      description : "Stimule le système immunitaire. Partagez un moment unique qui renforce le lien avec bébé."
+      description : "Stimule le système immunitaire. Partagez un moment unique qui renforce le lien avec bébé. Massage à l'huile d'amande douce."
     },
     {
-      service : "Massage pré-natal",
+      service : "Massage future maman",
       temps : "variable",
       description : "Pour les femmes enceintes, le massage permet de soulager les douleurs (dos, épaules, jambes lourdes...) et de favoriser une meilleure circulation sanguine."
     }
@@ -103,7 +105,7 @@ const prestations = () => {
 
   const tableauPerso = [
     {
-      service : "Massage personnalisé (zone spécifique possible)",
+      service : "Massage personnalisé",
       temps : "variable",
       description : "Massage effectué selon vos demandes, pour un moment unique et sur mesure."
     }
@@ -111,7 +113,7 @@ const prestations = () => {
 
   const tableauPieds = [
     {
-      service : "Massage de la voûte plantaire",
+      service : "Réflexologie",
       temps : "30min",
       description : "Dissipe les tensions, soulage certaines douleurs et rétablit l'équilibre du corps."
     }
@@ -119,7 +121,7 @@ const prestations = () => {
 
   const tableauYoga = [
     {
-      service : "Séance d'initiation au yoga hata",
+      service : "Séance d'initiation au Hata yoga",
       temps : "1h",
       description : "Cours en individuel ou en groupe. Les séance se déroulent à domicile ou en extérieur. "
     },
@@ -192,8 +194,13 @@ const prestations = () => {
                   bgPosition="10%" 
                   titre="A la bougie" 
                   tableau ={tableauBougie}
-                />
+                />              
+                <motion.h3 variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="categorie">
+                  <span>Le massage à la bougie en quelques mots :</span>
+                </motion.h3>
+                <MassageBandeauFourth/>
               </motion.div>
+
             </InView>
 
             <InView onChange={(inView, entry)=> inView && setThirdInView(true)} >
@@ -204,6 +211,10 @@ const prestations = () => {
                   titre="Pour bébé" 
                   tableau ={tableauBaby}
                 />
+                <motion.h3 variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="categorie">
+                  <span>Le massage pour bébé en quelques mots :</span>
+                </motion.h3>
+                <MassageBandeauThird/>
               </motion.div>
             </InView>
 
@@ -212,7 +223,7 @@ const prestations = () => {
                 <PrestationLayout
                   imgUrl="/images/175659034_364152124945419_4032164191564889065_n.jpg"
                   bgPosition="10%" 
-                  titre="Massage personnalisé (intuitif)" 
+                  titre="Massage personnalisé" 
                   tableau = {tableauPerso}/>
             </motion.div>
             </InView>
@@ -224,17 +235,12 @@ const prestations = () => {
                   bgPosition="10%" 
                   titre="Réflexologie plantaire" 
                   tableau = {tableauPieds}/>
+                  <motion.h3 variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="categorie">
+                  <span>La réflexologie en quelques mots :</span>
+                </motion.h3>
+                <MassageBandeauFifth/>
               </motion.div>
-            </InView>
-
-            <InView onChange={(inView, entry)=> inView && setCraneInView(true)} >
-              <motion.div className="crane" ref={crane} variants={opacityBandeau} initial="initial" animate={craneInView?"animate":""} >
-                Tous ces modelages peuvent évidement se terminer par un massage crânien (sauf avis contraire de votre part). Profitez-en !
-              </motion.div>
-            </InView>
-            
-
-          <HomeCurveSeparation texte="me contacter" lien="/prestations/#contactfooter" margin="0px 0px 50px" lien='/prestations/#contactfooter' />
+            </InView>          
           
           <div className="page-container">
           <InView onChange={(inView, entry)=> inView && setSixthInView(true)}>
@@ -257,7 +263,8 @@ const prestations = () => {
             </motion.div>
           </InView>
 
-          </div>    
+          </div> 
+          <HomeCurveSeparation texte="me contacter" lien="/prestations/#contactfooter" margin="0px 0px 50px" lien='/prestations/#contactfooter' />   
           <div ref={contactfooter} className="footer-container" id="contactfooter">
             <Footer/>
           </div>          
@@ -317,6 +324,23 @@ const DivWrapper = styled.div`
   .footer-container{
     height: 100%;
   }
+  h3.categorie{
+    font-family: "Montserrat", sans-serif;  
+    font-size: 1.4rem;
+    text-align: left;
+    letter-spacing: 1.5px;
+    font-style: italic;
+    margin-left: 50px;
+    margin-top: 0px;
+
+    span{
+      background-color: rgb(240,248,255, 0.8);
+      padding: 5px 10px;
+      color: #64737d;
+      border: 4px double #90857d;
+    }
+  }
+
 @media (max-width: 1024px){
   .service {
     width: 100%;

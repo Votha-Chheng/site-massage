@@ -63,18 +63,18 @@ const infospratiques = () => {
                       <img src="/images/portrait.jpg" width="200"/>
                     </div>
                     <div className="quote">
-                      Les soins que j'apporte sont issus d'une formation où j'ai appris de <b>multiples techniques profes&shy;sion&shy;nelles</b>. La qualité de mes massages se démar&shy;que par <b>l'in&shy;tention particulière, la bi&shy;en&shy;veillance et l'é&shy;nergie</b> que j'y mets. Mon but étant de vous ap&shy;porter un moment unique et sur-mesure grâce à mon attention, ma disponibilité et mon écoute.
+                      Les soins que j'apporte sont issus d'une formation où j'ai appris de multiples techniques profes&shy;sion&shy;nelles. La qualité de mes massages se démar&shy;que par l'in&shy;tention particulière, la bi&shy;en&shy;veillance et l'é&shy;nergie que j'y mets. Mon but étant de vous ap&shy;porter un moment unique et sur-mesure grâce à mon attention, ma disponibilité et mon écoute.
                     </div>
                   </div>
 
                   <div className="subtitle">
-                    Massages intuitifs & coaching de hata yoga à domicile.
+                    Massages intuitifs & coaching de Hata yoga à domicile.
                   </div>
                   <div className="lieux">
                     Arles, les Alpilles et alentours
                   </div>
                   <div className="horaires">
-                    Vous pouvez me joindre tous les jours de la semaine <b><u><em>de 8h à 19h</em></u></b> au 
+                    Vous pouvez me joindre tous les jours de la semaine <b><em>de 9h à 19h</em></b>
                     <div className='number'><a href="tel:0616838962">06.16.83.89.62</a></div>
                     que ce soit pour un simple renseignement, une demande particulière ou un rendez-vous.
                   </div>

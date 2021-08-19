@@ -78,7 +78,7 @@ const yoga = () => {
                     <img src="/images/yoga-3.jpg" width='450'/>
                   </div>
                   <div className="texte up-texte">
-                    Ma passion pour les pra&shy;tiques con&shy;dui&shy;sant à la rela&shy;xation ne se limite pas aux massages. Pour al&shy;ler plus loin dans cette optique, je pro&shy;pose des cours d'ini&shy;tiation au <b>hatha yoga</b> basés sur la res&shy;piration, la méditation et les éti&shy;rements.
+                    Ma passion pour les pra&shy;tiques con&shy;dui&shy;sant à la rela&shy;xation ne se limite pas aux massages. Pour al&shy;ler plus loin dans cette optique, je pro&shy;pose des cours d'ini&shy;tiation au Hatha yoga basés sur la res&shy;piration, la méditation et les éti&shy;rements.
                     Ce type de yoga, le plus pra&shy;tiqué en Oc&shy;cident, permet au pra&shy;tiquant une maî&shy;trise du corps et des sens à tra&shy;vers la pra&shy;tique précise et rythmée de pos&shy;tures.
                     Contraire&shy;ment à un enchaînement de gym&shy;nastique, les postures doivent être maintenues suffisamment long&shy;temps (environ 3 minutes).                 
                   </div>
@@ -95,7 +95,7 @@ const yoga = () => {
             </InView>
             
           </InView> 
-          <HomeCurveSeparation texte="en savoir plus" margin="0px 0px" lien="/prestations/#yoga"/>
+          <HomeCurveSeparation texte="le Hata yoga dans mes prestations" margin="0px 0px" lien="/prestations/#yoga"/>
           <InView onChange={(inView, entry)=>setPartTwoInView(inView)} className="page-container second">
             <main>
               <motion.div 
@@ -111,13 +111,13 @@ const yoga = () => {
                 animate={partTwoInView? {opacity:1, x:0} : ""} 
                 transition={{opacity:{delay:2, duration:0.8}, x:{delay:1, duration:2.5, ease:"easeOut"} }} >
                 Ces cours s'adres&shy;sent à tous les débu&shy;tants ou curieux qui sou&shy;haitent dé&shy;couvrir un nou&shy;veau moyen de bien-être et de rela&shy;xation.
-                Il se pra&shy;tique en groupe ou in&shy;divi&shy;duel&shy;lement. <b>Il est pos&shy;sible de com&shy;biner un cours de yoga et un mas&shy;sage de votre choix (tarifs sur de&shy;mande)</b>.
+                Il se pra&shy;tique en groupe ou in&shy;divi&shy;duel&shy;lement. Il est pos&shy;sible de com&shy;biner un cours de yoga et un mas&shy;sage de votre choix (tarifs sur de&shy;mande).
               </motion.div>
               <motion.div className="texte" 
                 initial={{opacity:0}} 
                 animate={partTwoInView? {opacity:1} : ""} 
                 transition={{opacity:{delay:2.9, duration:0.8}}}>
-                Grâce au hatha yoga :
+                Grâce au Hatha yoga :
                 <motion.ul variants={parentList} initial="initial" animate={controls} >
                   <motion.li variants={childList}>
                     <i className="fas fa-fan"/>
@@ -164,13 +164,13 @@ const DivWrapper = styled.div`
   }
   .quote{
     color: white;
-    text-shadow: 1px 1px 3px white;
+    text-shadow: 1px 1px 1px grey;
     text-align: justify;
     font-family: 'Playfair Display', serif;
     line-height: 2.8rem;
     padding: 20px;
     color: #ebebeb;
-    font-size: 1.6rem;
+    font-size: 1.75rem;
     width: 75%;
     position: relative;
     font-style : italic ;

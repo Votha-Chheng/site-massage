@@ -9,25 +9,13 @@ import { motion } from 'framer-motion'
 import HomeBandeauThird from '../components/homebandeauthird'
 import HomeBandeauFourth from '../components/homebandeaufourth'
 import HomeBandeauFifth from '../components/homebandeaufifth'
-import HomeBandeauSixth from '../components/homebandeausixth'
 import MenuHead from '../components/menuhead'
+import MassageBandeauFirst from '../components/massagebandeaufirst'
 
 
 export default function Home() {
-  const [sound, setSound] = useState(false)
-  const [clicked, setClicked] = useState(false)
 
   const menuRef = useRef(null)
-  const audioRef = useRef(null)
-  
-  const firstClickHandler = ()=>{
-    audioRef.current.play()
-    setClicked(true)
-  }
-
-  const pauseHandler = ()=>{
-    audioRef.current.pause()
-  }
 
   return (
     <div>
@@ -36,16 +24,6 @@ export default function Home() {
       </Head>
         
       <Wrapper>
-        <audio src="/KaiEngel-Maree.mp3" ref={audioRef}/>
-        <div className="icone-container" onClick={()=>setSound(prev=>!prev)}>
-          <i className="fas fa-volume-up fa-2x" style={{display :`${sound ? "block" :"none"}`}} onClick={()=>pauseHandler()}/>
-          <i className="fas fa-volume-mute fa-2x" style={{display :`${!sound ? "block" :"none"}`}} onClick={()=>firstClickHandler()}/>
-          <div className="point-music" style={{display:`${clicked? "none" : "flex"}`}}>
-            <img src="/images/arrow-left-svgrepo-com.svg" width="32" />
-            <small>Mettre la musique</small>
-          </div>
-          
-        </div>
         <motion.div ref={menuRef} className="menu-container" initial={{opacity: 0}} animate={{opacity:1}} transition={{opacity : {delay:8.5}}}>
           <MenuHead/>
         </motion.div>
@@ -53,12 +31,11 @@ export default function Home() {
         <MomentumScrollProvider easing={0.075}>
           <div id='super-container' className='super-container'> 
             <HomeBandeauFirst/> 
-
             <HomeBandeauSecond/>
             <HomeBandeauThird/>
+            <MassageBandeauFirst/>
             <HomeBandeauFourth/>
             <HomeBandeauFifth/>
-            <HomeBandeauSixth/>
           </div>
           <div className="footer-container">
             <Footer/>

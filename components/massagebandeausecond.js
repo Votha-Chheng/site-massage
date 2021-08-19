@@ -4,11 +4,11 @@ import {InView} from "react-intersection-observer";
 import styled from "styled-components";
 import { opacityBandeau } from "../utils";
 import HerosMassage from "./herosmassage";
-import HomeCurveSeparation from "./homecurveseparation";
 
 const MassageBandeauSecond = () => {
   const [sectionInView, setSectionInView] = useState(false)
   const [heroInView, setHeroInView] = useState(false)
+  const [craneInView, setCraneInView] = useState(false)
 
   const controls = useAnimation()
 
@@ -64,7 +64,7 @@ const MassageBandeauSecond = () => {
             <h4>Quels en sont les bienfaits physiologiques ?</h4>
             <ul>
               <li>
-                <i className="fas fa-fan" style={{}}/>
+                <i className="fas fa-fan"/>
                 La sensation très agréable que procure le massage du cuir chevelu, libère dans le corps des endorphines, ayant des propriétés antalgiques qui apportent un sentiment de bien-être, de contentement et de bonheur.
               
               </li>
@@ -83,7 +83,11 @@ const MassageBandeauSecond = () => {
           </motion.div>
         </InView> 
       </div>
-      <HomeCurveSeparation texte="le massage crânien en détails" margin="75px 0px 250px" lien="/prestations/#crane"/>
+      <InView onChange={(inView, entry)=> inView && setCraneInView(true)} >
+        <motion.div className="crane" variants={opacityBandeau} initial="initial" animate={craneInView?"animate":""} >
+          Le massage crânien est compris dans tous mes massages (sauf avis contraire de votre part). Profitez-en !
+        </motion.div>
+      </InView>
     </SectionWrap>
   );
 }

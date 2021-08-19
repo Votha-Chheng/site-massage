@@ -1,8 +1,29 @@
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components'
 
 const MenuHead = ({color}) => {
+
+  const [burger, setBurger] = useState(false)
+  const [secondMenuHeight, setSecondMenuHeight] = useState(0)
+
+  const secondMenuRef = useRef(null)
+
+  useEffect(() => {
+    setSecondMenuHeight(secondMenuRef.current.offsetHeight)
+    console.log(secondMenuHeight)
+  },[secondMenuHeight])
+  
   return (
     <Wrapper style={{color}} role="navigation" aria-label="navigation site Baux't des sens">
+      <nav className="second-menu" ref={secondMenuRef} style={{top:`${burger ? "40" : -secondMenuHeight-40}px`}} >
+        <li><a href='/massagecranien'>Massage crânien</a></li>
+        <li><a href='/yoga'>Yoga</a></li>
+        <li><a href='/prestations'>Prestations</a></li>
+        <li className="massages-menu">
+          <a href='/temoignages'>Témoignages</a>
+        </li>
+        <li><a href='/infospratiques'>Infos</a></li>
+      </nav>
       <a href="/">
         <div className="logo">
           <svg width="37" height="20" viewBox="0 0 37 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -11,29 +32,37 @@ const MenuHead = ({color}) => {
             <span id="bauxt">Baux't des sens</span>
         </div>
       </a>
+      <div id="mini-menu" onClick={()=>setBurger(prev=>!prev)} >
+        {
+          !burger? 
+          <img src="/images/burger-menu.svg" height="30" id="burger-menu" />
+          :
+          <img src="/images/close.svg" height="30" id="close-menu" />
+        }
+        
+      </div>
+        
         <ul>
+          <li><a href='/massagecranien'>Massage crânien</a></li>
+          <li><a href='/yoga'>Yoga</a></li>
+          <li><a href='/prestations'>Prestations</a></li>
           <li className="massages-menu">
-            <a href='/massages'>Massages</a>
-            <div className="sub-menu-massages">
+            <a href='/temoignages'>Témoignages</a>
+            {/* <div className="sub-menu-massages">
               <div><a href="/massages/#intuitif">Massage intuitif</a></div>
               <div> <a href="/massages/#crane">Massage crânien</a></div>
               <div><a href="/massages/#babymassage">Massage bébé</a></div>
               <div><a href="/massages/#bougie">Massage bougie</a></div>
               <div><a href="/massages/#pieds">Réflexologie</a></div>
-            </div>
+            </div> */}
           </li>
-          <li><a href='/yoga'>Yoga</a></li>
-          <li><a href='/prestations'>Prestations</a></li>
-          <li><a href='/infospratiques'>Infos pratiques</a></li>
+          <li><a href='/infospratiques'>Infos</a></li>
         </ul> 
-      
-
     </Wrapper>
   );
 }
 
 MenuHead.defaultProps = {
-  backgroundColor: "transparent",
   color : "white"
 }
 
@@ -45,13 +74,42 @@ const Wrapper = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: rgba(121, 138, 148, 0.9);
+  position: relative;
+  padding: 5px 0;
+
+  .second-menu{
+    position: absolute;
+    transition: all 0.3s ease-out;
+    left: 0;
+    background-color: rgba(121, 138, 148, 0.9);
+    width : 100%;
+
+    li{
+      list-style-type: none;
+      padding: 5px 0px;
+
+    }
+  }
+
+  #mini-menu{
+    position: relative;
+    display: none;
+    margin-right: 20px;
+    cursor: pointer;
+
+    #burger-menu{
+      
+    }
+  }
 
   ul{
     display: flex;
     justify-content: center;
     list-style-type: none;
     padding-left: 0;
-    width: 500px;
+    width: 680px;
+    margin: 0;
   }
 
   li, .logo{
@@ -125,18 +183,13 @@ const Wrapper = styled.nav`
     }
   }
 
-  @media (max-width: 768px){
-    flex-direction: column;
-
-    #bauxt{
+  @media (max-width: 890px){
+    ul{
       display: none;
     }
-    ul{
-      width: 100%;
-      li{
-        font-size: 1rem;
-        margin: 0px 10px;
-      }
+    #mini-menu{
+      display: block;
+      
     }
   }
 `

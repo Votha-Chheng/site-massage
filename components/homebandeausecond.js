@@ -238,7 +238,7 @@ const HomeBandeauSecond = () => {
                   initial={{opacity:0, y :"100%"}} 
                   animate={bandeauInView ? {opacity : 1, y:0} : ""} 
                   transition={{opacity : {delay : 14.4, duration: 0.8}, y:{delay:13.7, duration: 1.5, ease:"easeOut"}}}>
-                  Durant mes prestations, je n'apporte pas seule&shy;ment un soin avec des manœu&shy;vres, des techniques, du modelage et un moment de détente, non : j'aspire à beau&shy;coup mieux que cela. En effet, pour moi le bien-être se pré&shy;pare et s'invite. Tout est mis en œuvre, et tout est propice à ce que vous puis&shy;siez recevoir ce bien-être.
+                  Durant mes prestations, je n'apporte pas seule&shy;ment un soin avec des manœu&shy;vres, des techniques, du modelage et un moment de détente, non : j'aspire à beau&shy;coup mieux que cela. En effet, pour moi le bien-être se pré&shy;pare et s'invite. Tout est mis en œuvre, et tout est propice à ce que vous puis&shy;siez le recevoir dans les meilleures conditions.
                   <i className="fas fa-quote-right" style={{transform:"scale(1.5) translateY(5px)", textIndent:"10px"}}/>
                 </motion.div>
               </div>
@@ -254,7 +254,7 @@ const HomeBandeauSecond = () => {
           </div>
         </div>    
       </InView>
-      <HomeCurveSeparation texte="prendre contact" inView={bandeauInView} delay={15} buttonDelay={15.9} lien='/infospratiques'/>
+      <HomeCurveSeparation texte="prendre contact" inView={bandeauInView} delay={15} buttonDelay={15.9} lien='/infospratiques' margin="15px auto 100px" />
     </BandeauDiv>
   );
 }
@@ -307,6 +307,7 @@ const BandeauDiv = styled.div`
   }
   .container-page{
     padding: 25px;
+    min-height : 600px;
   }
   .biographie-container{
     .container-textes{

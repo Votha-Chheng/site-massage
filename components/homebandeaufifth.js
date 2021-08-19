@@ -99,10 +99,7 @@ const HomeBandeauFifth = () => {
           <div className="partie-textes">
             <motion.img className="img-car" src="/images/deplacement.svg" variants={childAppear}/>
             <motion.div className='texte first' variants={childAppear} >
-              <b>Quoi de mieux de se faire masser sans avoir à se déplacer ?</b> Avec <span className="marque">Baux't des sens</span>, c'est le bien-être et la détente qui viennent chez vous ! C'est pour&shy;quoi <b>je me déplace <u>uniquement</u> à domicile, dans les gîtes, les hôtels,</b> ou même au bord de votre piscine. Et ce, <b>avec tout le matériel nécessaire</b> (table de massage, linge, etc...) pour que vous n'ayez à vous oc&shy;cuper de rien. Tout ce qui vous reste donc à faire, c'est vous allonger et vous laisser aller...
-            </motion.div>
-            <motion.div className='texte' variants={childAppear} >
-              Mes zones de déplace&shy;ment vont <b>d'Arles et ses alen&shy;tours</b> jusqu'à <b>St-Martin-de-Crau</b>, ainsi que toute la <b>zone en&shy;glo&shy;bant les Alpil&shy;les</b> (les Baux-de-Provence, Font&shy;vieille, St-Rémy-de-Provence...).
+              Quoi de mieux que de se faire masser sans avoir à se déplacer ? Avec <span className="marque">Baux't des sens</span>, c'est le bien-être et la détente qui viennent chez vous ! C'est pour&shy;quoi je me déplace <u>uniquement</u> à domicile, dans les gîtes ou les hôtels sur Arles, dans les Alpilles et aux alentours. Et ce, avec tout le matériel nécessaire (table de massage, linge, etc...). Tout ce qui vous reste donc à faire, c'est vous allonger et vous laisser aller...
             </motion.div>
           </div>
           <motion.div className='deplacement-container' style={{cursor:'none', minWidth:`${mapDimension.width}px`, minHeight:`${mapDimension.height}px`}} variants={childAppear} >

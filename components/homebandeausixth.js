@@ -60,7 +60,7 @@ const HomeBandeauSixth = () => {
           )
           }
         </motion.div>
-        <h2 className='home-titles' style={{textAlign:"right", fontSize:'1.75rem'}} >Merci à eux pour leur confiance !</h2>
+        <h2 className='home-titles' style={{textAlign:"right", fontSize:'1.75rem'}} >Merci infiniment à eux et à tous les autres pour leur confiance !</h2>
       </InView>
     </BandeauSection>
   );
