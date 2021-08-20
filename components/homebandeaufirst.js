@@ -190,12 +190,19 @@ const HomeBandeauFirst = () => {
            initial={{scale:1, x:0}} 
            animate={{scale:["1.5", "1"], x:"100%"}} 
            transition={{x : {delay:1, duration:1}, scale : {delay : 1.2, duration:0.9}}}/>
-          <motion.img
+           <motion.picture 
+            initial={{scale : 1, filter : "blur(0px) brightness(125%)"}}
+            animate={{scale : ["1.5", "1"], filter:"blur(5px) brightness(125%)"}}
+            transition={{scale : {delay : 1.2, duration:0.9}, filter:{delay : 2, duration:2}}}>
+             <source srcSet="/images/bandeau_mains_masse.jpg" media="(min-width:520px)"/>
+             <img src="/images/118930618_372805930709061_72465373286677363_n.jpg"/>
+           </motion.picture>
+          {/* <motion.img
             src='/images/bandeau_mains_masse.jpg' 
             alt='massage mains'
             initial={{scale : 1, filter : "blur(0px) brightness(125%)"}}
             animate={{scale : ["1.5", "1"], filter:"blur(5px) brightness(125%)"}}
-            transition={{scale : {delay : 1.2, duration:0.9}, filter:{delay : 2, duration:2}}}/>
+            transition={{scale : {delay : 1.2, duration:0.9}, filter:{delay : 2, duration:2}}}/> */}
         </motion.div>       
         
         <motion.div className='title' initial={{opacity:"0"}} animate={{opacity:1}} transition={{opacity : {delay:3.8, duration:1.5}}}>
@@ -230,15 +237,6 @@ const BandeauDiv = styled.div`
   position: relative;
   background-color : #798a94;
 
-  .bg-first{
-    background-color : #798a94;
-    position : absolute;
-    top : 0;
-    left : 0;
-    width: 100vw;
-    height: 100vh;
-    overflow : hidden;
-  }
   .explore-icon{
     overflow : hidden;
     position : absolute;
