@@ -29,7 +29,7 @@ const prestations = () => {
   const bougie = useRef(null) 
   const babymassage = useRef(null)
   const yoga = useRef(null) 
-  const intuitif = useRef(null)
+  const classiques = useRef(null)
   const pieds = useRef(null)
   const crane = useRef(null)
 
@@ -51,8 +51,8 @@ const prestations = () => {
     if(arrayPath[1]==="bougie"){
       setScrollToPosition(bougie.current.offsetTop)
     }
-    if(arrayPath[1]==="intuitif"){
-      setScrollToPosition(intuitif.current.offsetTop)
+    if(arrayPath[1]==="classiques"){
+      setScrollToPosition(classiques.current.offsetTop)
     }
     if(arrayPath[1]==="pieds"){
       setScrollToPosition(pieds.current.offsetTop)
@@ -177,7 +177,7 @@ const prestations = () => {
             </motion.div>
 
             <InView onChange={(inView, entry)=> inView && setFirstInView(true)} >
-              <motion.div variants={slideFromRight} initial='initial' animate={firstInView? "animate":""} className="service">
+              <motion.div variants={slideFromRight} initial='initial' animate={firstInView? "animate":""} className="service" ref={classiques}>
                 <PrestationLayout
                   imgUrl="/images/176246623_287598346073187_2645306858024130844_n.jpg" 
                   bgPosition="10%" 
@@ -196,7 +196,7 @@ const prestations = () => {
                   tableau ={tableauBougie}
                 />              
                 <motion.h3 variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="categorie">
-                  <span>Le massage à la bougie en quelques mots :</span>
+                  <span>Le soin à la bougie en quelques mots</span>
                 </motion.h3>
                 <MassageBandeauFourth/>
               </motion.div>
@@ -212,14 +212,14 @@ const prestations = () => {
                   tableau ={tableauBaby}
                 />
                 <motion.h3 variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="categorie">
-                  <span>Le massage pour bébé en quelques mots :</span>
+                  <span>Le massage bébé en quelques mots</span>
                 </motion.h3>
                 <MassageBandeauThird/>
               </motion.div>
             </InView>
 
             <InView onChange={(inView, entry)=> inView && setFourthInView(true)} >
-              <motion.div variants={slideFromRight} initial='initial' animate={fourthInView? "animate":""} className="service" ref={intuitif}>
+              <motion.div variants={slideFromRight} initial='initial' animate={fourthInView? "animate":""} className="service">
                 <PrestationLayout
                   imgUrl="/images/175659034_364152124945419_4032164191564889065_n.jpg"
                   bgPosition="10%" 
@@ -236,7 +236,7 @@ const prestations = () => {
                   titre="Réflexologie plantaire" 
                   tableau = {tableauPieds}/>
                   <motion.h3 variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="categorie">
-                  <span>La réflexologie en quelques mots :</span>
+                  <span>La réflexologie en quelques mots</span>
                 </motion.h3>
                 <MassageBandeauFifth/>
               </motion.div>
@@ -345,6 +345,15 @@ const DivWrapper = styled.div`
   .service {
     width: 100%;
   }
+}
+
+@media (max-width: 650px){
+  h3.categorie {
+    width: 100%;
+    font-size: 0.9rem;
+    margin-left:0px;
+  }
+  
 }
 
 

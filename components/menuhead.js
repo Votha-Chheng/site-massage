@@ -10,7 +10,6 @@ const MenuHead = ({color}) => {
 
   useEffect(() => {
     setSecondMenuHeight(secondMenuRef.current.offsetHeight)
-    console.log(secondMenuHeight)
   },[secondMenuHeight])
   
   return (
@@ -47,7 +46,7 @@ const MenuHead = ({color}) => {
           <li><a href='/yoga'>Yoga</a></li>
           <li><a href='/prestations'>Prestations</a></li>
           <li className="massages-menu">
-            <a href='/temoignages'>Témoignages</a>
+            <a href='/temoignages'>Ils en parlent</a>
             {/* <div className="sub-menu-massages">
               <div><a href="/massages/#intuitif">Massage intuitif</a></div>
               <div> <a href="/massages/#crane">Massage crânien</a></div>
@@ -84,6 +83,7 @@ const Wrapper = styled.nav`
     left: 0;
     background-color: rgba(121, 138, 148, 0.9);
     width : 100%;
+    display : none;
 
     li{
       list-style-type: none;
@@ -97,10 +97,6 @@ const Wrapper = styled.nav`
     display: none;
     margin-right: 20px;
     cursor: pointer;
-
-    #burger-menu{
-      
-    }
   }
 
   ul{
@@ -125,16 +121,16 @@ const Wrapper = styled.nav`
       color: gold;
     }
   }
-  .massages-menu{
+  /* .massages-menu{
     .sub-menu-massages{
       display: none;
     }
-  }
-  .massages-menu:hover, .sub-menu-massages:hover{
+  } */
+  /* .massages-menu:hover, .sub-menu-massages:hover{
     position: relative;
 
     .sub-menu-massages{
-      display: block;
+      display: none;
       font-size: 0.8rem;
       position: absolute;
       font-weight: normal;
@@ -164,7 +160,7 @@ const Wrapper = styled.nav`
         }
       }
     }
-  }
+  } */
 
   .logo{
     font-family: 'Parisienne', 'cursive';
@@ -190,6 +186,9 @@ const Wrapper = styled.nav`
     #mini-menu{
       display: block;
       
+    }
+    .second-menu{
+      display : block;
     }
   }
 `

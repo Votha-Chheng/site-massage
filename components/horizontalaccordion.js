@@ -8,8 +8,6 @@ const HorizontalAccordion = () => {
     setPhotoHovered(event.target.id)
   }
 
-  console.log(photoHovered)
-
   return (
     <DivWrapper>
       <div className={`photo ${photoHovered==="1"? "hovered" : ""}`} tabIndex="6">  
@@ -20,7 +18,7 @@ const HorizontalAccordion = () => {
           onMouseEnter={(event)=>selectedPhotoHandler(event)} 
           onMouseLeave={()=>{setPhotoHovered('')}}
           style={{transform:`translateX(${(photoHovered !== '') && (photoHovered !=="1") ? "-10" : "0"}%) scale(${(photoHovered ==="1")? "1.3" : "1"})`}}/>
-        <h3 className="titre" id="1" onMouseEnter={(event)=>selectedPhotoHandler(event)} >Intuitif</h3>
+        <h3 className="titre" id="1" onMouseEnter={(event)=>selectedPhotoHandler(event)} >Suédois & Californien</h3>
       </div>
       <div className={`photo left ${photoHovered==="2"? "hovered" : ""}`} tabIndex="7">
         <img
@@ -30,7 +28,7 @@ const HorizontalAccordion = () => {
           onMouseEnter={(event)=>selectedPhotoHandler(event)} 
           onMouseLeave={()=>{setPhotoHovered('')}} 
           style={{transform:`translateX(${(photoHovered !== '') && (photoHovered !=="2") ? "-10" : "0"}%) scale(${(photoHovered ==="2")? "1.3" : "1"})`}}/>
-        <h3 className="titre" id="2" onMouseEnter={(event)=>selectedPhotoHandler(event)} >Crânien</h3>
+        <h3 className="titre" id="2" onMouseEnter={(event)=>selectedPhotoHandler(event)} >Massage crânien</h3>
       </div>
       <div className={`photo left ${photoHovered==="3"? "hovered" : ""}`} tabIndex="8">
         <img 
@@ -40,27 +38,33 @@ const HorizontalAccordion = () => {
           onMouseEnter={(event)=>selectedPhotoHandler(event)} 
           onMouseLeave={()=>{setPhotoHovered('')}}
           style={{transform:`translateX(${(photoHovered !== '') && (photoHovered !=="3") ? "-10" : "0"}%) scale(${(photoHovered ==="3")? "1.3" : "1"})`}}/>
-        <h3 className="titre" id="3" onMouseEnter={(event)=>selectedPhotoHandler(event)} >Pour bébé</h3>
+        <h3 className="titre" id="3" onMouseEnter={(event)=>selectedPhotoHandler(event)} >Massage pour bébé</h3>
       </div>
       <div className={`photo left ${photoHovered==="4"? "hovered" : ""}`} tabIndex="9"> 
-        <img
-          src='/images/massageBougie.jpg' 
-          width = "600" 
-          id="4"
-          onMouseEnter={(event)=>selectedPhotoHandler(event)} 
-          onMouseLeave={()=>{setPhotoHovered('')}} 
-          style={{transform:`translateX(${(photoHovered !== '') && (photoHovered !=="4") ? "-10" : "0"}%) scale(${(photoHovered ==="4")? "1.3" : "1"})`}}/>
-          <h3 className="titre" id="4" onMouseEnter={(event)=>selectedPhotoHandler(event)} >&Agrave; la bougie</h3>
+        <a href="/prestations#bougie">
+          <img
+            src='/images/massageBougie.jpg' 
+            width = "600" 
+            id="4"
+            onMouseEnter={(event)=>selectedPhotoHandler(event)} 
+            onMouseLeave={()=>{setPhotoHovered('')}} 
+            style={{transform:`translateX(${(photoHovered !== '') && (photoHovered !=="4") ? "-10" : "0"}%) scale(${(photoHovered ==="4")? "1.3" : "1"})`}}/>
+          <h3 className="titre" id="4" onMouseEnter={(event)=>selectedPhotoHandler(event)} >Massage à la bougie</h3>
+        </a>
+        
       </div>
       <div className={`photo left ${photoHovered==="5"? "hovered" : ""}`} tabIndex="10"> 
-        <img
-          src='/images/reflexologie.jpg' 
-          width = "600" 
-          id="5"
-          onMouseEnter={(event)=>selectedPhotoHandler(event)} 
-          onMouseLeave={()=>{setPhotoHovered('')}} 
-          style={{transform:`translateX(${(photoHovered !== '') && (photoHovered !=="5") ? "-10" : "0"}%) scale(${(photoHovered ==="5")? "1.3" : "1"})`}}/>
-          <h3 className="titre" id="5" onMouseEnter={(event)=>selectedPhotoHandler(event)} >Réflexologie</h3>
+        <a href="/prestations#pieds">
+          <img
+            src='/images/reflexologie.jpg' 
+            width = "600" 
+            id="5"
+            onMouseEnter={(event)=>selectedPhotoHandler(event)} 
+            onMouseLeave={()=>{setPhotoHovered('')}} 
+            style={{transform:`translateX(${(photoHovered !== '') && (photoHovered !=="5") ? "-10" : "0"}%) scale(${(photoHovered ==="5")? "1.3" : "1"})`}}/>
+          <h3 className="titre" id="5" onMouseEnter={(event)=>selectedPhotoHandler(event)} >Réflexologie plantaire</h3>
+        </a>
+        
       </div>
     </DivWrapper>
   );

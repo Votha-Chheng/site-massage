@@ -25,7 +25,9 @@ const massagecranien = () => {
         <MomentumScrollProvider easing={0.075}>
           <MassageBandeauSecond/>
           <HomeCurveSeparation texte="voir tous mes massages" delay="0.2" buttonDelay="1" lien="/prestations" margin="0 auto 100px" />
-          <Footer/>
+          <div className="footer-container">
+            <Footer/>
+          </div>
         </MomentumScrollProvider>
       </PageWrap>
     </div>

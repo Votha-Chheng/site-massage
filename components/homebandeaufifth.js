@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import {InView} from "react-intersection-observer";
 import styled from "styled-components";
 import { titleAnimation } from "../utils";
+import Footer from "./footer";
 import HomeCurveSeparation from "./homecurveseparation";
 
 const HomeBandeauFifth = () => {
@@ -102,7 +103,7 @@ const HomeBandeauFifth = () => {
               Quoi de mieux que de se faire masser sans avoir à se déplacer ? Avec <span className="marque">Baux't des sens</span>, c'est le bien-être et la détente qui viennent chez vous ! C'est pour&shy;quoi je me déplace <u>uniquement</u> à domicile, dans les gîtes ou les hôtels sur Arles, dans les Alpilles et aux alentours. Et ce, avec tout le matériel nécessaire (table de massage, linge, etc...). Tout ce qui vous reste donc à faire, c'est vous allonger et vous laisser aller...
             </motion.div>
           </div>
-          <motion.div className='deplacement-container' style={{cursor:'none', minWidth:`${mapDimension.width}px`, minHeight:`${mapDimension.height}px`}} variants={childAppear} >
+          <motion.div className='deplacement-container' style={{cursor:'none', minWidth:"250px", minHeight:"250px"}} variants={childAppear} >
             <img 
               className="small-map"
               ref={mapRef}
@@ -124,12 +125,11 @@ const HomeBandeauFifth = () => {
               onMouseLeave={()=>setMouseEnter(false)} 
               onMouseOut={()=>setMouseEnter(false)}
               onClick={()=>unzoomHandler()}/>
-          </motion.div>
-          
+          </motion.div> 
         </motion.div>
 
       </InView>
-      <HomeCurveSeparation texte="prendre un rendez-vous" margin="50px 0px 100px"/>
+      <HomeCurveSeparation texte="prendre un rendez-vous" margin="0px 0px 75px"/>
     </SectionWrapper>
 
   );
@@ -137,6 +137,8 @@ const HomeBandeauFifth = () => {
 
 
 const SectionWrapper = styled.section`
+  margin-bottom: 50px;
+
   .container-page{
     padding: 25px;
 
@@ -176,6 +178,7 @@ const SectionWrapper = styled.section`
       .partie-textes{
         padding: 20px 50px;
         margin-right: 10px;
+        width: 75%;
 
         .texte.first{
           text-indent: 0px;
@@ -201,6 +204,8 @@ const SectionWrapper = styled.section`
       .deplacement-container{   
         position: relative;
         margin-top: 30px;
+        height: 400px;
+        width: 400px;
 
         img.small-map{
           border: 4px solid whitesmoke;
@@ -217,9 +222,18 @@ const SectionWrapper = styled.section`
     }
   }
 
-  @media (max-width: 850px){
+  @media (max-width: 1138px){
+    .partie-textes{
+      width: 50% !important;
+    }
+  }
+  @media (max-width: 920px){
     .deplacement-container{
       display: none;
+      width: 0px;
+    }
+    .partie-textes{
+      width: 100% !important;
     }
   }
   @media (max-width: 600px){

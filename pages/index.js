@@ -36,10 +36,9 @@ export default function Home() {
             <MassageBandeauFirst/>
             <HomeBandeauFourth/>
             <HomeBandeauFifth/>
-          </div>
-          <div className="footer-container">
             <Footer/>
           </div>
+            
         </MomentumScrollProvider>
 
       </Wrapper>     
@@ -48,7 +47,6 @@ export default function Home() {
 }
 
 const Wrapper = styled.div`
-  height: auto;
   overflow : hidden;
   position: relative;
   background-color: #798a94;
@@ -85,7 +83,7 @@ const Wrapper = styled.div`
     }
   }
 
-  div#super-container{
+  #super-container{
     position : relative;
     height: 100%;
   }
@@ -108,7 +106,7 @@ const Wrapper = styled.div`
   }
 
   .footer-container{
-    height: 100%;
+    height: 650px;
   }
   @keyframes leftAndRight{
     0%{

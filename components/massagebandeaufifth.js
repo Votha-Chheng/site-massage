@@ -8,7 +8,6 @@ import HomeCurveSeparation from "./homecurveseparation";
 
 const MassageBandeauFifth = () => {
   const [sectionInView, setSectionInView] = useState(false)
-  const [heroInView, setHeroInView] = useState(false)
   const [schemaInView, setSchemaInView] = useState(false)
 
   const controls = useAnimation()
@@ -21,11 +20,7 @@ const MassageBandeauFifth = () => {
 
 
   return (
-    <SectionWrapper>
-      {/* <InView onChange={(inView, entry)=>setHeroInView(inView)}>
-        <HerosMassage title="réflexologie" image='foot-massage.jpg' translateUp="-250" heroInView={heroInView} />
-      </InView> */}
-      
+    <SectionWrapper> 
       <InView onChange={(inView, entry)=>inView && setSectionInView(true)} className="section-container">
         <motion.div className="part-left-container" initial={{opacity:0, x:"-100%"}} animate={sectionInView? {opacity:1, x:0}:""} transition={{opacity:{duration : 0.5, delay:1}, x:{duration:1.25, delay:0.8, ease:"easeOut"}}} >
           <div className="foot-img-container">
@@ -47,7 +42,8 @@ const MassageBandeauFifth = () => {
         </motion.div>
       </InView>
       <InView className="schema-pied" onChange={(inView, entry)=> inView && setSchemaInView(true)}>
-        <motion.img
+        <div className="box-pied">
+          <motion.img
           src="/images/schema-pied.png" 
           alt='schema zone du pied rélflexologie'
           width="340"
@@ -59,6 +55,7 @@ const MassageBandeauFifth = () => {
           animate={schemaInView?"animate":""}
           initial="initial">
           Schéma des zones du pied correspondant aux organes</motion.small>
+        </div>      
       </InView>
       
       <HomeCurveSeparation texte="prendre rendez-vous" margin="75px 0px 200px" lien="/prestations/#contactfooter" />
@@ -67,6 +64,8 @@ const MassageBandeauFifth = () => {
 }
 
 const SectionWrapper = styled.section`
+height: 100%;
+
 .section-container{
   display: flex;
   width: 90%;
@@ -106,11 +105,21 @@ const SectionWrapper = styled.section`
     margin: 0px auto;
     width: 340px;
     text-align:center;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
 
-    small{
-      font-size: 0.75rem;
-      color: #ffffff;
+    .box-pied{
+      display: flex;
+      flex-direction: column;
+      padding-right: calc(5% + 10px) ;
+      small{
+        font-size: 0.75rem;
+        color: #ffffff;
+      }
     }
+
+
   }
   @media (max-width: 1320px){
     .section-container{
@@ -124,6 +133,7 @@ const SectionWrapper = styled.section`
     }
   }
   @media (max-width: 780px){
+
     .hero{
       img{
         transform: translateY(0px) !important;

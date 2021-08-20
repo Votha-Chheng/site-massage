@@ -1,4 +1,4 @@
-import { animate, motion, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import {InView} from "react-intersection-observer";

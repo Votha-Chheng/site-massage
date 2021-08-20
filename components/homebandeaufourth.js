@@ -4,6 +4,7 @@ import {InView} from "react-intersection-observer";
 import styled from "styled-components";
 import { titleAnimation } from "../utils";
 import HorizontalAccordion from "./horizontalaccordion"
+import ListeResponsive from "./listeresponsive";
 
 const HomeBandeauFourth = () => {
 
@@ -26,25 +27,54 @@ const HomeBandeauFourth = () => {
           <motion.h3 className="categorie" initial={{opacity:0}} animate={titleInView ? {opacity:1} : ""} transition={{opacity:{delay : 0.5, transition : 4}}} >
             <span>Types de massages</span>
           </motion.h3>
-          <motion.div initial={{opacity:0, y:200}} animate={titleInView ? {opacity:1, y :0} : ""} transition={{opacity:{delay : 0.5, duration : 1}, y:{delay : 0.5, duration : 1.2, ease:"easeOut"}}} >
-            <HorizontalAccordion/> 
+          <motion.div 
+            initial={{opacity:0, y:200}} 
+            animate={titleInView ? {opacity:1, y :0} : ""} 
+            transition={{opacity:{delay : 0.5, duration : 1}, y:{delay : 0.5, duration : 1.2, ease:"easeOut"}}} >
+              <div className="accordion">
+                <HorizontalAccordion/> 
+              </div>
+              <div className="liste-responsive">
+                <ListeResponsive 
+                  title="Californien & Suédois" 
+                  link="/prestations#classiques" 
+                  photo="176156940_1637465016462471_4662970500857421866_n.jpg" 
+                  alt="massage californien et suédois" />
+
+                <ListeResponsive 
+                  title="Massage crânien" 
+                  link="/prestations#crane" 
+                  photo="pexels-photo-3997989.jpeg" 
+                  alt="massage crânien" />
+
+                <ListeResponsive 
+                  title="Massage pour bébé" 
+                  link="/prestations#babymassage" 
+                  photo="photo-1537673156864-5d2c72de7824.jpg" 
+                  alt="massage pour bébé" />
+
+                <ListeResponsive 
+                  title="Massage à la bougie" 
+                  link="/prestations#bougie" 
+                  photo="massageBougie.jpg" 
+                  alt="massage à la bougie" />
+                
+                <ListeResponsive 
+                  title="Réflexologie plantaire" 
+                  link="/prestations#pieds" 
+                  photo="reflexologie.jpg" 
+                  alt="Réflexologie plantaire" />
+              </div>
           </motion.div>  
         </div> 
-        <motion.h3 className="categorie" initial={{opacity:0}} animate={titleInView ? {opacity:1} : ""} transition={{opacity:{delay : 1.5, transition : 4}}} ><span>Mais aussi...</span></motion.h3>   
-        <motion.div 
-          className="container-yoga" 
-          initial={{opacity:0, y:"100%"}} 
-          animate={titleInView ? {opacity:1, y :0} : ""} 
-          transition={{opacity:{delay : 2, duration : 1}, y:{delay : 2, duration : 1.2, ease:"easeOut"}}} 
-          tabIndex="11"> 
-          <img
-            src='/images/pexels-photo-7593054.jpeg' 
-            alt="initiation yoga baux't des sens"
-            width = "600"/>
-          <h3 className="titre">
-            Initiation au yoga
-          </h3>
-        </motion.div>
+        <motion.h3 className="categorie" initial={{opacity:0}} animate={titleInView ? {opacity:1} : ""} transition={{opacity:{delay : 1.5, transition : 4}}} >
+          <span>Mais aussi...</span>
+        </motion.h3>   
+        <ListeResponsive 
+          title="Initiation au Hata yoga" 
+          link="/yoga" 
+          photo="pexels-photo-7593054.jpeg" 
+          alt="Initiation au Hata yoga" />
       </InView>
       
     </SectionWrapper>
@@ -53,6 +83,10 @@ const HomeBandeauFourth = () => {
 
 const SectionWrapper = styled.section`
   padding-bottom: 100px;
+
+  .liste-responsive{
+    display: none;
+  }
 
   .container-section{
     padding: 25px;
@@ -113,9 +147,15 @@ const SectionWrapper = styled.section`
         transition: all 0.25s cubic-bezier(.21,.59,.65,1.04);
         font-style: italic;
         color : #5b6871;
-
-
       }
+    }
+  }
+  @media (max-width: 1024px){
+    .accordion{
+      display: none;
+    }
+    .liste-responsive{
+      display: block;
     }
   }
 `

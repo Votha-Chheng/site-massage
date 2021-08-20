@@ -207,9 +207,9 @@ const HomeBandeauSecond = () => {
             <motion.div className='texte-bio'>
               <motion.div
                 className="photo-id"
-                initial={{height:600, borderRadius:"0", x: "calc(50vw - 170px)", border:"0"}} 
-                animate={bandeauInView? {height:300, x:0, borderRadius:"50%", border:"4px solid whitesmoke"} : ""} 
-                transition={{height: {delay:11.2, duration:1}, x:{delay:10, duration:1, ease:"easeOut"}, borderRadius:{delay:12.7, duration:0.5}, border:{delay:12.8}}}>
+                initial={{height:600, borderRadius:"0", x:"calc(50vw - 150px)", border:"0", position:"absolute"}} 
+                animate={bandeauInView? {height:300, x:0, borderRadius:"50%", border:"4px solid whitesmoke", position:"static"} : ""} 
+                transition={{height: {delay:11.2, duration:1}, x:{delay:10, duration:1, ease:"easeOut"}, borderRadius:{delay:12.7, duration:0.5}, border:{delay:12.8}, position:{delay:12, duration : 0.2}}}>
                 <motion.div
                   className='folder'
                   initial={{height : 610, width : 310, x:0}} 
@@ -254,7 +254,7 @@ const HomeBandeauSecond = () => {
           </div>
         </div>    
       </InView>
-      <HomeCurveSeparation texte="prendre contact" inView={bandeauInView} delay={15} buttonDelay={15.9} lien='/infospratiques' margin="15px auto 100px" />
+      <HomeCurveSeparation texte="prendre contact" inView={bandeauInView} delay={15} buttonDelay={15.9} lien='/infospratiques' margin="50px auto 100px" />
     </BandeauDiv>
   );
 }
@@ -263,7 +263,7 @@ const BandeauDiv = styled.div`
   overflow : hidden;
   background-color: #798a94;
   transition: background-color 0.5s ease-in-out;
-  height: 100%;
+  height: 900px;
   position: relative;
   padding: 1px 0px;
 
@@ -276,6 +276,7 @@ const BandeauDiv = styled.div`
     font-family: 'Playfair Display', serif;
     text-transform: uppercase;
     color: whitesmoke;
+    //min-height: 660px;
     
     .slogans{
       position: relative;
@@ -307,9 +308,10 @@ const BandeauDiv = styled.div`
   }
   .container-page{
     padding: 25px;
-    min-height : 600px;
   }
   .biographie-container{
+    min-height : 100%;
+
     .container-textes{
       padding-top: 10px;
       font-style: italic;

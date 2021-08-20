@@ -71,7 +71,6 @@ const SectionWrapper = styled.section`
   .flex-2{
     flex-direction: column;
     
-    
     .texte-container{
       display: flex;
       align-items: center;

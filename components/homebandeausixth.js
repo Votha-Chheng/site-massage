@@ -1,22 +1,10 @@
 import { motion, useAnimation } from "framer-motion";
-import { Children, useEffect, useState } from "react";
-import {InView} from "react-intersection-observer";
 import styled from "styled-components";
 import { titleAnimation } from "../utils";
 
 const HomeBandeauSixth = () => {
-  const [titleInView, setTitleInview] = useState(false);
-
-  const controls = useAnimation()
 
   const tableauAvis = ["temoin1", "temoin2", "temoin3", "temoin4", "temoin5", "temoin6", "temoin7"]
-
-  useEffect(() => {
-    if(titleInView){
-      controls.start("appear")
-      controls.start("animate")
-    }
-  }, [controls, titleInView])
 
   const parentAvis = {
     initial : {
@@ -47,29 +35,31 @@ const HomeBandeauSixth = () => {
 
   return (
     <BandeauSection>
-      <InView className="container-page" onChange={(inView, entry)=> setTitleInview(inView)} >
-        <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate={controls} >
+      <div className="container-page" >  
+        <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >
           Baux't des sens, c'est encore les autres qui en parlent le mieux...
         </motion.h2>
-        <motion.div className="grid-container" variants={parentAvis} initial="initial" animate={controls}>
+        <motion.div className="grid-container" variants={parentAvis} initial="initial" animate="animate">
           {
             tableauAvis.map((avis, idx)=>
-            <motion.div variants={childAvis} className="avis" key={idx}>
-              <img src={`/images/${avis}.jpg`} width="300" />
-            </motion.div>
-          )
+              <motion.div variants={childAvis} className="avis" key={idx}>
+                <img src={`/images/${avis}.jpg`} width="300" />
+              </motion.div>
+            )
           }
         </motion.div>
-        <h2 className='home-titles' style={{textAlign:"right", fontSize:'1.75rem'}} >Merci infiniment à eux et à tous les autres pour leur confiance !</h2>
-      </InView>
+        <h2 className='home-titles' style={{textAlign:"right", fontSize:'1.75rem'}} >Merci infiniment à eux et à tous les autres pour leur confiance !</h2>     
+      </div>
     </BandeauSection>
   );
 }
 
 const BandeauSection = styled.section`
+  overflow : hidden;
+
   .container-page{
     padding: 25px;
-    overflow-x : hidden;
+    
 
     .grid-container{
       display: flex;
@@ -90,16 +80,9 @@ const BandeauSection = styled.section`
       }
     }
   }
-  @keyframes bubble{
-    0%{
-      transform: scale(1.01);
-    }
-    50%{
-      transform: scale(0.99)
-    }
-    100%{
-      transform: scale(1.01);
-    }
+
+  @media (max-width: 920px){
+    margin-bottom: 800px;
   }
 `
 

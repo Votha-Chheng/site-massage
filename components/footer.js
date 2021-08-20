@@ -51,6 +51,7 @@ const FooterStyle = styled.div`
   padding : 20px;
   min-height: 500px;
   border-top: 6px double black;
+  overflow: hidden;
 
   .link-footer:hover{
     text-decoration: underline;
@@ -62,6 +63,7 @@ const FooterStyle = styled.div`
     justify-content: space-between;
     padding: 25px;
     height: 450px;
+    
     
     .part-right{
       color: #000000;
@@ -186,6 +188,8 @@ const FooterStyle = styled.div`
     }
   }
   @media (max-width: 920px){
+    
+
     .part-right{
       padding-left: 150px !important;
       width: 100% !important;
@@ -194,6 +198,7 @@ const FooterStyle = styled.div`
     .footer-container{
       flex-direction: column-reverse !important;
       align-items: center;
+      min-height: 900px !important;
     }
   }
   @media (max-width: 525px){
