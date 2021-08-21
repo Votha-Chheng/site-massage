@@ -264,7 +264,7 @@ const prestations = () => {
           </InView>
 
           </div> 
-          <HomeCurveSeparation texte="me contacter" lien="/prestations/#contactfooter" margin="0px 0px 50px" lien='/prestations/#contactfooter' />   
+          <HomeCurveSeparation texte="me contacter" lien="/prestations/#contactfooter" margin="0px 0px 75px" lien='/infos' />   
           <div ref={contactfooter} className="footer-container" id="contactfooter">
             <Footer/>
           </div>          

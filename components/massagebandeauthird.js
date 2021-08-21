@@ -43,7 +43,6 @@ const MassageBandeauThird = () => {
           </div>
         </motion.div> 
       </InView>
-      <HomeCurveSeparation texte="prendre rendez-vous" margin="75px 0px 175px" lien="/infospratiques" />
     </SectionWrapper>
   );
 }

@@ -57,8 +57,6 @@ const MassageBandeauFifth = () => {
           Schéma des zones du pied correspondant aux organes</motion.small>
         </div>      
       </InView>
-      
-      <HomeCurveSeparation texte="prendre rendez-vous" margin="75px 0px 200px" lien="/prestations/#contactfooter" />
     </SectionWrapper>
   );
 }

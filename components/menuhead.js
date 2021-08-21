@@ -15,9 +15,9 @@ const MenuHead = ({color}) => {
   return (
     <Wrapper style={{color}} role="navigation" aria-label="navigation site Baux't des sens">
       <nav className="second-menu" ref={secondMenuRef} style={{top:`${burger ? "40" : -secondMenuHeight-40}px`}} >
+        <li><a href='/prestations'>Prestations</a></li>
         <li><a href='/massagecranien'>Massage crânien</a></li>
         <li><a href='/yoga'>Yoga</a></li>
-        <li><a href='/prestations'>Prestations</a></li>
         <li className="massages-menu">
           <a href='/temoignages'>Témoignages</a>
         </li>
@@ -42,19 +42,10 @@ const MenuHead = ({color}) => {
       </div>
         
         <ul>
+          <li><a href='/prestations'>Prestations</a></li>
           <li><a href='/massagecranien'>Massage crânien</a></li>
           <li><a href='/yoga'>Yoga</a></li>
-          <li><a href='/prestations'>Prestations</a></li>
-          <li className="massages-menu">
-            <a href='/temoignages'>Ils en parlent</a>
-            {/* <div className="sub-menu-massages">
-              <div><a href="/massages/#intuitif">Massage intuitif</a></div>
-              <div> <a href="/massages/#crane">Massage crânien</a></div>
-              <div><a href="/massages/#babymassage">Massage bébé</a></div>
-              <div><a href="/massages/#bougie">Massage bougie</a></div>
-              <div><a href="/massages/#pieds">Réflexologie</a></div>
-            </div> */}
-          </li>
+          <li className="massages-menu"><a href='/temoignages'>Ils en parlent</a></li>
           <li><a href='/infospratiques'>Infos</a></li>
         </ul> 
     </Wrapper>

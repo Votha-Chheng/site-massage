@@ -47,7 +47,6 @@ const MassageBandeauFourth = () => {
             </div>
         </motion.div>
       </InView>
-      <HomeCurveSeparation texte="prendre rendez-vous" margin="75px 0px 200px" lien="/prestations/#bougie"/>
     </SectionWrapper>
   );
 }
