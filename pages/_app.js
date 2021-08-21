@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta charSet="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1"/>
-        <meta name="description" content="Envie d'un massage ou d'un moment propice à la détente sur Arles et la région des Alpilles ?... Baux'T des sens vous propose des séances de massage à domicile et d'initiation au Hata yoga."/>
+        <meta name="description" content="A la recherche d'un massage ou d'un moment propice à la détente sur Arles et la région des Alpilles ?... Baux'T des sens vous propose des séances de massage à domicile et d'initiation au Hata yoga."/>
         <meta property="og:title" content="Baux'T des sens, massage à domicile et yoga Arles Alpilles & Baux de Provence." />
         <meta property="og:image" content="https://zupimages.net/up/21/33/4t0a.jpg"/>
         <meta property="og:image:type" content="image/jpg"/>
