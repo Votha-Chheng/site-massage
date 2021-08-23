@@ -21,7 +21,6 @@ const HomeBandeauFifth = () => {
 
   useEffect(() => {
     setMapDimension({width:mapRef.current.clientWidth, height:mapRef.current.clientHeight})
-    console.log(mapDimension.width)
   }, [mapDimension.height, mapDimension.width])
 
 

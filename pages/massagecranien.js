@@ -1,14 +1,11 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
-import { useState } from "react";
-import {InView} from "react-intersection-observer";
 import styled from "styled-components";
 import Footer from "../components/footer";
 import HomeCurveSeparation from "../components/homecurveseparation";
 import MassageBandeauSecond from "../components/massagebandeausecond";
 import MenuHead from "../components/menuhead";
 import MomentumScrollProvider from "../context/MomentumScrollContext";
-import { opacityBandeau } from "../utils";
 
 const massagecranien = () => {
 
@@ -22,13 +19,18 @@ const massagecranien = () => {
         <motion.div className="menu-container" initial={{opacity: 0}} animate={{opacity:1}} transition={{opacity : {delay:1.5}}}>
           <MenuHead/>
         </motion.div>
-        <MomentumScrollProvider easing={0.075}>
+        <div className="big-screen">
+          <MomentumScrollProvider easing={0.075}>
+            <MassageBandeauSecond/>
+            <HomeCurveSeparation texte="voir tous mes massages" delay="0.2" buttonDelay="1" lien="/prestations" margin="0 auto 100px" />
+            <Footer/>
+          </MomentumScrollProvider>
+        </div>
+        <div className="small-screen">
           <MassageBandeauSecond/>
           <HomeCurveSeparation texte="voir tous mes massages" delay="0.2" buttonDelay="1" lien="/prestations" margin="0 auto 100px" />
-          <div className="footer-container">
-            <Footer/>
-          </div>
-        </MomentumScrollProvider>
+          <Footer/>
+        </div>
       </PageWrap>
     </div>
     
@@ -40,6 +42,19 @@ const PageWrap = styled.section`
   overflow : hidden;
   position: relative;
   background-color: #798a94;
+
+  .small-screen{
+      display: none;
+    }
+
+  @media (max-width : 1024px){
+    .small-screen{
+      display: block;
+    }
+    .big-screen{
+      display: none;
+    }
+  }
 
   .menu-container{
     position: fixed;

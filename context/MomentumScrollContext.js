@@ -79,6 +79,7 @@ const MomentumScrollProvider =  ({easing, children}) => {
   };
 
   return (
+    
     <ScrollContext.Provider value={{ addBlock, easing }}>
       <>
         <div ref={spacer} />

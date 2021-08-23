@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 import styled from 'styled-components'
 import Footer from '../components/footer'
 import HomeBandeauFirst from '../components/homebandeaufirst'
@@ -15,16 +15,8 @@ import MassageBandeauFirst from '../components/massagebandeaufirst'
 
 export default function Home() {
 
-  const [pageWidth, setPageWidth] = useState(0)
-
   const menuRef = useRef(null)
-  const pageRef = useRef(null)
-
-  useEffect(() => {
-    setPageWidth(pageRef.current.clientWidth) 
-  }, [pageWidth])
   
-
   return (
     <div>
       <Head>
@@ -35,20 +27,30 @@ export default function Home() {
         <motion.div ref={menuRef} className="menu-container" initial={{opacity: 0}} animate={{opacity:1}} transition={{opacity : {delay:8.5}}}>
           <MenuHead/>
         </motion.div>
-
-        <MomentumScrollProvider easing={pageWidth<1024? 0 : 0.075}>
-          <div id='super-container' className='super-container' ref={pageRef}> 
+        <div className="big-screen">
+          <MomentumScrollProvider easing={0.075}>
+            <div id='super-container' className='super-container'> 
+              <HomeBandeauFirst/> 
+              <HomeBandeauSecond/>
+              <HomeBandeauThird/>
+              <MassageBandeauFirst/>
+              <HomeBandeauFourth/>
+              <HomeBandeauFifth/> 
+            </div>
+            <Footer/>  
+          </MomentumScrollProvider>
+        </div>
+        <div className="small-screen">
+          <div id='super-container' className='super-container'> 
             <HomeBandeauFirst/> 
             <HomeBandeauSecond/>
             <HomeBandeauThird/>
             <MassageBandeauFirst/>
             <HomeBandeauFourth/>
-            <HomeBandeauFifth/>
-            <Footer/>
+            <HomeBandeauFifth/> 
           </div>
-            
-        </MomentumScrollProvider>
-
+          <Footer/>  
+        </div>
       </Wrapper>     
     </div>     
   )
@@ -58,6 +60,19 @@ const Wrapper = styled.div`
   overflow : hidden;
   position: relative;
   background-color: #798a94;
+
+  .small-screen {
+    display: none;
+  }
+
+  @media (max-width : 1024px){
+    .small-screen{
+      display: block;
+    }
+    .big-screen{
+      display: none;
+    }
+  }
 
   .point-music{
     position: absolute;
