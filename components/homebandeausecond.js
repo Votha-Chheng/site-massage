@@ -196,8 +196,6 @@ const HomeBandeauSecond = () => {
               <img src='/images/logoLotus.svg' alt="logo de Baux't des sens"/>
             </motion.div>
           </motion.div>
-          
-          
         </div>
         <div className='container-page'>
           <motion.h2 className="home-titles" initial={{opacity:0, x:"-100%"}} animate={bandeauInView? {opacity:1, x:0}:""} transition={{opacity:{delay:13, duration:1}, x:{delay:12, duration:2.5, ease:"easeOut"}}}>
@@ -370,7 +368,14 @@ const BandeauDiv = styled.div`
     top: 50px;
   }
 }
+
+@media (max-width:1110px){
+  height: 1200px !important;
+}
+
 @media (max-width:840px){
+  height: 1500px !important;
+
   .texte-bio{
     width : 100% !important;
   }
@@ -389,6 +394,12 @@ const BandeauDiv = styled.div`
   .slogan-container{
     font-size: 2rem;
   }
+}
+@media (max-width:485px){
+  height: 1750px !important;
+}
+@media (max-width:425px){
+  height: 1850px !important;
 }
 `
 

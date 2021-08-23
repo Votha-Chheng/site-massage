@@ -174,10 +174,9 @@ const infospratiques = () => {
                 </div>
                 
               </div>
-            </motion.div>
-              
+            </motion.div> 
           </div>
-          <Footer/>  
+          <Footer/>
         </div>
       </DivWrapper>
     </div>

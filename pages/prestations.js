@@ -93,12 +93,12 @@ const prestations = () => {
   const tableauBaby = [
     {
       service : "Massage bébé/maman (dès les premiers jours) ",
-      temps : "variable",
+      temps : "1h",
       description : "Stimule le système immunitaire. Partagez un moment unique qui renforce le lien avec bébé. Massage à l'huile d'amande douce."
     },
     {
       service : "Massage future maman",
-      temps : "variable",
+      temps : "1h",
       description : "Pour les femmes enceintes, le massage permet de soulager les douleurs (dos, épaules, jambes lourdes...) et de favoriser une meilleure circulation sanguine."
     }
   ]
@@ -106,7 +106,7 @@ const prestations = () => {
   const tableauPerso = [
     {
       service : "Massage personnalisé",
-      temps : "variable",
+      temps : "1h",
       description : "Massage effectué selon vos demandes, pour un moment unique et sur mesure."
     }
   ]
@@ -127,7 +127,7 @@ const prestations = () => {
     },
     {
       service : "Forfait yoga + massage",
-      temps : "variable",
+      temps : "Durée variable",
       description : " Quoi de mieux qu'une séance de yoga et de massage pour vivre son bien-être à fond ?"
     }
   ]
@@ -135,7 +135,7 @@ const prestations = () => {
   const tableauEvents = [
     {
       service : "Evènements particuliers (EVG, anniversaire, carte cadeau, etc...)",
-      temps : "variable",
+      temps : "Durée variable",
       description : "N'hésitez pas à me contacter pour un service sur mesure lors de ces évènements importants."
     }
   ]
@@ -179,9 +179,10 @@ const prestations = () => {
             <InView onChange={(inView, entry)=> inView && setFirstInView(true)} >
               <motion.div variants={slideFromRight} initial='initial' animate={firstInView? "animate":""} className="service" ref={classiques}>
                 <PrestationLayout
-                  imgUrl="/images/176246623_287598346073187_2645306858024130844_n.jpg" 
+                  // imgUrl="/images/176246623_287598346073187_2645306858024130844_n.jpg" 
+                  
                   bgPosition="10%" 
-                  titre="Les incontournables" 
+                  titre="" 
                   tableau ={tableauClassiques}
                 />
               </motion.div>

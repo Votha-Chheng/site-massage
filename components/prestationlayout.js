@@ -3,10 +3,10 @@ import styled from "styled-components";
 const PrestationLayout = ({imgUrl, bgPosition, titre, tableau}) => {
   return (
     <DivWrapper style = {{backgroundImage :`url(${imgUrl})` , backgroundPosition: bgPosition}}>
-    <h3>
+    <h3 className={titre? "titre-massage":"no-title"}>
       {titre}
-      <div className="right"/>
-      <div className="down"/>
+      <div className= {titre ? "right" : ""}/>
+      <div className={titre ? "down" : ""}/>
     </h3>
     <ul tabIndex="5">
       {
@@ -17,7 +17,7 @@ const PrestationLayout = ({imgUrl, bgPosition, titre, tableau}) => {
                 {element.service}
               </div>
               <div className="temps">
-                Durée : {element.temps}
+                {element.temps}
               </div>
             </div>
             <div className="description">
@@ -52,7 +52,11 @@ const DivWrapper = styled.div`
     filter: blur(2px);
   }
 
-  h3{
+  h3.no-title{
+    padding: 0;
+  }
+
+  h3.titre-massage{
     position: absolute;
     top: -50px;
     left: -50px;
