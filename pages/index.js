@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import Footer from '../components/footer'
 import HomeBandeauFirst from '../components/homebandeaufirst'
@@ -15,7 +15,15 @@ import MassageBandeauFirst from '../components/massagebandeaufirst'
 
 export default function Home() {
 
+  const [pageWidth, setPageWidth] = useState(0)
+
   const menuRef = useRef(null)
+  const pageRef = useRef(null)
+
+  useEffect(() => {
+    setPageWidth(pageRef.current.clientWidth) 
+  }, [pageWidth])
+  
 
   return (
     <div>
@@ -28,8 +36,8 @@ export default function Home() {
           <MenuHead/>
         </motion.div>
 
-        <MomentumScrollProvider easing={0.075}>
-          <div id='super-container' className='super-container'> 
+        <MomentumScrollProvider easing={pageWidth<1024? 0 : 0.075}>
+          <div id='super-container' className='super-container' ref={pageRef}> 
             <HomeBandeauFirst/> 
             <HomeBandeauSecond/>
             <HomeBandeauThird/>
