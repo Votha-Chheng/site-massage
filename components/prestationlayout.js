@@ -3,31 +3,31 @@ import styled from "styled-components";
 const PrestationLayout = ({imgUrl, bgPosition, titre, tableau}) => {
   return (
     <DivWrapper style = {{backgroundImage :`url(${imgUrl})` , backgroundPosition: bgPosition}}>
-    <h3 className={titre? "titre-massage":"no-title"}>
-      {titre}
-      <div className= {titre ? "right" : ""}/>
-      <div className={titre ? "down" : ""}/>
-    </h3>
-    <ul tabIndex="5">
-      {
-        tableau.map((element, index)=>
-          <li key={index}>
-            <div className="titre-temps">
-              <div>
-                {element.service}
+      <h3 className={titre? "titre-massage":"no-title"}>
+        {titre}
+        <div className= {titre ? "right" : ""}/>
+        <div className={titre ? "down" : ""}/>
+      </h3>
+      <ul tabIndex="5">
+        {
+          tableau.map((element, index)=>
+            <li key={index}>
+              <div className="titre-temps">
+                <div className="titre-service">
+                  {element.service}
+                </div>
+                <div className="temps">
+                  {element.temps}
+                </div>
               </div>
-              <div className="temps">
-                {element.temps}
+              <div className="description">
+                {element.description}
               </div>
-            </div>
-            <div className="description">
-              {element.description}
-            </div>
-          </li>
-        )
-      }
-    </ul>
-  </DivWrapper>
+            </li>
+          )
+        }
+      </ul>
+    </DivWrapper>
   );
 }
 
@@ -176,6 +176,29 @@ const DivWrapper = styled.div`
   @media (max-width: 580px){
     h3{
       font-size:calc(1.5rem + 2.2vw)  !important;
+    }
+    .titre-massage{
+      left:-10px !important;
+    }
+    .titre-service{
+      max-width: 300px !important;
+    }
+    .titre-temps{
+      font-size: 1.25rem !important;
+      flex-direction : row !important;
+      width: 100% !important;
+      justify-content: space-between !important;
+      //flex-wrap : nowrap;
+    }
+    .temps{
+      padding-left: 0 !important;
+      min-width: 100px !important;
+      font-size : 1.1rem !important;
+
+    }
+    .description{
+      font-size : 1rem !important;
+      margin-top: 5px;
     }
   }
 `

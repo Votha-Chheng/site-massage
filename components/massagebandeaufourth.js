@@ -24,7 +24,7 @@ const MassageBandeauFourth = () => {
         <HerosMassage title="massage à la bougie" image='176187352_2922669511298633_3323829876291585340_n.jpg' translateUp='-400' heroInView={heroInView}/>
       </InView> */}
       
-      <InView onChange={(inView, entry)=>setSectionInView(inView)} className="section-container">
+      <InView onChange={(inView, entry)=> inView && setSectionInView(true)} className="section-container">
         <motion.div className="flex-1" initial={{x:-300, opacity:0}} animate={sectionInView? {x:0, opacity:1}:""} transition={{opacity : {duration : 0.75, delay:0.8, ease:"easeOut"}, x : {duration : 1.2, delay:0.8, ease:"easeOut"}}} >
           <div className="bougie-container">
             <img src="/images/massageBougie2.jpg" width="400" height="400" />
@@ -52,6 +52,8 @@ const MassageBandeauFourth = () => {
 }
 
 const SectionWrapper = styled.section`
+  overflow: hidden;
+
   .section-container{
     width:1200px;
     margin: 0 auto;
@@ -162,7 +164,7 @@ const SectionWrapper = styled.section`
     width: 100% !important;
 
     .texte{
-      font-size: 1.2rem !important;
+      font-size: 1.1rem !important;
     }
     
   }
@@ -171,12 +173,14 @@ const SectionWrapper = styled.section`
 
     .texte-container{
       .texte{
-        font-size: 1.2rem !important;
+        font-size: 1.1rem !important;
       }
     }
   }
   .texte.fin{
     width: 100% !important;
+    font-size: 1.5rem !important;
+    letter-spacing: 1.5px !important;
   }
 
 }

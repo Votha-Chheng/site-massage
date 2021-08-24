@@ -224,6 +224,8 @@ const BandeauDiv = styled.div`
   }
 
   
+
+  
   
 `
 export default HomeBandeauThird;

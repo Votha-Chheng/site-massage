@@ -22,7 +22,7 @@ const MassageBandeauFifth = () => {
   return (
     <SectionWrapper> 
       <InView onChange={(inView, entry)=>inView && setSectionInView(true)} className="section-container">
-        <motion.div className="part-left-container" initial={{opacity:0, x:"-100%"}} animate={sectionInView? {opacity:1, x:0}:""} transition={{opacity:{duration : 0.5, delay:1}, x:{duration:1.25, delay:0.8, ease:"easeOut"}}} >
+        <motion.div className="part-left-container" initial={{opacity:0, x:"-100%"}} animate={sectionInView? {opacity:1, x:0}:""} transition={{opacity:{duration : 0.5, delay:0.2}, x:{duration:1, delay:0.2, ease:"easeOut"}}} >
           <div className="foot-img-container">
             <img src="/images/woman-getting-foot-massage.jpg" height="400"/>
             <small>Crédit photo : &copy; chevanon</small>
@@ -32,7 +32,7 @@ const MassageBandeauFifth = () => {
         <motion.div 
           initial={{opacity:0, x:"100%"}} 
           animate={sectionInView? {opacity:1, x:0}:""} 
-          transition={{opacity:{duration : 0.5, delay:1.6}, x:{duration:1.9, delay:0.8, ease:"easeOut"}}}>
+          transition={{opacity:{duration : 0.2, delay:1.6}, x:{duration:1.2, delay:0.3, ease:"easeOut"}}}>
           <div className="texte">
             Les pieds sont une partie du corps souvent oubliés pour les soins et le bien-être, alors qu'ils sont souvent très sollicités tout au long de la journée lorsque vous marchez ou que vous restez en position debout prolongée à cause du port des chaussures et du poids qu'ils supportent au quotidien.
           </div>
@@ -159,7 +159,8 @@ height: 100%;
     display: none !important;
   }
   .texte{
-    font-size: 1.2rem !important;
+    font-size: 1.1rem !important;
+    padding: 0 5px;
   }
 
 }

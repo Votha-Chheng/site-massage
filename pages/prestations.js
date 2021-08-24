@@ -121,7 +121,7 @@ const prestations = () => {
 
   const tableauYoga = [
     {
-      service : "Séance d'initiation au Hata yoga",
+      service : "Initiation au Hata yoga",
       temps : "1h",
       description : "Cours en individuel ou en groupe. Les séance se déroulent à domicile ou en extérieur. "
     },
@@ -150,7 +150,7 @@ const prestations = () => {
       opacity : 1,
       x:0,
       transition: {
-        duration:2,
+        duration:1,
         delay:0.1,
         ease: "easeOut"
       }
@@ -277,9 +277,9 @@ const prestations = () => {
           <InView onChange={(inView, entry)=> inView && setFirstInView(true)} >
             <motion.div variants={slideFromRight} initial='initial' animate={firstInView? "animate":""} className="service" ref={classiques}>
               <PrestationLayout
-                imgUrl="/images/176246623_287598346073187_2645306858024130844_n.jpg" 
+                imgUrl="" 
                 bgPosition="10%" 
-                titre="Les incontournables" 
+                titre="" 
                 tableau ={tableauClassiques}
               />
             </motion.div>
