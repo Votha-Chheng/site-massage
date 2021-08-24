@@ -32,7 +32,7 @@ const MassageBandeauFifth = () => {
         <motion.div 
           initial={{opacity:0, x:"100%"}} 
           animate={sectionInView? {opacity:1, x:0}:""} 
-          transition={{opacity:{duration : 0.2, delay:1.6}, x:{duration:1.2, delay:0.3, ease:"easeOut"}}}>
+          transition={{opacity:{duration : 0.2, delay:0.2}, x:{duration:1.2, delay:0.3, ease:"easeOut"}}}>
           <div className="texte">
             Les pieds sont une partie du corps souvent oubliés pour les soins et le bien-être, alors qu'ils sont souvent très sollicités tout au long de la journée lorsque vous marchez ou que vous restez en position debout prolongée à cause du port des chaussures et du poids qu'ils supportent au quotidien.
           </div>
