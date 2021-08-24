@@ -40,7 +40,7 @@ const HomeBandeauSecond = () => {
     },
     animate : {
       transition: {
-        delayChildren : 1.2,
+        delayChildren : 0.2,
         staggerChildren : 0.06,
       }
     }
@@ -51,7 +51,7 @@ const HomeBandeauSecond = () => {
     },
     animate : {
       transition: {
-        delayChildren : 2.7,
+        delayChildren : 1.7,
         staggerChildren : 0.06,
       }
     }
@@ -62,7 +62,7 @@ const HomeBandeauSecond = () => {
     },
     animate : {
       transition: {
-        delayChildren : 3.8,
+        delayChildren : 2.8,
         staggerChildren : 0.06,
       }
     }
@@ -73,7 +73,7 @@ const HomeBandeauSecond = () => {
     },
     animate : {
       transition: {
-        delayChildren : 5,
+        delayChildren : 4,
         staggerChildren : 0.06,
       }
     }
@@ -84,7 +84,7 @@ const HomeBandeauSecond = () => {
     },
     animate : {
       transition: {
-        delayChildren : 6.2,
+        delayChildren : 5.2,
         staggerChildren : 0.1,
       }
     }
