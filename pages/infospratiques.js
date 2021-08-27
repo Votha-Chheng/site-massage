@@ -61,9 +61,7 @@ const infospratiques = () => {
                       <a href="https://www.facebook.com/bauxt.dessens.73"><img src="/images/fblogo.svg" width="50"/></a>
                       <a href="https://www.instagram.com/bauxtdessens/"><img src="/images/logo-instagram.svg" width="57"/></a>
                     </div>
-                  </div>
-                  
-                  
+                  </div>  
                 </div>
 
                 <div className="prestations-container">

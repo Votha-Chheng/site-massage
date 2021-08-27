@@ -130,7 +130,6 @@ const PageWrapper = styled.div`
   .container-page{
     padding: 25px;
     
-
     .grid-container{
       display: flex;
       flex-wrap: wrap;

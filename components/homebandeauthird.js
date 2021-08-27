@@ -26,7 +26,7 @@ const HomeBandeauThird = () => {
     animate: {
       transition: {
         delayChildren : 1,
-        staggerChildren : 0.4
+        staggerChildren : 0.2
       }
     }
   }
@@ -53,7 +53,7 @@ const HomeBandeauThird = () => {
       transition:{
         duration : 1.5, 
         ease: "easeOut",
-        delay : 2.5
+        delay : 1.75
       }
     }
   }
@@ -63,8 +63,7 @@ const HomeBandeauThird = () => {
     <BandeauDiv ref={bandeauThird}>
       <InView className='container-page' onChange={(inView, entry)=>setTitleInview(inView)}>
         <motion.h2 variants={titleAnimation} initial="initial" animate={controls} className='title-h2'>Mon approche du bien-être</motion.h2>
-        
-        
+              
         <motion.div className="bande-photos" variants={pageAppear} initial="initial" animate={controls}>
           <motion.div className='container-photo' variants={imgAppear} >
             <img src='/images/close-up-relaxed-girl-getting-massage.jpg' alt="femme à l'aise" width="500"/>

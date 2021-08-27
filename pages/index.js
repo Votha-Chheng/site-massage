@@ -36,8 +36,8 @@ export default function Home() {
               <MassageBandeauFirst/>
               <HomeBandeauFourth/>
               <HomeBandeauFifth/> 
+              <Footer/>  
             </div>
-            <Footer/>  
           </MomentumScrollProvider>
         </div>
         <div className="small-screen">
@@ -48,8 +48,8 @@ export default function Home() {
             <MassageBandeauFirst/>
             <HomeBandeauFourth/>
             <HomeBandeauFifth/> 
+            <Footer/> 
           </div>
-          <Footer/>  
         </div>
       </Wrapper>     
     </div>     

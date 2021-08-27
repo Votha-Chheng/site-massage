@@ -60,7 +60,7 @@ const HomeBandeauFifth = () => {
     animate:{
       transition: {
         delayChildren : 0.7,
-        staggerChildren : 0.8
+        staggerChildren : 0.4
       }
     }
   }
@@ -76,7 +76,7 @@ const HomeBandeauFifth = () => {
       transition: {
         duration: 1,
         y : {
-          duration: 1.5,
+          duration: 1,
         }
       }
     }   

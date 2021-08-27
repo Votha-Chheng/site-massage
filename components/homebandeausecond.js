@@ -101,11 +101,11 @@ const HomeBandeauSecond = () => {
       transition : {
         duration :1,
         rotateY : {
-          delay :8.5,
+          delay :6.5,
           duration : 0.8
         },
         display: {
-          delay:10
+          delay:9
         }
       }
     }
@@ -127,11 +127,11 @@ const HomeBandeauSecond = () => {
         duration :0.5,
         ease : "easeOut",
         rotateY : {
-          delay : 8.5,
+          delay : 6.5,
           duration : 0.8
         },
         display: {
-          delay:10
+          delay:9
         }
       }
     }
@@ -198,7 +198,11 @@ const HomeBandeauSecond = () => {
           </motion.div>
         </div>
         <div className='container-page'>
-          <motion.h2 className="home-titles" initial={{opacity:0, x:"-100%"}} animate={bandeauInView? {opacity:1, x:0}:""} transition={{opacity:{delay:13, duration:1}, x:{delay:12, duration:2.5, ease:"easeOut"}}}>
+          <motion.h2 
+            className="home-titles" 
+            initial={{opacity:0, x:"-100%"}} 
+            animate={bandeauInView? {opacity:1, x:0}:""} 
+            transition={{opacity:{delay:10, duration:1}, x:{delay:9.5, duration:2.5, ease:"easeOut"}}}>
             Baux't des sens, c'est avant tout Julie...
           </motion.h2>
           <div className="biographie-container" initial={{border:"none"}} animate={bandeauInView? {}:""} transition={{delay:10, duration:2}}> 
@@ -207,19 +211,24 @@ const HomeBandeauSecond = () => {
                 className="photo-id"
                 initial={{height:600, borderRadius:"0", x:"calc(50vw - 150px)", border:"0", position:"absolute"}} 
                 animate={bandeauInView? {height:300, x:0, borderRadius:"50%", border:"4px solid whitesmoke", position:"static"} : ""} 
-                transition={{height: {delay:11.2, duration:1}, x:{delay:10, duration:1, ease:"easeOut"}, borderRadius:{delay:12.7, duration:0.5}, border:{delay:12.8}, position:{delay:12, duration : 0.2}}}>
+                transition={{
+                  height: {delay:7.7, duration:1}, 
+                  x:{delay:9, duration:1.5, ease:"easeOut"}, 
+                  borderRadius:{delay:10.7, duration:0.5}, 
+                  border:{delay:11}, 
+                  position:{delay:9, duration : 0.2}}}>
                 <motion.div
                   className='folder'
                   initial={{height : 610, width : 310, x:0}} 
                   animate={bandeauInView ? {x:"100%", display:"none"} :""} 
-                  transition={{x : {delay: 8.6, duration:0.75, ease:"easeOut"}, display:{delay:10}}}/>
+                  transition={{x : {delay: 6.6, duration:0.75, ease:"easeOut"}, display:{delay:10}}}/>
                 <motion.img 
                   src="/images/portrait.jpg" 
                   height="600" 
                   width="auto" 
                   initial={{opacity:0, x:0}} 
                   animate={bandeauInView ? {opacity:0.75, x:"-10%"} : ""} 
-                  transition={{opacity : {delay:8, duration:0.5}}} />            
+                  transition={{opacity : {delay:6.8, duration:0.1}}} />            
               </motion.div>
             
               <div className="container-textes" ref={containerTextesRef}>
@@ -227,7 +236,7 @@ const HomeBandeauSecond = () => {
                   className="textes" 
                   initial={{opacity:0, y :"100%"}} 
                   animate={bandeauInView ? {opacity : 1, y:0} : ""} 
-                  transition={{opacity : {delay : 13.8, duration: 0.8}, y:{delay:13.7, duration: 1.5, ease:"easeOut"}}}>
+                  transition={{opacity : {delay : 11.8, duration: 0.8}, y:{delay:11.7, duration: 1.5, ease:"easeOut"}}}>
                   <i className="fas fa-quote-left" style={{transform:"scale(1.5) translateY(-10px)", textIndent:"-10px"}}/>
                   &nbsp;Bienvenue, je m'ap&shy;pel&shy;le Julie ! Je suis pas&shy;sionnée par le monde du bien-être depuis plu&shy;sieurs an&shy;nées et suis titu&shy;laire d'un diplô&shy;me d'es&shy;thé&shy;ti&shy;que en plus d'une forma&shy;tion en soins du corps, for&shy;ma&shy;tion suivie sur Avi&shy;gnon pendant plusieurs mois. 
                 </motion.div>
@@ -235,7 +244,7 @@ const HomeBandeauSecond = () => {
                   className="textes" 
                   initial={{opacity:0, y :"100%"}} 
                   animate={bandeauInView ? {opacity : 1, y:0} : ""} 
-                  transition={{opacity : {delay : 14.4, duration: 0.8}, y:{delay:13.7, duration: 1.5, ease:"easeOut"}}}>
+                  transition={{opacity : {delay : 12, duration: 0.8}, y:{delay:12.2, duration: 1.5, ease:"easeOut"}}}>
                   Durant mes prestations, je n'apporte pas seule&shy;ment un soin avec des manœu&shy;vres, des techniques, du modelage et un moment de détente, non : j'aspire à beau&shy;coup mieux que cela. En effet, pour moi le bien-être se pré&shy;pare et s'invite. Tout est mis en œuvre, et tout est propice à ce que vous puis&shy;siez le recevoir dans les meilleures conditions.
                   <i className="fas fa-quote-right" style={{transform:"scale(1.5) translateY(5px)", textIndent:"10px"}}/>
                 </motion.div>
@@ -245,14 +254,14 @@ const HomeBandeauSecond = () => {
                 style={{left:`${textesBioRight}px`, height:`${textesBioHeight-30}px`, width:`${imgSideWidth-70}px`}}
                 initial={{opacity : 0, x:"100%"}}
                 animate={bandeauInView? {opacity : 1, x : 0} : ""}
-                transition = {{opacity : {duration : 0.7, delay: 14.2}, x : {duration : 1.5, delay:13.9, ease:"easeOut"}}}>
+                transition = {{opacity : {duration : 0.7, delay: 12.5}, x : {duration : 1.5, delay:12.7, ease:"easeOut"}}}>
                 <img src={`${imgSideWidth<380 ? "/images/pexels-anete-lusina-5240637.jpg":"/images/bougie-serviette.jpg"}`} alt="accesoires de massage" height={textesBioHeight-30} width={imgSideWidth-70}/>
               </motion.div>
             </motion.div>
           </div>
         </div>    
       </InView>
-      <HomeCurveSeparation texte="prendre contact" inView={bandeauInView} delay={15} buttonDelay={15.9} lien='/infospratiques' margin="50px auto 100px" />
+      <HomeCurveSeparation texte="prendre contact" inView={bandeauInView} delay={13.5} buttonDelay={14} lien='/infospratiques' margin="50px auto 100px" />
     </BandeauDiv>
   );
 }
