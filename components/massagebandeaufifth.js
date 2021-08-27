@@ -30,6 +30,7 @@ const MassageBandeauFifth = () => {
         </motion.div>
         
         <motion.div 
+          className="texte-box"
           initial={{opacity:0, x:"100%"}} 
           animate={sectionInView? {opacity:1, x:0}:""} 
           transition={{opacity:{duration : 0.2, delay:0.2}, x:{duration:1.2, delay:0.3, ease:"easeOut"}}}>
@@ -68,6 +69,11 @@ height: 100%;
   display: flex;
   width: 90%;
   justify-content: center;
+  margin: 0 auto;
+  
+  .texte-box{
+    padding: 0 15px;
+  }
 }
   .foot-img-container{
     position: relative;
@@ -127,7 +133,11 @@ height: 100%;
   @media (max-width: 1150px){
     .section-container{
       flex-direction: column !important;
-      align-items: center;
+      align-items: center !important;
+    }
+    .box-pied{
+      padding: 0px !important;
+      margin: 15px auto !important;
     }
   }
   @media (max-width: 780px){

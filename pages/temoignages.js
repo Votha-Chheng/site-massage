@@ -57,7 +57,7 @@ const temoignages = () => {
                   {
                     tableauAvis.map((avis, idx)=>
                       <motion.div variants={childAvis} className="avis" key={idx}>
-                        <img src={`/images/${avis}.jpg`} width="300" />
+                        <img src={`/images/${avis}.jpg`} width="300" loading="lazy" />
                       </motion.div>
                     )
                   }
@@ -149,7 +149,7 @@ const PageWrapper = styled.div`
       background-color:whitesmoke;
       margin: 15px;
       transition: background-color 0.1s ease-out;
-      
+
       &:hover{
         background-color: transparent;
       }

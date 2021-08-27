@@ -200,7 +200,7 @@ const DivWrapper = styled.div`
 
   #super-container{
     width: 1000px;
-    height: 1200px;
+    height: 1250px;
     background-image: url("/images/bg-flowers.jpg");
     background-size: cover;
     padding : 50px 0px 100px;
@@ -211,14 +211,14 @@ const DivWrapper = styled.div`
     background-color: black;
     background-size: cover;
     width: 900px;
-    height: 1100px;
+    height: 1150px;
     clip-path: polygon(50% 0, 100% 10%, 100% 90%, 50% 100%, 0 89%, 0 10%);
     position: relative;
     margin: 0 auto;
 
     .hexagone-2{
       width: 890px;
-      height: 1090px;
+      height: 1140px;
       background: white;
       position: absolute;
       top: 5px;

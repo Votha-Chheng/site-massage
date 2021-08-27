@@ -179,10 +179,10 @@ const prestations = () => {
             <InView onChange={(inView, entry)=> inView && setFirstInView(true)} >
               <motion.div variants={slideFromRight} initial='initial' animate={firstInView? "animate":""} className="service" ref={classiques}>
                 <PrestationLayout
-                  // imgUrl="/images/176246623_287598346073187_2645306858024130844_n.jpg" 
+                  //imgUrl="/images/176246623_287598346073187_2645306858024130844_n.jpg" 
                   
                   bgPosition="10%" 
-                  titre="" 
+                  //titre="gfhbfb" 
                   tableau ={tableauClassiques}
                 />
               </motion.div>
