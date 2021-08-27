@@ -231,6 +231,9 @@ const SectionWrapper = styled.section`
       display: none;
       width: 0px;
     }
+    img.img-car{
+      max-width: 100px !important;
+    }
     .partie-textes{
       width: 100% !important;
     }

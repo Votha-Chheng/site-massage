@@ -200,6 +200,7 @@ const HomeBandeauFirst = () => {
             initial={{scale:1, x:0}} 
             animate={{scale:["1.5", "1"], x:"100%"}} 
             transition={{x : {delay:1, duration:1}, scale : {delay : 1.2, duration:0.9}}}/>
+
             <motion.picture 
             initial={{scale : 1, filter : "blur(0px) brightness(125%)"}}
             animate={{scale : ["1.5", "1"], filter:"blur(5px) brightness(125%)"}}
@@ -404,11 +405,11 @@ const BandeauDiv = styled.div`
       height: 120px;
 
       .switch-lieux{
-      height : 100px;
+      height : 75px;
       width: 100%;
 
         .queue-1{
-          height: 100%;
+          height: 50px;
           width: 100%;
           text-align: center;
           position: relative;
@@ -632,14 +633,22 @@ const BandeauDiv = styled.div`
   
     .slogans{
       width :100% !important;
-      height : 75px !important;
+      height : 100px !important;
 
       div{
-        font-size: 1.5rem !important;
+        font-size: 2rem !important;
       }
     }
   }
   @media (max-width:540px){
+    .explore-icon{
+      overflow : hidden;
+      position : absolute;
+      z-index : 3;
+      bottom : 50px;
+      left : 50%;
+      transform: translate(-50%, 0);
+    }
     .bg-image-container{
       img{
         margin-left: -75%;
@@ -666,7 +675,12 @@ const BandeauDiv = styled.div`
     .conteneur-phrases{
       bottom: 120px !important;
       .slogans {
-        height : 110px !important;
+        height : 75px !important;
+        width: 413px !important;
+
+        div{
+          font-size: 1.5rem !important;
+        }
       }
     }
   }
@@ -676,6 +690,13 @@ const BandeauDiv = styled.div`
         margin-left: -100%;
       }
     }
+    .slogans {
+        height : 100px !important;
+
+        div{
+          font-size: 1rem !important;
+        }
+      }
   }
   
 `

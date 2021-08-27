@@ -36,7 +36,7 @@ const yoga = () => {
     },
     ulAppear : {
       transition:  {
-        delayChildren : 3.2,
+        delayChildren : 1.5,
         staggerChildren : 0.2
       }
     }
@@ -96,27 +96,27 @@ const yoga = () => {
               
             </InView> 
             <HomeCurveSeparation texte="le Hata yoga dans mes prestations" margin="0px 0px" lien="/prestations/#yoga"/>
-            <InView onChange={(inView, entry)=>setPartTwoInView(inView)} className="page-container second">
+            <InView onChange={(inView, entry)=> inView && setPartTwoInView(true)} className="page-container second">
               <main>
                 <motion.div 
                   className="img-yoga-container second"
                   initial={{opacity:0, x:"-150%"}} 
                   animate={partTwoInView? {opacity:1, x:0} : ""} 
-                  transition={{opacity:{delay:0.5, duration:1.5}, x:{delay:0.75, duration:1.5, ease:"easeOut"} }} >
+                  transition={{opacity:{delay:0.1, duration:1.5}, x:{delay:0.2, duration:1.5, ease:"easeOut"} }} >
                   <img src="/images/yoga-2.jpeg" width="350" />
                 </motion.div>
                 <motion.div
                   className="texte"
-                  initial={{opacity:0, x:"150%"}} 
+                  initial={{opacity:0, x:"125%"}} 
                   animate={partTwoInView? {opacity:1, x:0} : ""} 
-                  transition={{opacity:{delay:2, duration:0.8}, x:{delay:1, duration:2.5, ease:"easeOut"} }} >
+                  transition={{opacity:{delay:0.2, duration:0.8}, x:{delay:0.2, duration:2, ease:"easeOut"} }} >
                   Ces cours s'adres&shy;sent à tous les débu&shy;tants ou curieux qui sou&shy;haitent dé&shy;couvrir un nou&shy;veau moyen de bien-être et de rela&shy;xation.
                   Il se pra&shy;tique en groupe ou in&shy;divi&shy;duel&shy;lement. Il est pos&shy;sible de com&shy;biner un cours de yoga et un mas&shy;sage de votre choix (tarifs sur de&shy;mande).
                 </motion.div>
                 <motion.div className="texte" 
                   initial={{opacity:0}} 
                   animate={partTwoInView? {opacity:1} : ""} 
-                  transition={{opacity:{delay:2.9, duration:0.8}}}>
+                  transition={{opacity:{delay:1.5, duration:0.8}}}>
                   Grâce au Hatha yoga :
                   <motion.ul variants={parentList} initial="initial" animate={controls} >
                     <motion.li variants={childList}>
@@ -143,6 +143,10 @@ const yoga = () => {
             <Footer/>       
           </MomentumScrollProvider>
         </div>
+
+
+
+
         <div className="small-screen">
           <InView className="page-container" onChange={(inView, entry)=>setSectionInView(inView)} >
             <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate={controls} >Baux't des sens, c'est aussi de l'initiation au yoga...</motion.h2>
@@ -171,27 +175,27 @@ const yoga = () => {
           </InView> 
           
           <HomeCurveSeparation texte="le Hata yoga dans mes prestations" margin="0px 0px" lien="/prestations/#yoga"/>
-          <InView onChange={(inView, entry)=>setPartTwoInView(inView)} className="page-container second">
+          <InView onChange={(inView, entry)=> inView && setPartTwoInView(true)} className="page-container second">
             <main>
               <motion.div 
                 className="img-yoga-container second"
                 initial={{opacity:0, x:"-150%"}} 
                 animate={partTwoInView? {opacity:1, x:0} : ""} 
-                transition={{opacity:{delay:0.5, duration:1.5}, x:{delay:0.75, duration:1.5, ease:"easeOut"} }} >
+                transition={{opacity:{delay:0.25, duration:1.5}, x:{delay:0.5, duration:1.5, ease:"easeOut"} }} >
                 <img src="/images/yoga-2.jpeg" width="350" />
               </motion.div>
               <motion.div
                 className="texte"
                 initial={{opacity:0, x:"150%"}} 
                 animate={partTwoInView? {opacity:1, x:0} : ""} 
-                transition={{opacity:{delay:2, duration:0.8}, x:{delay:1, duration:2.5, ease:"easeOut"} }} >
+                transition={{opacity:{delay:0.25, duration:0.8}, x:{delay:0.25, duration:2, ease:"easeOut"} }} >
                 Ces cours s'adres&shy;sent à tous les débu&shy;tants ou curieux qui sou&shy;haitent dé&shy;couvrir un nou&shy;veau moyen de bien-être et de rela&shy;xation.
                 Il se pra&shy;tique en groupe ou in&shy;divi&shy;duel&shy;lement. Il est pos&shy;sible de com&shy;biner un cours de yoga et un mas&shy;sage de votre choix (tarifs sur de&shy;mande).
               </motion.div>
               <motion.div className="texte" 
                 initial={{opacity:0}} 
                 animate={partTwoInView? {opacity:1} : ""} 
-                transition={{opacity:{delay:2.9, duration:0.8}}}>
+                transition={{opacity:{delay:1, duration:0.8}}}>
                 Grâce au Hatha yoga :
                 <motion.ul variants={parentList} initial="initial" animate={controls} >
                   <motion.li variants={childList}>

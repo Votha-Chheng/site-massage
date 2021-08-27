@@ -104,7 +104,7 @@ const infospratiques = () => {
         </div>
 
         <div className='small-screen'>
-          <div className="page-container"  ref={pageRef}>
+          <div className="page-container" ref={pageRef}>
             <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >Infos pratiques</motion.h2>
 
             <motion.div id="super-container" variants={opacityBandeau} initial="initial" animate="animate" >

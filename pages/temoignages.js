@@ -25,13 +25,13 @@ const temoignages = () => {
   const childAvis = {
     initial : {
       opacity: 0,
-      y: 500
+      y: 300
     },
     animate: {
       opacity: 1,
       y:0,
       transition: {
-        duration: 1,
+        duration: 1.5,
         ease: "easeOut"
       }
     }
@@ -49,7 +49,7 @@ const temoignages = () => {
 
         <div className="big-screen">
           <MomentumScrollProvider easing={0.075}>
-            <div className="container-page" >  
+            {/* <div className="container-page" >   */}
                 <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >
                   Baux't des sens, c'est encore les autres qui en parlent le mieux...
                 </motion.h2>
@@ -63,13 +63,13 @@ const temoignages = () => {
                   }
                 </motion.div>
               <h2 className='home-titles' style={{textAlign:"right", fontSize:'1.75rem'}} >Merci infiniment à eux et à tous les autres pour leur confiance !</h2>     
-            </div>
+            {/* </div> */}
             <Footer/>
           </MomentumScrollProvider>
         </div>
 
         <div className="small-screen">
-          <div className="container-page" >  
+          {/* <div className="container-page" >   */}
             <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >
               Baux't des sens, c'est encore les autres qui en parlent le mieux...
             </motion.h2>
@@ -83,7 +83,7 @@ const temoignages = () => {
               }
             </motion.div>
             <h2 className='home-titles' style={{textAlign:"right", fontSize:'1.75rem'}} >Merci infiniment à eux et à tous les autres pour leur confiance !</h2>     
-          </div>
+          {/* </div> */}
           <Footer/>
         </div>
       </PageWrapper> 
@@ -96,9 +96,13 @@ const PageWrapper = styled.div`
   overflow : hidden;
   position: relative;
   background-color: #798a94;
+  width: 100%;
 
   .small-screen {
     display: none;
+  }
+  .big-screen{
+    display: block;
   }
 
   @media (max-width : 1024px){
@@ -127,25 +131,35 @@ const PageWrapper = styled.div`
     margin: 75px 0px 100px;
     letter-spacing: 1px;
   }
+
   .container-page{
     padding: 25px;
     
-    .grid-container{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
-      margin: 0px;
-      min-height : 250px;
+  }
+  .grid-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0px;
+    min-height : 250px;
 
-      .avis{
-        padding: 10px;
-        background-color:whitesmoke;
-        margin: 15px;
-        
-        &:hover{
-          transform: scale(1.4);
-        }
+    .avis{
+      padding: 10px;
+      background-color:whitesmoke;
+      margin: 15px;
+      transition: background-color 0.1s ease-out;
+      
+      &:hover{
+        background-color: transparent;
+      }
+
+      img{
+        transition: transform 0.3s ease-out;
+      }
+      
+      img:hover{
+        transform: scale(1.2);
       }
     }
   }
