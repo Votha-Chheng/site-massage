@@ -364,6 +364,20 @@ const DivWrapper = styled.div`
     }
   }
 
+  @media (max-width : 1440px){
+    .page-container{
+      margin:0px 0px 31vh;
+      padding: 0;
+    } 
+  }
+  @media (max-width : 1368px){
+    .page-container{
+      margin:0px 0px 72vh;
+      padding: 0;
+    } 
+  }
+
+
   @media (max-width: 1225px){
     .img-yoga-container.second{ 
       float: none !important;
