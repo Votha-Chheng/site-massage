@@ -59,7 +59,7 @@ const temoignages = () => {
                 {
                   tableauAvis.map((avis, idx)=>
                     <motion.div variants={childAvis} className="avis" key={idx}>
-                      <img src={`/images/${avis}.jpg`} width="300" loading="lazy" />
+                      <img src={`/images/${avis}.jpg`} width="300"/>
                     </motion.div>
                   )
                 }
@@ -67,7 +67,10 @@ const temoignages = () => {
               <h2 className='home-titles' style={{textAlign:"right", fontSize:'1.75rem'}} >
                 Merci infiniment à eux et à tous les autres pour leur confiance !
               </h2>
-              <Footer/>    
+              <div>
+                <Footer/>  
+              </div>
+                
             </div>
           </MomentumScrollProvider>
         </div>
@@ -99,17 +102,16 @@ const temoignages = () => {
 }
 
 const PageWrapper = styled.div`
-  min-height: 100%;
+  min-height: 3150px;
   overflow : hidden;
   position: relative;
   background-color: #798a94;
   width: 100%;
 
-  .container-page{
-    margin:0px 0px 30vh;
-    padding: 0;
+  @media (max-width : 1680px){
+    min-height: 3047px;
   }
-    
+
 
   .small-screen {
     display: none;
@@ -118,18 +120,6 @@ const PageWrapper = styled.div`
     display: block;
   }
 
-  @media (max-width : 1440px){
-    .container-page{
-      margin:0px 0px 31vh;
-      padding: 0;
-    } 
-  }
-  @media (max-width : 1368px){
-    .container-page{
-      margin:0px 0px 72vh;
-      padding: 0;
-    } 
-  }
   @media (max-width : 1024px){
     .small-screen{
       display: block;

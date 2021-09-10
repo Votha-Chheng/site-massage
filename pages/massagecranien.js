@@ -21,9 +21,12 @@ const massagecranien = () => {
         </motion.div>
         <div className="big-screen">
           <MomentumScrollProvider easing={0.075}>
-            <MassageBandeauSecond/>
-            <HomeCurveSeparation texte="voir tous mes massages" delay="0.2" buttonDelay="1" lien="/prestations" margin="0 auto 100px" />
-            <Footer/>
+            <div>
+              <MassageBandeauSecond/>
+              <HomeCurveSeparation texte="voir tous mes massages" delay="0.2" buttonDelay="1" lien="/prestations" margin="0 auto 100px" />
+              <Footer/>
+            </div>
+
           </MomentumScrollProvider>
         </div>
         <div className="small-screen">
