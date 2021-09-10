@@ -105,10 +105,10 @@ const PageWrapper = styled.div`
   background-color: #798a94;
   width: 100%;
 
-  /* .container-page{
+  .container-page{
     margin:0px 0px 30vh;
     padding: 0;
-  } */
+  }
     
 
   .small-screen {
@@ -118,7 +118,7 @@ const PageWrapper = styled.div`
     display: block;
   }
 
-  /* @media (max-width : 1440px){
+  @media (max-width : 1440px){
     .container-page{
       margin:0px 0px 31vh;
       padding: 0;
@@ -129,19 +129,14 @@ const PageWrapper = styled.div`
       margin:0px 0px 72vh;
       padding: 0;
     } 
-  } */
+  }
   @media (max-width : 1024px){
     .small-screen{
       display: block;
     }
     .big-screen{
       display: none;
-    }
-    .container-page{
-    margin:0px;
-    padding: 0;
-  }
-    
+    }    
   }
 
   .menu-container{
