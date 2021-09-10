@@ -60,7 +60,23 @@ const Wrapper = styled.div`
   overflow : hidden;
   position: relative;
   background-color: #798a94;
-  min-height: 100%;
+  min-height: 7186px;
+
+  @media (max-width : 1600px){
+    min-height: 7265px;
+  }
+  @media (max-width : 1440px){
+    min-height: 7290px;
+  }
+  @media (max-width : 1360px){
+    min-height: 7324px;
+  }
+  @media (max-width : 1280px){
+    min-height: 7490px;
+  }
+  @media (max-width : 1152px){
+    min-height: 7607px;
+  }
 
   .small-screen {
     display: none;

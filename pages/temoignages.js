@@ -112,6 +112,16 @@ const PageWrapper = styled.div`
     min-height: 3047px;
   }
 
+  @media (max-width : 1440px){
+    min-height: 3451px;
+  }
+  @media (max-width : 1360px){
+    min-height: 3710px;
+  }
+  @media (max-width : 1152px){
+    min-height: 4000px;
+  }
+
 
   .small-screen {
     display: none;
