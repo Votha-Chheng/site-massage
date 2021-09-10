@@ -228,7 +228,17 @@ const yoga = () => {
 
 const DivWrapper = styled.div`
   background-color: #798a94;
-  min-height: 2260px;
+  min-height: 2240px;
+
+  @media (max-width : 1680px){
+    min-height: 2260px;
+  }
+  @media (max-width : 1600px){
+    min-height: 2338px;
+  }
+  @media (max-width : 1300px){
+    min-height: 2923px;
+  }
 
   .small-screen {
     display: none;
