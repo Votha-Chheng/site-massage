@@ -106,7 +106,7 @@ const PageWrapper = styled.div`
   width: 100%;
 
   .container-page{
-    margin:0px 0px 35vh;
+    margin:0px 0px 30vh;
     padding: 0;
   }
     

@@ -383,6 +383,25 @@ const DivWrapper = styled.div`
     display: none;
     padding-top: 40px;
   }
+  .big-screen{
+
+    margin:0px 0px 35vh;
+    padding: 0;
+  
+  }
+
+  @media (max-width : 1440px){
+    .big-screen{
+      margin:0px 0px 31vh;
+      padding: 0;
+    } 
+  }
+  @media (max-width : 1368px){
+    .big-screen{
+      margin:0px 0px 72vh;
+      padding: 0;
+    } 
+  }
 
   @media (max-width : 1024px){
     .small-screen{
