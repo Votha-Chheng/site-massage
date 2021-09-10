@@ -171,103 +171,106 @@ const prestations = () => {
 
         <div className="big-screen">
           <MomentumScrollProvider easing={0.075}>
-            <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >Prestations proposées</motion.h2>
-            <motion.div className="warning" variants={opacityBandeau} initial="initial" animate="animate" >
-              Tous les tarifs seront communiqués sur demande. N'hésitez pas à me contacter pour savoir ce qui vous conviendrait le mieux !
-            </motion.div>
+            <div>
+              <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >Prestations proposées</motion.h2>
+              <motion.div className="warning" variants={opacityBandeau} initial="initial" animate="animate" >
+                Tous les tarifs seront communiqués sur demande. N'hésitez pas à me contacter pour savoir ce qui vous conviendrait le mieux !
+              </motion.div>
 
-            <InView onChange={(inView, entry)=> inView && setFirstInView(true)} >
-              <motion.div variants={slideFromRight} initial='initial' animate={firstInView? "animate":""} className="service" ref={classiques}>
-                <PrestationLayout
-                  //imgUrl="/images/176246623_287598346073187_2645306858024130844_n.jpg" 
-                  
-                  bgPosition="10%" 
-                  //titre="gfhbfb" 
-                  tableau ={tableauClassiques}
-                />
-              </motion.div>
-            </InView>
-              
-            <InView onChange={(inView, entry)=> inView && setSecondInView(true)} >
-              <motion.div variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="service" ref={bougie}>
-                <PrestationLayout
-                  imgUrl="/images/176187352_2922669511298633_3323829876291585340_n.jpg"
-                  bgPosition="10%" 
-                  titre="A la bougie" 
-                  tableau ={tableauBougie}
-                />              
-                <motion.h3 variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="categorie">
-                  <span>Le soin à la bougie en quelques mots</span>
-                </motion.h3>
-                <MassageBandeauFourth/>
-              </motion.div>
-            </InView>
-
-            <InView onChange={(inView, entry)=> inView && setThirdInView(true)} >
-              <motion.div variants={slideFromRight} initial='initial' animate={thirdInView? "animate":""} className="service" ref={babymassage}>
-                <PrestationLayout
-                  imgUrl="/images/175586104_139909494699792_3872593976078069092_n.jpg"
-                  bgPosition="10%" 
-                  titre="Pour bébé" 
-                  tableau ={tableauBaby}
-                />
-                <motion.h3 variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="categorie">
-                  <span>Le massage bébé en quelques mots</span>
-                </motion.h3>
-                <MassageBandeauThird/>
-              </motion.div>
-            </InView>
-
-            <InView onChange={(inView, entry)=> inView && setFourthInView(true)} >
-              <motion.div variants={slideFromRight} initial='initial' animate={fourthInView? "animate":""} className="service">
-                <PrestationLayout
-                  imgUrl="/images/175659034_364152124945419_4032164191564889065_n.jpg"
-                  bgPosition="10%" 
-                  titre="Massage personnalisé" 
-                  tableau = {tableauPerso}/>
-              </motion.div>
-            </InView>
-              
-            <InView onChange={(inView, entry)=> inView && setFifthInView(true)}>
-              <motion.div variants={slideFromRight} initial='initial' animate={fifthInView? "animate":""} className="service" ref={pieds}>
-                <PrestationLayout
-                  imgUrl="/images/woman-getting-foot-massage.jpg"
-                  bgPosition="10%" 
-                  titre="Réflexologie plantaire" 
-                  tableau = {tableauPieds}/>
+              <InView onChange={(inView, entry)=> inView && setFirstInView(true)} >
+                <motion.div variants={slideFromRight} initial='initial' animate={firstInView? "animate":""} className="service" ref={classiques}>
+                  <PrestationLayout
+                    //imgUrl="/images/176246623_287598346073187_2645306858024130844_n.jpg" 
+                    
+                    bgPosition="10%" 
+                    //titre="gfhbfb" 
+                    tableau ={tableauClassiques}
+                  />
+                </motion.div>
+              </InView>
+                
+              <InView onChange={(inView, entry)=> inView && setSecondInView(true)} >
+                <motion.div variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="service" ref={bougie}>
+                  <PrestationLayout
+                    imgUrl="/images/176187352_2922669511298633_3323829876291585340_n.jpg"
+                    bgPosition="10%" 
+                    titre="A la bougie" 
+                    tableau ={tableauBougie}
+                  />              
                   <motion.h3 variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="categorie">
-                  <span>La réflexologie en quelques mots</span>
-                </motion.h3>
-                <MassageBandeauFifth/>
-              </motion.div>
-            </InView>          
-            
-            <div className="page-container">
-              <InView onChange={(inView, entry)=> inView && setSixthInView(true)}>
-                <motion.div variants={slideFromRight} initial='initial' animate={sixthInView? "animate":""} className="service" ref={yoga}>
-                  <PrestationLayout
-                    imgUrl = "/images/yoga.jpg"
-                    bgPosition="10%"
-                    titre = "Hata yoga"
-                    tableau = {tableauYoga}/>
+                    <span>Le soin à la bougie en quelques mots</span>
+                  </motion.h3>
+                  <MassageBandeauFourth/>
                 </motion.div>
               </InView>
 
-              <InView onChange={(inView, entry)=> inView && setSeventhInView(true)}>
-                <motion.div variants={slideFromRight} initial='initial' animate={seventhInView? "animate":""} className="service" id="events">
+              <InView onChange={(inView, entry)=> inView && setThirdInView(true)} >
+                <motion.div variants={slideFromRight} initial='initial' animate={thirdInView? "animate":""} className="service" ref={babymassage}>
                   <PrestationLayout
-                    imgUrl = "/images/party.jpg"
-                    bgPosition="10%"
-                    titre = "Evènements"
-                    tableau = {tableauEvents} />
+                    imgUrl="/images/175586104_139909494699792_3872593976078069092_n.jpg"
+                    bgPosition="10%" 
+                    titre="Pour bébé" 
+                    tableau ={tableauBaby}
+                  />
+                  <motion.h3 variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="categorie">
+                    <span>Le massage bébé en quelques mots</span>
+                  </motion.h3>
+                  <MassageBandeauThird/>
                 </motion.div>
               </InView>
-            </div> 
-            <HomeCurveSeparation 
-              texte="Prendre RDV en ligne" 
-              lien="https://l.facebook.com/l.php?u=http%3A%2F%2Fwww.planity.com%2Fbauxt-des-sens-13200-arles%3Ffbclid%3DIwAR0mHzOv6Id9JEcrDOerYfTdaKOQPOPHv39WeCWhwdVyeUQ1hbV9LQywoEM&h=AT0tItrGZoTuzeOZgdTfjYJmHMkKcS17CtbD9pvoL4WFUJh166TB4jzzvgjvSI2oYhMdp-RU2pS27z6QfCRb3Gq7polaLejUxAeEmzWb4Nw3K6qSeD1qFS1kzaHXJWFSdzrRvpzVT9_eG0VCfr0" margin="0px 0px 75px" 
-              target="_blank"/>   
-            <Footer/>        
+
+              <InView onChange={(inView, entry)=> inView && setFourthInView(true)} >
+                <motion.div variants={slideFromRight} initial='initial' animate={fourthInView? "animate":""} className="service">
+                  <PrestationLayout
+                    imgUrl="/images/175659034_364152124945419_4032164191564889065_n.jpg"
+                    bgPosition="10%" 
+                    titre="Massage personnalisé" 
+                    tableau = {tableauPerso}/>
+                </motion.div>
+              </InView>
+                
+              <InView onChange={(inView, entry)=> inView && setFifthInView(true)}>
+                <motion.div variants={slideFromRight} initial='initial' animate={fifthInView? "animate":""} className="service" ref={pieds}>
+                  <PrestationLayout
+                    imgUrl="/images/woman-getting-foot-massage.jpg"
+                    bgPosition="10%" 
+                    titre="Réflexologie plantaire" 
+                    tableau = {tableauPieds}/>
+                    <motion.h3 variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="categorie">
+                    <span>La réflexologie en quelques mots</span>
+                  </motion.h3>
+                  <MassageBandeauFifth/>
+                </motion.div>
+              </InView>          
+              
+              <div className="page-container">
+                <InView onChange={(inView, entry)=> inView && setSixthInView(true)}>
+                  <motion.div variants={slideFromRight} initial='initial' animate={sixthInView? "animate":""} className="service" ref={yoga}>
+                    <PrestationLayout
+                      imgUrl = "/images/yoga.jpg"
+                      bgPosition="10%"
+                      titre = "Hata yoga"
+                      tableau = {tableauYoga}/>
+                  </motion.div>
+                </InView>
+
+                <InView onChange={(inView, entry)=> inView && setSeventhInView(true)}>
+                  <motion.div variants={slideFromRight} initial='initial' animate={seventhInView? "animate":""} className="service" id="events">
+                    <PrestationLayout
+                      imgUrl = "/images/party.jpg"
+                      bgPosition="10%"
+                      titre = "Evènements"
+                      tableau = {tableauEvents} />
+                  </motion.div>
+                </InView>
+              </div> 
+              <HomeCurveSeparation 
+                texte="Prendre RDV en ligne" 
+                lien="https://l.facebook.com/l.php?u=http%3A%2F%2Fwww.planity.com%2Fbauxt-des-sens-13200-arles%3Ffbclid%3DIwAR0mHzOv6Id9JEcrDOerYfTdaKOQPOPHv39WeCWhwdVyeUQ1hbV9LQywoEM&h=AT0tItrGZoTuzeOZgdTfjYJmHMkKcS17CtbD9pvoL4WFUJh166TB4jzzvgjvSI2oYhMdp-RU2pS27z6QfCRb3Gq7polaLejUxAeEmzWb4Nw3K6qSeD1qFS1kzaHXJWFSdzrRvpzVT9_eG0VCfr0" margin="0px 0px 75px" 
+                target="_blank"/>   
+              <Footer/>   
+            </div>
+     
           </MomentumScrollProvider>
         </div>
 
