@@ -380,31 +380,26 @@ const prestations = () => {
 
 const DivWrapper = styled.div`
   background-color: #798a94;
-  min-height: 100%;
+  min-height: 9023px;
+
+  @media (max-width : 1680px){
+    min-height: 9001px;
+  }
+  @media (max-width : 1600px){
+    min-height: 9023px;
+  }
+  @media (max-width : 1440px){
+    min-height: 9283px;
+  }
+  @media (max-width : 1360px){
+    min-height: 9309px;
+  }
 
   .small-screen {
     display: none;
     padding-top: 40px;
   }
-  /* .big-screen{
 
-    margin:0px 0px 35vh;
-    padding: 0;
-  
-  } */
-
-  /* @media (max-width : 1440px){
-    .big-screen{
-      margin:0px 0px 31vh;
-      padding: 0;
-    } 
-  }
-  @media (max-width : 1368px){
-    .big-screen{
-      margin:0px 0px 72vh;
-      padding: 0;
-    } 
-  } */
 
   @media (max-width : 1024px){
     .small-screen{
