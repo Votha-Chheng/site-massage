@@ -228,7 +228,7 @@ const yoga = () => {
 
 const DivWrapper = styled.div`
   background-color: #798a94;
-  min-height: 100%;
+  min-height: 2260px;
 
   .small-screen {
     display: none;
