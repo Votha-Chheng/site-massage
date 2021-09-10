@@ -19,7 +19,7 @@ const MenuHead = ({color}) => {
         <li><a href='/massagecranien'>Massage crânien</a></li>
         <li><a href='/yoga'>Yoga</a></li>
         <li className="massages-menu">
-          <a href='/temoignages'>Témoignages</a>
+          <a href='/temoignages'>Ils me font confiance</a>
         </li>
         <li><a href='/infospratiques'>Infos</a></li>
       </nav>
@@ -45,7 +45,7 @@ const MenuHead = ({color}) => {
           <li><a href='/prestations'>Prestations</a></li>
           <li><a href='/massagecranien'>Massage crânien</a></li>
           <li><a href='/yoga'>Yoga</a></li>
-          <li className="massages-menu"><a href='/temoignages'>Ils en parlent</a></li>
+          <li className="massages-menu"><a href='/temoignages'>Ils me font confiance</a></li>
           <li><a href='/infospratiques'>Infos</a></li>
         </ul> 
     </Wrapper>
@@ -95,7 +95,7 @@ const Wrapper = styled.nav`
     justify-content: center;
     list-style-type: none;
     padding-left: 0;
-    width: 680px;
+    width: 750px;
     margin: 0;
   }
 

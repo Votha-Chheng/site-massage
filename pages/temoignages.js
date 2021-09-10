@@ -3,6 +3,7 @@ import Head from "next/head";
 import styled from "styled-components";
 import Footer from "../components/footer";
 import MenuHead from "../components/menuhead";
+import Partenaires from "../components/partenaires";
 import MomentumScrollProvider from "../context/MomentumScrollContext";
 import { titleAnimation } from "../utils";
 
@@ -49,27 +50,31 @@ const temoignages = () => {
 
         <div className="big-screen">
           <MomentumScrollProvider easing={0.075}>
-            {/* <div className="container-page" >   */}
-                <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >
-                  Baux't des sens, c'est encore les autres qui en parlent le mieux...
-                </motion.h2>
-                <motion.div className="grid-container" variants={parentAvis} initial="initial" animate="animate">
-                  {
-                    tableauAvis.map((avis, idx)=>
-                      <motion.div variants={childAvis} className="avis" key={idx}>
-                        <img src={`/images/${avis}.jpg`} width="300" loading="lazy" />
-                      </motion.div>
-                    )
-                  }
-                </motion.div>
-              <h2 className='home-titles' style={{textAlign:"right", fontSize:'1.75rem'}} >Merci infiniment à eux et à tous les autres pour leur confiance !</h2>     
-            {/* </div> */}
-            <Footer/>
+            <div className="container-page">
+              <Partenaires/>
+              <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >
+                Baux't des sens, c'est encore les autres qui en parlent le mieux...
+              </motion.h2>
+              <motion.div className="grid-container" variants={parentAvis} initial="initial" animate="animate">
+                {
+                  tableauAvis.map((avis, idx)=>
+                    <motion.div variants={childAvis} className="avis" key={idx}>
+                      <img src={`/images/${avis}.jpg`} width="300" loading="lazy" />
+                    </motion.div>
+                  )
+                }
+              </motion.div>
+              <h2 className='home-titles' style={{textAlign:"right", fontSize:'1.75rem'}} >
+                Merci infiniment à eux et à tous les autres pour leur confiance !
+              </h2>
+              <Footer/>    
+            </div>
           </MomentumScrollProvider>
         </div>
 
         <div className="small-screen">
-          {/* <div className="container-page" >   */}
+          <div className="container-page">
+            <Partenaires/>
             <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >
               Baux't des sens, c'est encore les autres qui en parlent le mieux...
             </motion.h2>
@@ -77,14 +82,16 @@ const temoignages = () => {
               {
                 tableauAvis.map((avis, idx)=>
                   <motion.div variants={childAvis} className="avis" key={idx}>
-                    <img src={`/images/${avis}.jpg`} width="300" />
+                    <img src={`/images/${avis}.jpg`} width="300" loading="lazy" />
                   </motion.div>
                 )
               }
             </motion.div>
-            <h2 className='home-titles' style={{textAlign:"right", fontSize:'1.75rem'}} >Merci infiniment à eux et à tous les autres pour leur confiance !</h2>     
-          {/* </div> */}
-          <Footer/>
+            <h2 className='home-titles' style={{textAlign:"right", fontSize:'1.75rem'}} >
+              Merci infiniment à eux et à tous les autres pour leur confiance !
+            </h2>
+            <Footer/>    
+          </div>
         </div>
       </PageWrapper> 
     </div>
@@ -98,6 +105,12 @@ const PageWrapper = styled.div`
   background-color: #798a94;
   width: 100%;
 
+  .container-page{
+    margin:0px 0px 35vh;
+    padding: 0;
+  }
+    
+
   .small-screen {
     display: none;
   }
@@ -105,6 +118,18 @@ const PageWrapper = styled.div`
     display: block;
   }
 
+  @media (max-width : 1440px){
+    .container-page{
+      margin:0px 0px 31vh;
+      padding: 0;
+    } 
+  }
+  @media (max-width : 1368px){
+    .container-page{
+      margin:0px 0px 72vh;
+      padding: 0;
+    } 
+  }
   @media (max-width : 1024px){
     .small-screen{
       display: block;
@@ -112,6 +137,11 @@ const PageWrapper = styled.div`
     .big-screen{
       display: none;
     }
+    .container-page{
+    margin:0px;
+    padding: 0;
+  }
+    
   }
 
   .menu-container{
@@ -132,10 +162,6 @@ const PageWrapper = styled.div`
     letter-spacing: 1px;
   }
 
-  .container-page{
-    padding: 25px;
-    
-  }
   .grid-container{
     display: flex;
     flex-wrap: wrap;

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import Diplomes from "../components/diplomes";
 import Footer from "../components/footer";
 import HomeCurveSeparation from "../components/homecurveseparation";
 import MenuHead from "../components/menuhead";
@@ -31,7 +32,16 @@ const infospratiques = () => {
         <div className='big-screen'>
           <MomentumScrollProvider easing={0.075}>
             <div className="page-container"  ref={pageRef}>
-              <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >Infos pratiques</motion.h2>
+              <Diplomes/>
+              <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >
+                Prendre rendez-vous en ligne
+              </motion.h2>
+              <motion.div className="warning" variants={opacityBandeau} initial="initial" animate="animate" >
+                Vous pouvez désormais prendre rendez-vous en ligne en cliquant sur ce bouton qui mène à mon Agenda.
+                <div className="button">
+                  Prendre RDV en ligne
+                </div>
+              </motion.div>
 
               <motion.div id="super-container" variants={opacityBandeau} initial="initial" animate="animate" >
                 <div className="prestations-container-mini">
@@ -105,7 +115,16 @@ const infospratiques = () => {
 
         <div className='small-screen'>
           <div className="page-container" ref={pageRef}>
-            <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >Infos pratiques</motion.h2>
+            <Diplomes/>
+            <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >
+              Prendre rendez-vous en ligne
+            </motion.h2>
+            <motion.div className="warning" variants={opacityBandeau} initial="initial" animate="animate" >
+              Vous pouvez désormais prendre rendez-vous en ligne en cliquant sur ce bouton qui mène à mon Agenda.
+              <div className="button">
+                Prendre RDV en ligne
+              </div>
+            </motion.div>
 
             <motion.div id="super-container" variants={opacityBandeau} initial="initial" animate="animate" >
               <div className="prestations-container-mini">
@@ -361,6 +380,57 @@ const DivWrapper = styled.div`
   .layer-white{
     display: none;
   }
+  .warning{
+    color: #898787;
+    text-align: center;
+    width: 75%;
+    margin: 0px auto 175px;
+    background-color: white;
+    padding: 25px 25px 50px 25px;
+    border: 4px solid #898787;
+    border-left: 15px solid #898787;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    font-style:italic;
+    line-height: 2.5rem;
+    font-size : 1.4rem;
+    position: relative;
+
+    .button{
+      padding: 0px 10px;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      left: 50%;
+      bottom: -40px;
+      z-index: 2;
+      width: 215px;
+      height: 70px;
+      font-size: 0.8rem;
+      border-radius: 50%;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-style: italic;
+      background-color:#797067;
+      border: 4px double #c4b9b1 ;
+      color: #c4b9b1;
+      transform: scale(1.1) translateX(-50%);
+      transition: color 0.5s ease-out, background-color 0.2s ease-out, border-color 0.5s, border-radius 0.3s ease-out;
+      line-height: 1rem;
+
+      &:hover{
+        width:160px;
+        border: 6px double whitesmoke;
+        color: #4d4742;
+        background-color: #c4b9b1;
+        border-radius: 0%;
+      }
+    }
+  }
 
   @keyframes rotation{
     from{
@@ -405,13 +475,15 @@ const DivWrapper = styled.div`
   @media (max-width: 850px){
     .layer-white{
       .flex-container{
-        flex-direction: column;
+        flex-direction: column; 
+        
         .image-frame{
           align-self: center;
           margin-bottom: 20px;
         }
         .quote{
-          font-size: 1.1rem;
+          font-size: 1.25rem !important;
+          max-width: 95% !important;
         }
       }
     }

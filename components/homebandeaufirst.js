@@ -201,13 +201,14 @@ const HomeBandeauFirst = () => {
             animate={{scale:["1.5", "1"], x:"100%"}} 
             transition={{x : {delay:1, duration:1}, scale : {delay : 1.2, duration:0.9}}}/>
 
-            <motion.picture 
+          <motion.div 
             initial={{scale : 1, filter : "blur(0px) brightness(125%)"}}
             animate={{scale : ["1.5", "1"], filter:"blur(5px) brightness(125%)"}}
-            transition={{scale : {delay : 1.2, duration:0.9}, filter:{delay : 2, duration:2}}}>
-              <source srcSet="/images/bandeau_mains_masse.jpg" media="(min-width:520px)"/>
-              <img src="/images/118930618_372805930709061_72465373286677363_n.jpg"/>
-            </motion.picture>
+            transition={{scale : {delay : 1.2, duration:0.9}, filter:{delay : 2, duration:2}}}
+            className="bg-image">
+              {/* <source srcSet="/images/bandeau_mains_masse.jpg" media="(min-width:520px)"/>
+              <img src="/images/118930618_372805930709061_72465373286677363_n.jpg"/> */}
+            </motion.div>
         </motion.div>       
           
         <motion.div className='title' initial={{opacity:"0"}} animate={{opacity:1}} transition={{opacity : {delay:3.8, duration:1.5}}}>
@@ -327,10 +328,14 @@ const BandeauDiv = styled.div`
       background-color: #798a94;
       z-index: 3;
     }
-    img{
+    .bg-image{
       width : 100vw;
       height : 100vh;
       opacity : 0.5;
+      background-image: url(/images/bandeau_mains_masse.jpg);
+      background-repeat : no-repeat ;
+      background-size: 100vw;
+      height:100vh;
     }
   }
 

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import useWindowSize from "../hooks/useWindowSize";
 
-const HomeCurveSeparation = ({texte, inView, delay, buttonDelay, lien, margin}) => {
+const HomeCurveSeparation = ({texte, inView, delay, buttonDelay, lien, margin, target}) => {
   const [curlySvgHeight, setCurlySvgHeight] = useState(0)
 
   const size = useWindowSize()
@@ -63,7 +63,7 @@ const HomeCurveSeparation = ({texte, inView, delay, buttonDelay, lien, margin}) 
 
   return (                                
     <DivWrapper style={{margin}}>
-      <a href={`${lien}`}>
+      <a href={`${lien}`} target={target}>
         <motion.div
           tabIndex="0"
           className="bouton-contact"

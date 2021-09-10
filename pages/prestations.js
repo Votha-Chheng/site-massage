@@ -263,7 +263,10 @@ const prestations = () => {
                 </motion.div>
               </InView>
             </div> 
-            <HomeCurveSeparation texte="me contacter" lien="/infos" margin="0px 0px 75px" lien='/infos' />   
+            <HomeCurveSeparation 
+              texte="Prendre RDV en ligne" 
+              lien="https://l.facebook.com/l.php?u=http%3A%2F%2Fwww.planity.com%2Fbauxt-des-sens-13200-arles%3Ffbclid%3DIwAR0mHzOv6Id9JEcrDOerYfTdaKOQPOPHv39WeCWhwdVyeUQ1hbV9LQywoEM&h=AT0tItrGZoTuzeOZgdTfjYJmHMkKcS17CtbD9pvoL4WFUJh166TB4jzzvgjvSI2oYhMdp-RU2pS27z6QfCRb3Gq7polaLejUxAeEmzWb4Nw3K6qSeD1qFS1kzaHXJWFSdzrRvpzVT9_eG0VCfr0" margin="0px 0px 75px" 
+              target="_blank"/>   
             <Footer/>        
           </MomentumScrollProvider>
         </div>
@@ -360,7 +363,10 @@ const prestations = () => {
               </motion.div>
             </InView>
           </div> 
-          <HomeCurveSeparation texte="me contacter" lien="/infos" margin="0px 0px 75px" lien='/infos' />   
+          <HomeCurveSeparation 
+            texte="Prendre RDV en ligne" 
+            lien="https://l.facebook.com/l.php?u=http%3A%2F%2Fwww.planity.com%2Fbauxt-des-sens-13200-arles%3Ffbclid%3DIwAR0mHzOv6Id9JEcrDOerYfTdaKOQPOPHv39WeCWhwdVyeUQ1hbV9LQywoEM&h=AT0tItrGZoTuzeOZgdTfjYJmHMkKcS17CtbD9pvoL4WFUJh166TB4jzzvgjvSI2oYhMdp-RU2pS27z6QfCRb3Gq7polaLejUxAeEmzWb4Nw3K6qSeD1qFS1kzaHXJWFSdzrRvpzVT9_eG0VCfr0" margin="0px 0px 75px" 
+            target="_blank"/>
           <Footer/>
         </div>
 
