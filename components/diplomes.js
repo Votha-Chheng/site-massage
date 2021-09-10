@@ -27,9 +27,9 @@ const Diplomes = () => {
         Mes diplômes & formations
       </motion.h2>
       <motion.ul variants={variantsAppear} initial="start" animate="fadeIn"  >
-        <motion.li variants={variantsChildren}><i class="fas fa-user-graduate"/> Certificat d'aptitude professionnelle en esthétique, cosmétique, parfumerie</motion.li>
-        <motion.li variants={variantsChildren}><i class="fas fa-user-graduate"/> Certification de spécialisation des soins du corps</motion.li>
-        <motion.li variants={variantsChildren}><i class="fas fa-user-graduate"/> Formations en &Eacute;tirements et Mobilisations Articulaires</motion.li>
+        <motion.li variants={variantsChildren}><i className="fas fa-user-graduate"/> Certificat d'aptitude professionnelle en esthétique, cosmétique, parfumerie</motion.li>
+        <motion.li variants={variantsChildren}><i className="fas fa-user-graduate"/> Certification de spécialisation des soins du corps</motion.li>
+        <motion.li variants={variantsChildren}><i className="fas fa-user-graduate"/> Formations en &Eacute;tirements et Mobilisations Articulaires</motion.li>
       </motion.ul>
     </SectionWrapper>
   );

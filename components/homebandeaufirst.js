@@ -206,8 +206,6 @@ const HomeBandeauFirst = () => {
             animate={{scale : ["1.5", "1"], filter:"blur(5px) brightness(125%)"}}
             transition={{scale : {delay : 1.2, duration:0.9}, filter:{delay : 2, duration:2}}}
             className="bg-image">
-              {/* <source srcSet="/images/bandeau_mains_masse.jpg" media="(min-width:520px)"/>
-              <img src="/images/118930618_372805930709061_72465373286677363_n.jpg"/> */}
             </motion.div>
         </motion.div>       
           
@@ -334,8 +332,8 @@ const BandeauDiv = styled.div`
       opacity : 0.5;
       background-image: url(/images/bandeau_mains_masse.jpg);
       background-repeat : no-repeat ;
-      background-size: 100vw;
-      height:100vh;
+      background-size: 100vw 100vh;
+      //background-position: top right;
     }
   }
 
@@ -626,6 +624,12 @@ const BandeauDiv = styled.div`
         width: auto;
         margin-left: -10%;
       }
+    }
+  }
+
+  @media (max-width:1024px){
+    .bg-image{
+      background-image: url(/images/118930618_372805930709061_72465373286677363_n.jpg) !important;
     }
   }
 

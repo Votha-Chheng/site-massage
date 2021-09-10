@@ -38,9 +38,12 @@ const infospratiques = () => {
               </motion.h2>
               <motion.div className="warning" variants={opacityBandeau} initial="initial" animate="animate" >
                 Vous pouvez désormais prendre rendez-vous en ligne en cliquant sur ce bouton qui mène à mon Agenda.
-                <div className="button">
-                  Prendre RDV en ligne
-                </div>
+                <a href="https://www.planity.com/bauxt-des-sens-13200-arles?fbclid=IwAR0mHzOv6Id9JEcrDOerYfTdaKOQPOPHv39WeCWhwdVyeUQ1hbV9LQywoEM" target="_blank">
+                  <div className="button">
+                    Prendre RDV en ligne
+                  </div>
+                </a>
+                
               </motion.div>
 
               <motion.div id="super-container" variants={opacityBandeau} initial="initial" animate="animate" >
