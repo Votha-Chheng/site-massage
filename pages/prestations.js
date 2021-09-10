@@ -377,20 +377,20 @@ const prestations = () => {
 
 const DivWrapper = styled.div`
   background-color: #798a94;
-  height: 100%;
+  min-height: 100%;
 
   .small-screen {
     display: none;
     padding-top: 40px;
   }
-  .big-screen{
+  /* .big-screen{
 
     margin:0px 0px 35vh;
     padding: 0;
   
-  }
+  } */
 
-  @media (max-width : 1440px){
+  /* @media (max-width : 1440px){
     .big-screen{
       margin:0px 0px 31vh;
       padding: 0;
@@ -401,7 +401,7 @@ const DivWrapper = styled.div`
       margin:0px 0px 72vh;
       padding: 0;
     } 
-  }
+  } */
 
   @media (max-width : 1024px){
     .small-screen{

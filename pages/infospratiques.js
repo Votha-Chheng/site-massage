@@ -202,7 +202,7 @@ const infospratiques = () => {
 
 const DivWrapper = styled.div`
   background-color: #798a94;
-  height: 100%;
+  min-height: 100%;
 
   .small-screen{
       display: none;

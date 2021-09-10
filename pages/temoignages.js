@@ -99,16 +99,16 @@ const temoignages = () => {
 }
 
 const PageWrapper = styled.div`
-  height: auto;
+  min-height: 100%;
   overflow : hidden;
   position: relative;
   background-color: #798a94;
   width: 100%;
 
-  .container-page{
+  /* .container-page{
     margin:0px 0px 30vh;
     padding: 0;
-  }
+  } */
     
 
   .small-screen {
@@ -118,7 +118,7 @@ const PageWrapper = styled.div`
     display: block;
   }
 
-  @media (max-width : 1440px){
+  /* @media (max-width : 1440px){
     .container-page{
       margin:0px 0px 31vh;
       padding: 0;
@@ -129,7 +129,7 @@ const PageWrapper = styled.div`
       margin:0px 0px 72vh;
       padding: 0;
     } 
-  }
+  } */
   @media (max-width : 1024px){
     .small-screen{
       display: block;

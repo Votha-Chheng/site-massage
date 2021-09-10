@@ -60,6 +60,7 @@ const Wrapper = styled.div`
   overflow : hidden;
   position: relative;
   background-color: #798a94;
+  min-height: 100%;
 
   .small-screen {
     display: none;
