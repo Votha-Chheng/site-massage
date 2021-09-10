@@ -60,8 +60,11 @@ const Wrapper = styled.div`
   overflow : hidden;
   position: relative;
   background-color: #798a94;
-  min-height: 7186px;
+  height: 7120px;
 
+  @media (max-width : 1680px){
+    min-height: 7185px;
+  }
   @media (max-width : 1600px){
     min-height: 7265px;
   }
