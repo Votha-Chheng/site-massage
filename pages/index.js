@@ -60,10 +60,11 @@ const Wrapper = styled.div`
   overflow : hidden;
   position: relative;
   background-color: #798a94;
-  height: 7120px;
+  min-height: 7120px;
 
   @media (max-width : 1680px){
     min-height: 7185px;
+    
   }
   @media (max-width : 1600px){
     min-height: 7265px;
@@ -72,13 +73,13 @@ const Wrapper = styled.div`
     min-height: 7290px;
   }
   @media (max-width : 1360px){
-    min-height: 7324px;
+    min-height: 7324px; 
   }
   @media (max-width : 1280px){
-    min-height: 7490px;
+    min-height: 7490px; 
   }
   @media (max-width : 1152px){
-    min-height: 7607px;
+    min-height: 7608px !important;
   }
 
   .small-screen {
@@ -88,6 +89,7 @@ const Wrapper = styled.div`
   @media (max-width : 1024px){
     .small-screen{
       display: block;
+      height : 100% !important;
     }
     .big-screen{
       display: none;

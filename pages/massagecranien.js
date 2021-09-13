@@ -41,7 +41,7 @@ const massagecranien = () => {
 }
 
 const PageWrap = styled.section`
-  height: 2655px;
+  min-height: 2655px;
   overflow : hidden;
   position: relative;
   background-color: #798a94;

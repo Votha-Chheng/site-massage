@@ -159,7 +159,7 @@ const yoga = () => {
                   <div className="texte up-texte">
                     Ma passion pour les pra&shy;tiques con&shy;dui&shy;sant à la rela&shy;xation ne se limite pas aux massages. Pour al&shy;ler plus loin dans cette optique, je pro&shy;pose des cours d'ini&shy;tiation au Hatha yoga basés sur la res&shy;piration, la méditation et les éti&shy;rements.
                     Ce type de yoga, le plus pra&shy;tiqué en Oc&shy;cident, permet au pra&shy;tiquant une maî&shy;trise du corps et des sens à tra&shy;vers la pra&shy;tique précise et rythmée de pos&shy;tures.
-                    Contraire&shy;ment à un enchaînement de gym&shy;nastique, les postures doivent être maintenues suffisamment long&shy;temps (environ 3 minutes).                 
+                    Contraire&shy;ment à un enchaîne&shy;ment de gym&shy;nastique, les postu&shy;res doivent être main&shy;tenues suffi&shy;sam&shy;ment long&shy;temps (environ 3 minutes).                 
                   </div>
                 </div>
 
@@ -174,7 +174,7 @@ const yoga = () => {
             </InView>
           </InView> 
           
-          <HomeCurveSeparation texte="le Hata yoga dans mes prestations" margin="0px 0px" lien="/prestations/#yoga"/>
+          <HomeCurveSeparation texte="le Hata yoga dans mes prestations" margin="50px 0px" lien="/prestations/#yoga"/>
           <InView onChange={(inView, entry)=> inView && setPartTwoInView(true)} className="page-container second">
             <main>
               <motion.div 
@@ -284,7 +284,8 @@ const DivWrapper = styled.div`
     padding: 50px 25px;
 
     .home-titles{
-      margin-top:50px;
+      padding-top:75px;
+      margin-top:0;
       margin-bottom : 75px;
     }
 
@@ -400,6 +401,12 @@ const DivWrapper = styled.div`
   }
 
   @media (max-width: 825px){
+    .page-container.second{
+      margin-top: 200px;
+    }
+    .page-container{
+      margin-bottom: 10vh;
+    }
     .img-yoga-container.first{  
       text-align: center;
       
