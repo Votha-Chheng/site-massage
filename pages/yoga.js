@@ -231,13 +231,25 @@ const DivWrapper = styled.div`
   min-height: 2240px;
 
   @media (max-width : 1680px){
-    min-height: 2260px;
+    min-height: 2285px;
   }
   @media (max-width : 1600px){
-    min-height: 2338px;
+    min-height: 2320px;
+  }
+  @media (max-width : 1440px){
+    min-height: 2389px;
+  }
+  @media (max-width : 1360px){
+    min-height: 2804px;
   }
   @media (max-width : 1300px){
-    min-height: 2923px;
+    min-height: 2949px;
+  }
+  @media (max-width : 1280px){
+    min-height: 2946px;
+  }
+  @media (max-width : 1152px){
+    min-height: 3452px;
   }
 
   .small-screen {

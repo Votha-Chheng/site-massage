@@ -208,11 +208,27 @@ const infospratiques = () => {
 
 const DivWrapper = styled.div`
   background-color: #798a94;
-  min-height: 100%;
+  min-height: 3148px;
 
   .small-screen{
-      display: none;
-    }
+    display: none;
+  }
+
+  @media (max-width : 1680px){
+    min-height: 3165px;
+    
+  }
+  @media (max-width : 1440px){
+    min-height: 3185px;
+  }
+
+  @media (max-width : 1280px){
+    min-height: 3162px; 
+  }
+  @media (max-width : 1152px){
+    min-height: 3198px !important;
+  }
+
 
   @media (max-width : 1024px){
     .small-screen{

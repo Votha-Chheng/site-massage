@@ -109,17 +109,17 @@ const PageWrapper = styled.div`
   width: 100%;
 
   @media (max-width : 1680px){
-    min-height: 3047px;
+    min-height: 3122px;
   }
 
   @media (max-width : 1440px){
-    min-height: 3451px;
+    min-height: 3526px;
   }
   @media (max-width : 1360px){
-    min-height: 3710px;
+    min-height: 3782px;
   }
   @media (max-width : 1152px){
-    min-height: 4000px;
+    min-height: 4075px;
   }
 
 

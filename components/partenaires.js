@@ -23,7 +23,7 @@ const Partenaires = () => {
   return (
     <SectionWrapper>
       <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >
-        Ils ont fait appel à mes services...
+        Ils font appel à mes services
       </motion.h2>
       <motion.ul variants={variantsAppear} initial="start" animate="fadeIn">
         <motion.li variants={variantsChildren}>

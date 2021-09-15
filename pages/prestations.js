@@ -380,21 +380,24 @@ const prestations = () => {
 
 const DivWrapper = styled.div`
   background-color: #798a94;
-  min-height: 9023px;
+  min-height: 9026px;
 
   @media (max-width : 1680px){
-    min-height: 9001px;
+    min-height: 9076px;
   }
   @media (max-width : 1600px){
-    min-height: 9023px;
+    min-height: 9100px;
   }
   @media (max-width : 1440px){
-    min-height: 9283px;
+    min-height: 9285px;
   }
   @media (max-width : 1360px){
     min-height: 9309px;
   }
-
+  @media (max-width : 1152px){
+    min-height: 10413px !important;
+  }
+  
   .small-screen {
     display: none;
     padding-top: 40px;

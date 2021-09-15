@@ -11,7 +11,11 @@ const Footer = () => {
             <h3 className="sub">Masssage & Yoga à domicile</h3>
             <h1 className="location">Arles et Alpilles</h1>
             <h4>Disponible 7/7 jours</h4>
-            <h5>Uniquement sur rendez-vous</h5>
+            <a href="https://www.planity.com/bauxt-des-sens-13200-arles?fbclid=IwAR0mHzOv6Id9JEcrDOerYfTdaKOQPOPHv39WeCWhwdVyeUQ1hbV9LQywoEM" target="_blank">
+              <div className="button">
+                Prendre RDV en ligne
+              </div>
+            </a>
           </div>
 
         </div>
@@ -52,6 +56,38 @@ const FooterStyle = styled.div`
   min-height: 500px;
   border-top: 6px double black;
   overflow: hidden;
+
+  .button{
+    padding: 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+    width: 215px;
+    height: 70px;
+    font-size: 0.8rem;
+    border-radius: 50%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-style: italic;
+    background-color:#797067;
+    border: 4px double #c4b9b1 ;
+    color: #c4b9b1;
+    transition: color 0.5s ease-out, background-color 0.2s ease-out, border-color 0.5s, border-radius 0.3s ease-out;
+    line-height: 1rem;
+    margin: 0 auto;
+
+    &:hover{
+      width:160px;
+      border: 6px double whitesmoke;
+      color: #4d4742;
+      background-color: #c4b9b1;
+      border-radius: 0%;
+    }
+  }
 
   .link-footer:hover{
     text-decoration: underline;

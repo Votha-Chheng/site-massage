@@ -76,7 +76,7 @@ const Wrapper = styled.div`
     min-height: 7324px; 
   }
   @media (max-width : 1280px){
-    min-height: 7490px; 
+    min-height: 7447px; 
   }
   @media (max-width : 1152px){
     min-height: 7608px !important;
