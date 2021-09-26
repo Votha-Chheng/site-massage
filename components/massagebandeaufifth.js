@@ -64,6 +64,7 @@ const MassageBandeauFifth = () => {
 
 const SectionWrapper = styled.section`
 height: 100%;
+padding-top: 50px;
 
 .section-container{
   display: flex;

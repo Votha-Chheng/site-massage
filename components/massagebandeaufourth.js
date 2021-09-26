@@ -8,7 +8,6 @@ import HomeCurveSeparation from "./homecurveseparation";
 
 const MassageBandeauFourth = () => {
   const [sectionInView, setSectionInView] = useState(false)
-  const [heroInView, setHeroInView] = useState(false)
 
   const controls = useAnimation()
 
@@ -19,11 +18,7 @@ const MassageBandeauFourth = () => {
   }, [controls, sectionInView])
 
   return (
-    <SectionWrapper>
-      {/* <InView onChange={(inView, entry)=>setHeroInView(inView)}>
-        <HerosMassage title="massage à la bougie" image='176187352_2922669511298633_3323829876291585340_n.jpg' translateUp='-400' heroInView={heroInView}/>
-      </InView> */}
-      
+    <SectionWrapper> 
       <InView onChange={(inView, entry)=> inView && setSectionInView(true)} className="section-container">
         <motion.div className="flex-1" initial={{x:-300, opacity:0}} animate={sectionInView? {x:0, opacity:1}:""} transition={{opacity : {duration : 0.75, delay:0.8, ease:"easeOut"}, x : {duration : 1.2, delay:0.8, ease:"easeOut"}}} >
           <div className="bougie-container">
@@ -53,6 +48,7 @@ const MassageBandeauFourth = () => {
 
 const SectionWrapper = styled.section`
   overflow: hidden;
+  padding-top: 50px;
 
   .section-container{
     width:1200px;

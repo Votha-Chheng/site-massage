@@ -19,11 +19,7 @@ const MassageBandeauThird = () => {
   }, [controls, sectionInView])
 
   return (
-    <SectionWrapper>
-      {/* <InView onChange={(inView, entry)=>setHeroInView(inView)}>
-        <HerosMassage image='baby-massage.jpg' title="massage pour bébé" translateUp='-770' heroInView={heroInView}/>
-      </InView> */}
-      
+    <SectionWrapper>     
       <InView className="section-container" onChange={(inView, entry)=>setSectionInView(inView)}> 
         <motion.div className="basic-container" variants={opacityBandeau} initial="initial" animate={controls} >
           <div className="image-bébé-container">
@@ -48,7 +44,7 @@ const MassageBandeauThird = () => {
 }
 
 const SectionWrapper = styled.section`
-
+  padding-top: 50px;
   .basic-container{
     width: 90%;
     margin: 0 auto;

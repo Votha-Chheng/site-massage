@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import {InView} from "react-intersection-observer";
 import styled from "styled-components";
 import { opacityBandeau, titleAnimation } from "../utils";
-import HerosMassage from "./herosmassage";
-import HomeCurveSeparation from "./homecurveseparation";
 
 const MassageBandeauFirst = () => {
   const [sectionInView, setSectionInView] = useState(false)
