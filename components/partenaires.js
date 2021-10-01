@@ -57,7 +57,10 @@ const Partenaires = () => {
           <img src="/images/collectionist.jpg" width="360" alt="logo collectionist"/>
         </motion.li>
         <motion.li variants={variantsChildren}>
-          <img src="/images/home_connexion.jpg" width="300" alt="logo home connexion.jpg"/>
+          <a href="https://www.myhomeconnexion.com/" target="_blank">
+            <img src="/images/home_connexion.jpg" width="300" alt="logo home connexion.jpg"/>
+          </a> 
+          <small>(Cliquez sur sur le logo)</small>       
         </motion.li>
       </motion.ul>
     </SectionWrapper>
@@ -79,6 +82,20 @@ padding-bottom: 15vh;
     list-style: none;
     margin: 20px;
     padding: 0;
+    
+
+    &:last-child {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+    }
+    a{
+      transition: all 0.25s ease-out;
+      &:hover{
+        box-shadow : 0 0 20px whitesmoke;
+      }
+    }
   }
 `
 export default Partenaires;

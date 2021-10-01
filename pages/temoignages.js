@@ -40,7 +40,7 @@ const temoignages = () => {
   return (
     <div>
       <Head>
-        <title>Baux't des sens | Témoignages, livre d'or</title>
+        <title>Baux't des sens | Témoignages, partenaire, livre d'or</title>
       </Head>
 
       <PageWrapper>
