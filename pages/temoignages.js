@@ -102,7 +102,7 @@ const temoignages = () => {
 }
 
 const PageWrapper = styled.div`
-  min-height: 3150px;
+  min-height: 3170px;
   overflow : hidden;
   position: relative;
   background-color: #798a94;
