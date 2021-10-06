@@ -60,7 +60,7 @@ const Partenaires = () => {
           <a href="https://www.myhomeconnexion.com/" target="_blank">
             <img src="/images/home_connexion.jpg" width="300" alt="logo home connexion.jpg"/>
           </a> 
-          <small>(Cliquez sur sur le logo)</small>       
+          <small>(Cliquez sur le logo)</small>       
         </motion.li>
       </motion.ul>
     </SectionWrapper>
