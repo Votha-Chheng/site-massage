@@ -24,7 +24,7 @@ export default function Home() {
       </Head>
         
       <Wrapper>
-        <motion.div ref={menuRef} className="menu-container" initial={{opacity: 0}} animate={{opacity:1}} transition={{opacity : {delay:5.5}}}>
+        <motion.div ref={menuRef} className="menu-container" initial={{opacity: 0}} animate={{opacity:1}} transition={{opacity : {delay:4.75}}}>
           <MenuHead/>
         </motion.div>
         <div className="big-screen">

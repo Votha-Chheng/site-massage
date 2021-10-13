@@ -192,8 +192,7 @@ const HomeBandeauSecond = () => {
           </motion.div>
           <motion.div variants={parentSlogan5} initial="initial" animate={controls} className='slogans' style={{display:"flex"}}>
             <motion.div variants={childrenLettersOpacity} className="logo-font">
-              &nbsp;Baux't<br/>des sens
-              <img src='/images/logoLotus.svg' alt="logo de Baux't des sens"/>
+              <img src='/images/logo-bleu.svg' height="90" alt="logo de Baux't des sens"/>
             </motion.div>
           </motion.div>
         </div>
@@ -303,21 +302,6 @@ const BandeauDiv = styled.div`
       text-align : center;
       justify-content: center;
       z-index: 5;
-    }
-  }
-  .logo-font{
-    font-family: 'Parisienne', cursive;
-    text-transform: none;
-    padding-top: 5px;
-    position: relative;
-    transform: translateX(-50%);
-
-    img{
-      position: absolute;
-      top: 55%;
-      left: 50%;
-      transform: translate(-50%, -60%);
-      z-index: -1;
     }
   }
   .container-page{
