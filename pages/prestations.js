@@ -375,10 +375,10 @@ const prestations = () => {
 
 const DivWrapper = styled.div`
   background-color: #798a94;
-  min-height: 9026px;
+  min-height: 9186px;
 
   @media (max-width : 1680px){
-    min-height: 9076px;
+    min-height: 9166px;
   }
   @media (max-width : 1600px){
     min-height: 9100px;
