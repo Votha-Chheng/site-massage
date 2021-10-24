@@ -197,10 +197,10 @@ const yoga = () => {
                 animate={partTwoInView? {opacity:1} : ""} 
                 transition={{opacity:{delay:1, duration:0.8}}}>
                 Grâce au Hatha yoga :
-                <motion.ul variants={parentList} initial="initial" animate={controls} >
+                <motion.ul variants={parentList} initial="initial" animate={controls} style={{paddingLeft:"0"}}>
                   <motion.li variants={childList}>
                     <i className="fas fa-fan"/>
-                    On travaille l’équilibre physique tout en disciplinant son esprit.
+                    On travaille l’équi&shy;li&shy;bre physique tout en disci&shy;plinant son esprit.
                   </motion.li>
                   <motion.li variants={childList}>
                     <i className="fas fa-fan"/>
@@ -208,7 +208,7 @@ const yoga = () => {
                   </motion.li>
                   <motion.li variants={childList}>
                     <i className="fas fa-fan"/>
-                    On améliore sa respi&shy;ration et son souffle
+                    On améliore sa res&shy;pi&shy;ration et son souffle
                   </motion.li>
                   <motion.li variants={childList}>
                     <i className="fas fa-fan"/>

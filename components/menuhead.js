@@ -14,7 +14,7 @@ const MenuHead = ({color}) => {
   
   return (
     <Wrapper style={{color}} role="navigation" aria-label="navigation site Baux't des sens">
-      <nav className="second-menu" ref={secondMenuRef} style={{top:`${burger ? "40" : -secondMenuHeight-40}px`}} >
+      <nav className="second-menu" ref={secondMenuRef} style={{top:`${burger ? "0" : -secondMenuHeight}px`}} >
         <li><a href='/prestations'>Prestations</a></li>
         <li><a href='/massagecranien'>Massage crânien</a></li>
         <li><a href='/yoga'>Yoga</a></li>
@@ -26,7 +26,7 @@ const MenuHead = ({color}) => {
       <a href="/">
         <div className="logo">
           <img src='/images/silhouette.svg' alt="logo Baux't des sens" height="50"/>
-            <span id="bauxt">Baux't des sens</span>
+            <h1 id="bauxt">Baux't des sens</h1>
         </div>
       </a>
       <div id="mini-menu" onClick={()=>setBurger(prev=>!prev)} >
@@ -70,7 +70,7 @@ const Wrapper = styled.nav`
     position: absolute;
     transition: all 0.3s ease-out;
     left: 0;
-    background-color: rgba(121, 138, 148, 0.9);
+    background-color: rgba(121, 138, 148);
     width : 100%;
     display : none;
 
@@ -115,14 +115,18 @@ const Wrapper = styled.nav`
     display: flex;
     align-items: center;
     font-family: 'Mrs Saint Delafield', 'cursive';
-    font-size: 1.75em;
     line-height: 1em;
     transition: transform 0.3s ease-out;
     cursor: pointer;
     display: flex;
     margin-left: 20px;
     margin-top: 5px;
-    font-weight: normal;
+    
+    h1{
+      font-weight: normal;
+      font-size: 1.5rem;
+
+    }
 
     img{
       margin-right: 10px;

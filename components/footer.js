@@ -6,8 +6,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="part-left">
           <div className="presentation">
-            <h1 className="footer-title">Baux't des sens</h1>
-            <img src="/images/logoLotus.svg" width='100' />
+            <img src="/images/logo.svg" width='175' />
             <h3 className="sub">Masssage & Yoga à domicile</h3>
             <h1 className="location">Arles et Alpilles</h1>
             <h4>Disponible 7/7 jours</h4>
