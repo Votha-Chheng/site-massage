@@ -57,10 +57,10 @@ const MassageBandeauFirst = () => {
               Ainsi, le massage in&shy;tuitif cherche à installer le mieux être pas seul&shy;ement dans l'immé&shy;diat mais aussi dans la durée. C'est un mas&shy;sage que je pra&shy;ti&shy;que grâce et avec mon res&shy;senti, mon intuition. Il est personnalisé et adapté à la personne qui le reçoit à l'instant T. 
             </div>
             <div>
-              Par mon attention, j'ai la facul&shy;té d'entrer en con&shy;nexion avec le rece&shy;veur, l'harmo&shy;nie du massage se crée grâce à la façon que j'ai de m'ajuster à la respi&shy;ration du massé. Je per&shy;çois des in&shy;forma&shy;tions non verbales qui me permet&shy;tent de compren&shy;dre si je dois passer plus de temps sur telles parties du corps afin de le libérer de toutes tensions ou d'uti&shy;liser tel&shy;les tech&shy;niques pour vous ac&shy;compagner à lâcher pri&shy;se...
+              Par mon attention, j'ai la facul&shy;té d'entrer en con&shy;nexion avec le rece&shy;veur, l'harmo&shy;nie du massage se crée grâce à la façon que j'ai de m'ajuster à la respi&shy;ration du massé. Je per&shy;çois des in&shy;forma&shy;tions non verbales qui me per&shy;met&shy;tent de compren&shy;dre si je dois passer plus de temps sur telles parties du corps afin de le libérer de toutes tensions ou d'uti&shy;liser tel&shy;les tech&shy;niques pour vous ac&shy;compagner à lâcher pri&shy;se...
             </div>
             <div>
-              Ce massage person&shy;nalisé et complet à base d’huiles es&shy;sentiel&shy;les biolo&shy;giques, prend en compte l’ap&shy;proche glo&shy;bale de l’être humain et le tou&shy;che dans ses dif&shy;féren&shy;tes di&shy;men&shy;sions (phy&shy;sique, men&shy;tale, émo&shy;tion&shy;nelle et éner&shy;gé&shy;tique) afin que cel&shy;les-ci soient ré&shy;har&shy;moni&shy;sées. Tous mes soins sont animés par la philosophie du massage intuitif.
+              Ce massage person&shy;nalisé et com&shy;plet à base d’huiles es&shy;sentiel&shy;les biolo&shy;giques, prend en compte l’ap&shy;proche glo&shy;bale de l’être humain et le tou&shy;che dans ses dif&shy;féren&shy;tes di&shy;men&shy;sions (phy&shy;sique, men&shy;tale, émo&shy;tion&shy;nelle et éner&shy;gé&shy;tique) afin que cel&shy;les-ci soient ré&shy;har&shy;moni&shy;sées. Tous mes soins sont animés par la philosophie du massage intuitif.
             </div>
           </div>
         </motion.div>

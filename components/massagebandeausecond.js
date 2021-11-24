@@ -31,7 +31,7 @@ const MassageBandeauSecond = () => {
             <img src="/images/176067219_2674521086185632_6685018227844772496_n.jpg" width="300" />
             <div className="texte-cranien">
               <div>
-                Ah, le massage du cuir chevelu ! Beaucoup de ceux qui sont déjà passés sous mes mains en sont tellement fan... Impossible de terminer le modelage sans passer par là. 
+                Ah, le massage du cuir chevelu ! Beau&shy;coup de ceux qui sont déjà passés sous mes mains en sont tellement fan... Impos&shy;sible de terminer le modelage sans passer par là. 
               </div>
               <div>
                 Ce massage semble assez anodin mais ses effets positifs sur l'esprit et le corps à court et long terme sont innombrables.

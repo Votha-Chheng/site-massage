@@ -79,7 +79,7 @@ const HomeBandeauFirst = () => {
           <img 
             src="/images/logo.svg" 
             width="200%" 
-            />
+          />
         </motion.div>
         <motion.div className='conteneur-phrases' variants={variantsPhrases} initial='initial' animate='animate'>
           <motion.div className='border-top' variants={variantBorderTop}/>
@@ -530,6 +530,14 @@ const BandeauDiv = styled.div`
     }
   }
   @media (max-width:400px){
+    .main-logo{
+      top : 15%;
+      left:50%;
+      transform: translate(-50%, 0);
+      img{
+        width:300px;
+      }
+    }
     .bg-image-container{
       img{
         margin-left: -100%;

@@ -82,13 +82,13 @@ const HomeBandeauThird = () => {
           <motion.div className='textes-container' variants={textAppear}>
             <div className="texte-aside">
               <i className="fas fa-quote-left"/>
-              &nbsp;Ma priorité est de vous mettre à l'aise dès le premier échange et de res&shy;pecter votre intimité afin que vous puissiez vous détendre, ressentir le lâcher prise pour ainsi profiter du mo&shy;ment dans son intégra&shy;lité. 
+              &nbsp;Ma priorité est de vous mettre à l'aise dès le premier échange et de res&shy;pecter votre intimité afin que vous puissiez vous détendre, res&shy;sentir le lâcher prise pour ainsi profiter du mo&shy;ment dans son intégra&shy;lité. 
               <div className="texte-aside">
-                Il est parfois difficile de se laisser aller auprès d'une nouvel&shy;le pra&shy;ticien&shy;ne, cela peut pren&shy;dre du temps et se faire sur plusieurs rendez-vous. Je prends le temps néces&shy;saire à chacun car nous pas&shy;sons par la confiance, le confort et la sécurité, sentiments in&shy;dispen&shy;sables qui vous permet&shy;tra de savourer les bien&shy;faits des soins que je vous apporte.
+                Il est parfois difficile de se laisser aller auprès d'une nouvel&shy;le pra&shy;ticien&shy;ne, cela peut pren&shy;dre du temps et se faire sur plusieurs rendez-vous. Je prends le temps né&shy;ces&shy;saire à chacun car nous pas&shy;sons par la con&shy;fiance, le confort et la sécu&shy;rité, senti&shy;ments in&shy;dis&shy;pen&shy;sa&shy;bles qui vous permet&shy;tront de savou&shy;rer les bien&shy;faits des soins que je vous apporte.
               </div>
             </div>
             <div className="texte-aside">
-              Une musique vous incitera à la relaxation ainsi qu'une huile aux odeurs exotique et paradisiaque comme, le monoi, la coco, le jasmin, ou encore la fleur d'oranger. Vous l'aurez compris, il y en aura pour tous les sens...
+              Une musique vous inci&shy;tera à la relaxation ainsi qu'une huile aux odeurs exotique et paradisiaque com&shy;me le monoi, la coco, le jasmin, ou encore la fleur d'oranger. Vous l'aurez com&shy;pris, il y en aura pour tous les sens...
               <i className="fas fa-quote-right"/>
             </div>
           </motion.div>

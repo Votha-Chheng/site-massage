@@ -40,11 +40,7 @@ const MenuHead = ({color}) => {
       </div>
         
         <ul>
-          <li>
-            <Link href='/prestations'>
-              <a >Prestations</a>
-            </Link>
-          </li>
+          <li><a href='/prestations'>Prestations</a></li>
           <li><a href='/massagecranien'>Massage crânien</a></li>
           <li><a href='/yoga'>Yoga</a></li>
           <li className="massages-menu"><a href='/temoignages'>Ils me font confiance</a></li>

@@ -36,7 +36,7 @@ const Diplomes = () => {
 }
 
 const SectionWrapper = styled.section`
-margin-bottom: 150px;
+  margin-bottom: 150px;
 
   li{
     list-style: none;
@@ -53,6 +53,12 @@ margin-bottom: 150px;
     font-family: "Montserrat", sans-serif;
     font-style: italic;
     line-height: 2.5rem;
+  }
+
+  @media (max-width:450px){
+    li{
+      font-size: 1.5rem;
+    }
   }
   
 `
