@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link'
 import styled from 'styled-components'
 
 const MenuHead = ({color}) => {
@@ -46,26 +45,10 @@ const MenuHead = ({color}) => {
               <a >Prestations</a>
             </Link>
           </li>
-          <li>
-            <Link href='/massagecranien'>
-              <a>Massage crânien</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/yoga'>
-              <a>Yoga</a>
-            </Link>
-          </li>
-          <li className="massages-menu">
-            <Link href='/temoignages'>
-              <a>Ils me font confiance</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/infospratiques'>
-              <a>Infos</a>
-            </Link>
-          </li>
+          <li><a href='/massagecranien'>Massage crânien</a></li>
+          <li><a href='/yoga'>Yoga</a></li>
+          <li className="massages-menu"><a href='/temoignages'>Ils me font confiance</a></li>
+          <li><a href='/infospratiques'>Infos</a></li>
         </ul> 
     </Wrapper>
   );
