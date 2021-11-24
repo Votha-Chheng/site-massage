@@ -147,7 +147,7 @@ const Wrapper = styled.div`
     font-size : 3rem;
     font-style : italic;
     font-weight: normal;
-    margin: 25px 0px;
+    margin: 40px 0px 25px;
   }
 
   .footer-container{
