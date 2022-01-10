@@ -16,13 +16,14 @@ const Footer = () => {
               </div>
             </a>
           </div>
-
         </div>
         <div className="part-right">
           <h2 className="contact">Contact</h2>
           <div className="infos">
             <div className="telephone">
-              <a href="tel:0616838962"><i className="fas fa-phone-alt"></i>  06 16 83 89 62 </a>
+              <a href="tel:0616838962">
+                <i className="fas fa-phone-alt"></i>  06 16 83 89 62
+              </a>
             </div>
           </div>
           <div className="reseau">
