@@ -63,7 +63,7 @@ const HomeCurveSeparation = ({texte, inView, delay, buttonDelay, lien, margin, t
 
   return (                                
     <DivWrapper style={{margin}}>
-      <a href={`${lien}`} target={target}>
+      <a href={`${lien}`} target={target} rel="noopener noreferrer">
         <motion.div
           tabIndex="0"
           className="bouton-contact"

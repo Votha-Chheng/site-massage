@@ -27,9 +27,15 @@ const Diplomes = () => {
         Mes diplômes & formations
       </motion.h2>
       <motion.ul variants={variantsAppear} initial="start" animate="fadeIn"  >
-        <motion.li variants={variantsChildren}><i className="fas fa-user-graduate"/> Certificat d'aptitude professionnelle en esthétique, cosmétique, parfumerie</motion.li>
-        <motion.li variants={variantsChildren}><i className="fas fa-user-graduate"/> Certification de spécialisation des soins du corps</motion.li>
-        <motion.li variants={variantsChildren}><i className="fas fa-user-graduate"/> Formations en &Eacute;tirements et Mobilisations Articulaires</motion.li>
+        <motion.li variants={variantsChildren}>
+          <i className="fas fa-user-graduate"/> Certificat d'apti&shy;tude pro&shy;fessionnelle en esthé&shy;tique, cos&shy;métique, parfu&shy;merie
+        </motion.li>
+        <motion.li variants={variantsChildren}>
+          <i className="fas fa-user-graduate"/> Certification de spé&shy;cialisation des soins du corps
+        </motion.li>
+        <motion.li variants={variantsChildren}>
+          <i className="fas fa-user-graduate"/> Formations en &Eacute;tire&shy;ments et Mobilisations Ar&shy;ti&shy;culaires
+        </motion.li>
       </motion.ul>
     </SectionWrapper>
   );
@@ -55,9 +61,11 @@ const SectionWrapper = styled.section`
     line-height: 2.5rem;
   }
 
-  @media (max-width:450px){
+  @media (max-width:475px){
     li{
-      font-size: 1.5rem;
+      font-size: 1.15rem;
+      width: 95%;
+      text-align: justify;
     }
   }
   

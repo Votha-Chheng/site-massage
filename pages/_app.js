@@ -35,7 +35,6 @@ function MyApp({ Component, pageProps }) {
         <link rel="stylesheet/css" href='/global.css'/>
         <link rel="icon" href="/images/logoLotus.svg" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"></link>
-        {/* <meta httpEquiv="refresh" content="4;URL=https://bauxt-des-sens.com/" /> */}
         <title>Massage à domicile et yoga</title>
       </Head>
 

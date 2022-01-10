@@ -185,9 +185,6 @@ const prestations = () => {
                   tableau ={tableauClassiques}/>
                 <InView className="marker" onChange={(inView, entry)=> inView && setFirstInView(true)}/>  
               </motion.div>
-              
-                
-              
                 <motion.div variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="service" ref={bougie}>
                   <PrestationLayout
                     imgUrl="/images/176187352_2922669511298633_3323829876291585340_n.jpg"
@@ -216,7 +213,6 @@ const prestations = () => {
                   <MassageBandeauThird/>
                 </motion.div>
 
-              
                 <motion.div variants={slideFromRight} initial='initial' animate={fourthInView? "animate":""} className="service">
                   <PrestationLayout
                     imgUrl="/images/175659034_364152124945419_4032164191564889065_n.jpg"
@@ -226,7 +222,6 @@ const prestations = () => {
                   <InView className="marker" onChange={(inView, entry)=> inView && setFourthInView(true)} />
                 </motion.div>
                 
-              
                 <motion.div variants={slideFromRight} initial='initial' animate={fifthInView? "animate":""} className="service" ref={pieds}>
                   <PrestationLayout
                     imgUrl="/images/woman-getting-foot-massage.jpg"
@@ -261,9 +256,10 @@ const prestations = () => {
                   </motion.div>
               </div> 
               <HomeCurveSeparation 
-                texte="Prendre RDV en ligne" 
-                lien="https://l.facebook.com/l.php?u=http%3A%2F%2Fwww.planity.com%2Fbauxt-des-sens-13200-arles%3Ffbclid%3DIwAR0mHzOv6Id9JEcrDOerYfTdaKOQPOPHv39WeCWhwdVyeUQ1hbV9LQywoEM&h=AT0tItrGZoTuzeOZgdTfjYJmHMkKcS17CtbD9pvoL4WFUJh166TB4jzzvgjvSI2oYhMdp-RU2pS27z6QfCRb3Gq7polaLejUxAeEmzWb4Nw3K6qSeD1qFS1kzaHXJWFSdzrRvpzVT9_eG0VCfr0" margin="0px 0px 75px" 
-                target="_blank"/>   
+                texte="Prendre RDV" 
+                lien="tel:0616838962" 
+                margin="0px 0px 75px" 
+                target=""/>   
               <Footer/>   
             </div>   
           </MomentumScrollProvider>

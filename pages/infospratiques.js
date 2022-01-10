@@ -33,18 +33,17 @@ const infospratiques = () => {
           <MomentumScrollProvider easing={0.075}>
             <div className="page-container"  ref={pageRef}>
               <Diplomes/>
-              <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >
+              {/* <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >
                 Prendre rendez-vous en ligne
-              </motion.h2>
-              <motion.div className="warning" variants={opacityBandeau} initial="initial" animate="animate" >
+              </motion.h2> */}
+              {/* <motion.div className="warning" variants={opacityBandeau} initial="initial" animate="animate" >
                 Vous pouvez désormais prendre rendez-vous en ligne en cliquant sur ce bouton qui mène à mon Agenda.
                 <a href="https://www.planity.com/bauxt-des-sens-13200-arles?fbclid=IwAR0mHzOv6Id9JEcrDOerYfTdaKOQPOPHv39WeCWhwdVyeUQ1hbV9LQywoEM" target="_blank">
                   <div className="button">
                     Prendre RDV en ligne
                   </div>
                 </a>
-                
-              </motion.div>
+              </motion.div> */}
 
               <motion.div id="super-container" variants={opacityBandeau} initial="initial" animate="animate" >
                 <div className="prestations-container-mini">
@@ -119,18 +118,18 @@ const infospratiques = () => {
         <div className='small-screen'>
           <div className="page-container" ref={pageRef}>
             <Diplomes/>
-            <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >
+            {/* <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >
               Prendre rendez-vous en ligne
-            </motion.h2>
-            <motion.div className="warning" variants={opacityBandeau} initial="initial" animate="animate" >
+            </motion.h2> */}
+
+            {/* <motion.div className="warning" variants={opacityBandeau} initial="initial" animate="animate" >
               Vous pouvez désormais prendre rendez-vous en ligne en cliquant sur ce bouton qui mène à mon Agenda.
               <a href="https://www.planity.com/bauxt-des-sens-13200-arles?fbclid=IwAR0mHzOv6Id9JEcrDOerYfTdaKOQPOPHv39WeCWhwdVyeUQ1hbV9LQywoEM" target="_blank">
                 <div className="button">
                   Prendre RDV en ligne
                 </div>
               </a>
-              
-            </motion.div>
+            </motion.div> */}
 
             <motion.div id="super-container" variants={opacityBandeau} initial="initial" animate="animate" >
               <div className="prestations-container-mini">
