@@ -261,13 +261,10 @@ const HomeBandeauSecond = () => {
         </div>    
       </InView>
       <HomeCurveSeparation 
-        texte="prendre RDV en ligne" 
-        inView={bandeauInView} 
-        delay={13.5} 
-        buttonDelay={14} 
-        lien='https://www.planity.com/bauxt-des-sens-13200-arles?fbclid=IwAR0mHzOv6Id9JEcrDOerYfTdaKOQPOPHv39WeCWhwdVyeUQ1hbV9LQywoEM' 
-        target="_blank"
-        margin="50px auto 100px"/>
+        texte="Prendre RDV" 
+        lien="tel:0616838962" 
+        margin="0px 0px 75px" 
+        target=""/>
     </BandeauDiv>
   );
 }
