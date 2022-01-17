@@ -260,11 +260,18 @@ const HomeBandeauSecond = () => {
           </div>
         </div>    
       </InView>
-      <HomeCurveSeparation 
+      <motion.div
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        transition={{delay:13, duration: 0.5, ease:"easeOut"}}
+      >
+        <HomeCurveSeparation 
         texte="Prendre RDV" 
         lien="tel:0616838962" 
         margin="0px 0px 75px" 
         target=""/>
+      </motion.div>
+      
     </BandeauDiv>
   );
 }
