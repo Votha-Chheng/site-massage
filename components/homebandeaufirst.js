@@ -111,10 +111,11 @@ const HomeBandeauFirst = () => {
             transition={{x : {delay:1, duration:1}, scale : {delay : 1.2, duration:0.9}}}/>
 
           <motion.div 
+            className="bg-image"
             initial={{scale : 1, filter : "blur(0px) brightness(125%)"}}
-            animate={{scale : ["1.5", "1"], filter:"blur(5px) brightness(125%)"}}
-            transition={{scale : {delay : 1.2, duration:0.9}, filter:{delay : 2, duration:2}}}
-            className="bg-image">
+            animate={{scale : ["1.5", "1"], filter:"blur(5px) brightness(125%)", opacity: [0.5,0 , 0, 0.5]}}
+            transition={{scale : {delay : 1.2, duration:0.9}, filter:{delay : 2, duration:2}, opacity: {delay:2.4, duration:2}}}
+          >
             </motion.div>
         </motion.div>       
           
