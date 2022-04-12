@@ -113,8 +113,8 @@ const HomeBandeauFirst = () => {
           <motion.div 
             className="bg-image"
             initial={{scale : 1, filter : "blur(0px) brightness(125%)"}}
-            animate={{scale : ["1.5", "1"], filter:"blur(5px) brightness(125%)", opacity: [0.5,0 , 0, 0.5]}}
-            transition={{scale : {delay : 1.2, duration:0.9}, filter:{delay : 2, duration:2}, opacity: {delay:2.4, duration:2}}}
+            animate={{scale : ["1.5", "1"], filter:"blur(5px) brightness(125%)", opacity: [0.75, 0, 0, 0, 0.5]}}
+            transition={{scale : {delay : 1.2, duration:0.9}, filter:{delay : 2, duration:2}, opacity: {delay:2.15, duration:2}}}
           >
             </motion.div>
         </motion.div>       
@@ -210,7 +210,6 @@ const BandeauDiv = styled.div`
     .bg-image{
       width : 100vw;
       height : 100vh;
-      opacity : 0.5;
       background-image: url(/images/bandeau_mains_masse.jpg);
       background-repeat : no-repeat ;
       background-size: 100vw 100vh;
