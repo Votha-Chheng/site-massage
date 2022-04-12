@@ -262,7 +262,7 @@ const HomeBandeauSecond = () => {
       </InView>
       <motion.div
         initial={{opacity:0}}
-        animate={{opacity:1}}
+        animate={ {opacity: bandeauInView ? 1: ""} }
         transition={{delay:13, duration: 0.5, ease:"easeOut"}}
       >
         <HomeCurveSeparation 
