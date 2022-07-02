@@ -21,7 +21,7 @@ const MassageBambous = () => {
     <SectionWrapper> 
       <InView onChange={(inView, entry)=> inView && setSectionInView(true)} className="section-container">
         <motion.div 
-          className="flex-1" 
+          //style={{display:"flex", flexDirection: "column"}}
           initial={{x:-300, opacity:0}} 
           animate={sectionInView? {x:0, opacity:1}:""} 
           transition={{opacity : {duration : 0.75, delay:0.8, ease:"easeOut"}, x : {duration : 1.2, delay:0.8, ease:"easeOut"}}} 
@@ -50,7 +50,7 @@ const SectionWrapper = styled.section`
     height: 300px;
     position: relative;
     border: 2px solid whitesmoke;
-    margin-bottom:15px;
+    margin: 15px auto;
   }
 
   .section-container{
