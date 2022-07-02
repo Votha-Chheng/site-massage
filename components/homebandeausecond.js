@@ -266,10 +266,11 @@ const HomeBandeauSecond = () => {
         transition={{delay:13, duration: 0.5, ease:"easeOut"}}
       >
         <HomeCurveSeparation 
-        texte="Prendre RDV" 
-        lien="tel:0616838962" 
-        margin="0px 0px 75px" 
-        target=""/>
+          texte="Prendre RDV" 
+          lien="tel:0616838962" 
+          margin="0px 0px 75px" 
+          target=""
+        />
       </motion.div>
       
     </BandeauDiv>

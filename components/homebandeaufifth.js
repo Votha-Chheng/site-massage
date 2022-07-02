@@ -110,7 +110,6 @@ const HomeBandeauFifth = () => {
               alt="zones où je me déplace baux't des sens"  
               onMouseEnter={()=>setMouseEnter(true)} 
               onMouseLeave={()=>setMouseEnter(false)} 
-              onMouseEnter={()=>setMouseEnter(true)}
               onClick={()=>setAgrandissement(prev=>!prev)}
               style={{cursor:`${mouseEnter ? "none" : "default"}`, zIndex:4, opacity:`${agrandissement?"0":"1"}`}} />
             <img 

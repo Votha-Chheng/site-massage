@@ -12,7 +12,8 @@ import MassageBandeauFifth from "../components/massagebandeaufifth"
 import MenuHead from "../components/menuhead";
 import PrestationLayout from "../components/prestationlayout";
 import MomentumScrollProvider from "../context/MomentumScrollContext";
-import { opacityBandeau, titleAnimation } from "../utils";
+import { titleAnimation } from "../utils";
+import MassageBambous from "../components/massagebambous";
 
 const prestations = () => {
 
@@ -20,6 +21,7 @@ const prestations = () => {
   const [firstInView, setFirstInView] = useState(false)
   const [secondInView, setSecondInView] = useState(false)
   const [thirdInView, setThirdInView] = useState(false)
+  const [bambousInView, setBambousInView] = useState(false)
   const [fourthInView, setFourthInView] = useState(false)
   const [fifthInView, setFifthInView] = useState(false)
   const [sixthInView, setSixthInView] = useState(false)
@@ -32,6 +34,7 @@ const prestations = () => {
   const classiques = useRef(null)
   const pieds = useRef(null)
   const crane = useRef(null)
+  const bambous = useRef(null)
 
   const history = useRouter()
   const {asPath} = history
@@ -60,6 +63,9 @@ const prestations = () => {
     if(arrayPath[1]==="crane"){
       setScrollToPosition(crane.current.offsetTop)
     }
+    if(arrayPath[1]==="bambous"){
+      setScrollToPosition(bambous.current.offsetTop)
+    }
   },[arrayPath, history])
 
  
@@ -71,21 +77,21 @@ const prestations = () => {
 
   const tableauClassiques = [
     {
-      service : "Massage Californien ",
-      temps : "1h",
+      service : "Massage Californien 60mn ",
+      prix : "80",
       description : "Contribue à la relaxation, apaise le corps, libère les émotions."
     },
     {
-      service : "Massage Suédois",
-      temps : "1h",
+      service : "Massage Suédois 60mn",
+      prix : "80",
       description : "Tonifie et relaxe les muscles, favorise la circulation sanguine."
     }
   ]
 
   const tableauBougie = [
     {
-      service : "Massage à la bougie et à l'huile chaude",
-      temps : "1h",
+      service : "Massage à la bougie 60mn",
+      prix : "80",
       description : "Idéal pour l'hiver, sensation de cocooning, profond relâchement. Massage ultra hydratant, idéal pour les peaux sèches."
     }
   ]
@@ -93,12 +99,12 @@ const prestations = () => {
   const tableauBaby = [
     {
       service : "Massage bébé/maman (dès les premiers jours) ",
-      temps : "1h",
+      prix : "80",
       description : "Stimule le système immunitaire. Partagez un moment unique qui renforce le lien avec bébé. Massage à l'huile d'amande douce."
     },
     {
-      service : "Massage future maman",
-      temps : "1h",
+      service : "Massage future maman 60mn",
+      prix : "80",
       description : "Pour les femmes enceintes, le massage permet de soulager les douleurs (dos, épaules, jambes lourdes...) et de favoriser une meilleure circulation sanguine."
     }
   ]
@@ -106,36 +112,44 @@ const prestations = () => {
   const tableauPerso = [
     {
       service : "Massage personnalisé",
-      temps : "1h",
+      prix : "Tarif sur demande",
       description : "Massage effectué selon vos demandes, pour un moment unique et sur mesure."
     }
   ]
 
   const tableauPieds = [
     {
-      service : "Réflexologie",
-      temps : "30min",
+      service : "Réflexologie 30mn",
+      prix : "35",
       description : "Dissipe les tensions, soulage certaines douleurs et rétablit l'équilibre du corps."
     }
   ]
 
   const tableauYoga = [
     {
-      service : "Initiation au Hata yoga",
-      temps : "1h",
+      service : "Initiation au Hata yoga 60mn",
+      prix : "Tarif sur demande",
       description : "Cours en individuel ou en groupe. Les séance se déroulent à domicile ou en extérieur. "
     },
     {
       service : "Forfait yoga + massage",
-      temps : "Durée variable",
+      prix : "Tarif sur demande",
       description : " Quoi de mieux qu'une séance de yoga et de massage pour vivre son bien-être à fond ?"
     }
-  ]
+  ] 
 
+
+  const tableauBambous = [
+    {
+      service : "Massage aux bambous 60mn",
+      prix : "80",
+      description : "En stimulant la circulation sanguine, le massage aux bambous permet d’assouplir les tissus et de drainer les toxines, tout en soulageant les douleurs musculo-articulaires. Contre-indications : voir ci-dessous."
+    }
+  ]
   const tableauEvents = [
     {
       service : "Evènements particuliers (EVG, anniversaire, carte cadeau, etc...)",
-      temps : "Durée variable",
+      prix : "Tarif sur demande",
       description : "N'hésitez pas à me contacter pour un service sur mesure lors de ces évènements importants."
     }
   ]
@@ -150,7 +164,7 @@ const prestations = () => {
       opacity : 1,
       x:0,
       transition: {
-        duration:0.75,
+        duration:0.5,
         ease: "easeOut"
       }
     }
@@ -172,9 +186,9 @@ const prestations = () => {
           <MomentumScrollProvider easing={0.075}>
             <div>
               <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >Prestations proposées</motion.h2>
-              <motion.div className="warning" variants={opacityBandeau} initial="initial" animate="animate" >
+              {/* <motion.div className="warning" variants={opacityBandeau} initial="initial" animate="animate" >
                 Tous les tarifs seront communiqués sur demande. N'hésitez pas à me contacter pour savoir ce qui vous conviendrait le mieux !
-              </motion.div>
+              </motion.div> */}
 
               <motion.div variants={slideFromRight} initial='initial' animate={firstInView? "animate":""} className="service" ref={classiques}>
                 <PrestationLayout
@@ -213,6 +227,19 @@ const prestations = () => {
                   <MassageBandeauThird/>
                 </motion.div>
 
+                <motion.div variants={slideFromRight} initial='initial' animate={bambousInView? "animate":""} className="service">
+                  <PrestationLayout
+                    imgUrl="/images/massage-bambous.jpg"
+                    bgPosition="10%" 
+                    titre="Massage aux bambous" 
+                    tableau = {tableauBambous}/>
+                  <InView className="marker" onChange={(inView, entry)=> inView && setBambousInView(true)} />
+                  <motion.h3 variants={slideFromRight} initial='initial' animate={bambousInView? "animate":""} className="categorie">
+                    <span>Le massage bambou en quelques mots</span>
+                  </motion.h3>
+                  <MassageBambous/>
+                </motion.div>
+
                 <motion.div variants={slideFromRight} initial='initial' animate={fourthInView? "animate":""} className="service">
                   <PrestationLayout
                     imgUrl="/images/175659034_364152124945419_4032164191564889065_n.jpg"
@@ -227,9 +254,10 @@ const prestations = () => {
                     imgUrl="/images/woman-getting-foot-massage.jpg"
                     bgPosition="10%" 
                     titre="Réflexologie plantaire" 
-                    tableau = {tableauPieds}/>
-                    <InView className="marker" onChange={(inView, entry)=> inView && setFifthInView(true)}/>
-                    <motion.h3 variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="categorie">
+                    tableau = {tableauPieds}
+                  />
+                  <InView className="marker" onChange={(inView, entry)=> inView && setFifthInView(true)}/>
+                  <motion.h3 variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="categorie">
                     <span>La réflexologie en quelques mots</span>
                   </motion.h3>
                   <MassageBandeauFifth/>
@@ -265,11 +293,15 @@ const prestations = () => {
           </MomentumScrollProvider>
         </div>
 
+
+
+
+
         <div className="small-screen">
           <motion.h2 className="home-titles" variants={titleAnimation} initial="initial" animate="appear" >Prestations proposées</motion.h2>
-          <motion.div className="warning" variants={opacityBandeau} initial="initial" animate="animate" >
+          {/* <motion.div className="warning" variants={opacityBandeau} initial="initial" animate="animate" >
             Tous les tarifs seront communiqués sur demande. N'hésitez pas à me contacter pour savoir ce qui vous conviendrait le mieux !
-          </motion.div>
+          </motion.div> */}
 
           <InView onChange={(inView, entry)=> inView && setFirstInView(true)} >
             <motion.div variants={slideFromRight} initial='initial' animate={firstInView? "animate":""} className="service" ref={classiques}>
@@ -311,6 +343,19 @@ const prestations = () => {
               <MassageBandeauThird/>
             </motion.div>
           </InView>
+
+          <motion.div variants={slideFromRight} initial='initial' animate={bambousInView? "animate":""} className="service">
+            <PrestationLayout
+              imgUrl="/images/massage-bambous.jpg"
+              bgPosition="10%" 
+              titre="Massage aux bambous" 
+              tableau = {tableauBambous}/>
+            <InView className="marker" onChange={(inView, entry)=> inView && setBambousInView(true)} />
+            <motion.h3 variants={slideFromRight} initial='initial' animate={bambousInView? "animate":""} className="categorie">
+              <span>Le bambou en quelques mots</span>
+            </motion.h3>
+            <MassageBambous/>
+          </motion.div>
 
           <InView onChange={(inView, entry)=> inView && setFourthInView(true)} >
             <motion.div variants={slideFromRight} initial='initial' animate={fourthInView? "animate":""} className="service">
@@ -372,7 +417,7 @@ const prestations = () => {
 
 const DivWrapper = styled.div`
   background-color: #798a94;
-  min-height: 9220px;
+  /* min-height: 9220px;
 
   @media (max-width : 1680px){
     min-height: 9220px !important;
@@ -388,7 +433,7 @@ const DivWrapper = styled.div`
   }
   @media (max-width : 1190px){
     min-height: 9660px !important;
-  }
+  } */
   
   .small-screen {
     display: none;
@@ -420,10 +465,14 @@ const DivWrapper = styled.div`
     line-height: 3rem;
     font-size : 1.4rem;
   }
+
+  .flex-1 {
+    border-bottom: none;
+  }
   
   .service {
     margin: 175px 0px;
-    padding-top: 100px;
+    padding-top: 10px;
     position: relative;
 
     .marker{
@@ -461,7 +510,7 @@ const DivWrapper = styled.div`
   }
   h3.categorie{
     font-family: "Montserrat", sans-serif;  
-    font-size: 1.4rem;
+    font-size: 2rem;
     text-align: left;
     letter-spacing: 1.5px;
     font-style: italic;
@@ -485,8 +534,10 @@ const DivWrapper = styled.div`
 @media (max-width: 650px){
   h3.categorie {
     width: 100%;
-    font-size: 0.9rem;
+    line-height:2.5rem;
+    font-size: 1.2rem;
     margin-left:0px;
+    letter-spacing:0;
   }
   
 }

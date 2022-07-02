@@ -88,10 +88,10 @@ const HomeBandeauFirst = () => {
             <div className='switch-lieux'>
               <div className="queue-1">
                 <div className="arles" ref={queueOneRef}>
-                  en Arles&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;aux Baux-de-Provence&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;dans les Alpilles&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;en Provence&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
+                  en Arles&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dans les Alpilles&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;en Camargue&nbsp;&nbsp;&nbsp;
                 </div>
                 <div className="arles-2">
-                  en Arles&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;aux Baux-de-Provence&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;dans les Alpilles&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;en Provence&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
+                  en Arles&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dans les Alpilles&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;en Camargue&nbsp;&nbsp;&nbsp;
                 </div>
               </div>
             </div>

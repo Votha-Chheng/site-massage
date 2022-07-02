@@ -1,9 +1,12 @@
 import { motion, useAnimation } from "framer-motion";
+import Image from 'next/image'
 import { useEffect, useState } from "react";
 import {InView} from "react-intersection-observer";
 import styled from "styled-components";
 
-const MassageBandeauFourth = () => {
+
+
+const MassageBambous = () => {
   const [sectionInView, setSectionInView] = useState(false)
 
   const controls = useAnimation()
@@ -17,26 +20,21 @@ const MassageBandeauFourth = () => {
   return (
     <SectionWrapper> 
       <InView onChange={(inView, entry)=> inView && setSectionInView(true)} className="section-container">
-        <motion.div className="flex-1" initial={{x:-300, opacity:0}} animate={sectionInView? {x:0, opacity:1}:""} transition={{opacity : {duration : 0.75, delay:0.8, ease:"easeOut"}, x : {duration : 1.2, delay:0.8, ease:"easeOut"}}} >
-          <div className="bougie-container">
-            <img src="/images/massageBougie2.jpg" width="400" height="400" />
+        <motion.div 
+          className="flex-1" 
+          initial={{x:-300, opacity:0}} 
+          animate={sectionInView? {x:0, opacity:1}:""} 
+          transition={{opacity : {duration : 0.75, delay:0.8, ease:"easeOut"}, x : {duration : 1.2, delay:0.8, ease:"easeOut"}}} 
+        >
+          <div className="texte">
+            Fait à l'aide de bâtons de bambou chauf&shy;fés et huilés, le massage aux bam&shy;bous est un traitement intra&shy;musculaire profond puis&shy;qu'il permet d'accentuer les mouvements du masso&shy;thérapeu&shy;te. Bois léger mais ro&shy;buste, le bam&shy;bou offre de mul&shy;tiples effets thé&shy;rapeu&shy;tiques en dis&shy;persant les tensions et en li&shy;bérant les énergies.
+          </div>
+          <div className="bambous-img">
+            <Image src="/images/massage-bambous.jpg" layout="fill"/>
           </div>
           <div className="texte">
-            Ce type de massage réalisé sur l'ensemble du corps est ré&shy;puté pour sa capacité à dé&shy;ten&shy;dre les muscles et à sup&shy;primer les ten&shy;sions dues au stress. Ori&shy;ginai&shy;re de Thaï&shy;lande, il reste en&shy;core assez mécon&shy;nu en Oc&shy;cident. L’huile est ap&shy;pli&shy;quée sur l’en&shy;semble du corps par de longs mou&shy;vements flui&shy;des. 
+            <span style={{fontWeight: "bold", textDecoration:"underline"}}>Contre indications</span> : Les personnes ayant des pro&shy;blèmes cardio&shy;vasculaires ou de cir&shy;culations tel&shy;les que phlébite ou varices ainsi que les per&shy;sonnes souf&shy;frant de trou&shy;bles rénaux, d’hyper&shy;tension ou de dia&shy;bète devraient consulter l’avis d’un médecin avant de re&shy;cevoir ce soin. Le mas&shy;sage aux bambous est éga&shy;lement dé&shy;conseillé en cas de fièvre ou de gros&shy;sesse.
           </div>
-        </motion.div>
-        <motion.div className="flex-2" initial={{x:300, opacity:0}} animate={sectionInView? {x:0, opacity:1}:""} transition={{opacity : {duration : 0.75, delay:1.5, ease:"easeOut"}, x : {duration : 1.2, delay:1.5, ease:"easeOut"}}} >
-          <div className="texte-container">
-            <div className="texte">
-              Les bougies de massage sont des bougies spécifiques, 100% naturelles à base de cire végétale ou d’abeil&shy;les et enri&shy;chies en huiles es&shy;sentiel&shy;les, senteurs pro&shy;pices à la dé&shy;con&shy;traction. La fonte de la bougie produit de la cire li&shy;quide qui se transforme en huile de mas&shy;sage hy&shy;dra&shy;tante. Avec un parfum agré&shy;able, des vertus adou&shy;cis&shy;santes et nour&shy;rissantes pour la peau, ce mas&shy;sage est conseil&shy;lé pour les peaux sèches et sen&shy;sibles. De plus, la douce sen&shy;sation de la ci&shy;re tiède sur la peau en fait un mas&shy;sage idéal pour l'hiver. 
-            </div>
-            <div className="bougie-container">
-              <img src="/images/massageBougie.jpg" width="400" height="400"/>
-            </div>
-          </div>
-            <div className="texte fin">
-              Bref, effet enveloppant, confort immédiat et sensation de cocooning garantis !
-            </div>
         </motion.div>
       </InView>
     </SectionWrapper>
@@ -46,6 +44,14 @@ const MassageBandeauFourth = () => {
 const SectionWrapper = styled.section`
   overflow: hidden;
   padding-top: 10px;
+
+  .bambous-img{
+    width: 360px;
+    height: 300px;
+    position: relative;
+    border: 2px solid whitesmoke;
+    margin-bottom:15px;
+  }
 
   .section-container{
     width:1200px;
@@ -178,4 +184,4 @@ const SectionWrapper = styled.section`
 
 }
 `
-export default MassageBandeauFourth;
+export default MassageBambous;

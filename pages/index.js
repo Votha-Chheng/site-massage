@@ -34,7 +34,7 @@ export default function Home() {
               <HomeBandeauSecond/>
               <HomeBandeauThird/>
               <MassageBandeauFirst/>
-              <HomeBandeauFourth/>
+              {/* <HomeBandeauFourth/> */}
               <HomeBandeauFifth/> 
               <Footer/>  
             </div>
@@ -46,7 +46,7 @@ export default function Home() {
             <HomeBandeauSecond/>
             <HomeBandeauThird/>
             <MassageBandeauFirst/>
-            <HomeBandeauFourth/>
+            {/* <HomeBandeauFourth/> */}
             <HomeBandeauFifth/> 
             <Footer/> 
           </div>
@@ -60,8 +60,8 @@ const Wrapper = styled.div`
   overflow : hidden;
   position: relative;
   background-color: #798a94;
-  min-height: 7120px;
-
+  /* min-height: 7120px; */
+/* 
   @media (max-width : 1680px){
     min-height: 7185px;
     
@@ -80,7 +80,7 @@ const Wrapper = styled.div`
   }
   @media (max-width : 1152px){
     min-height: 7608px !important;
-  }
+  } */
 
   .small-screen {
     display: none;

@@ -16,8 +16,8 @@ const PrestationLayout = ({imgUrl, bgPosition, titre, tableau}) => {
                 <div className="titre-service">
                   {element.service}
                 </div>
-                <div className="temps">
-                  {element.temps}
+                <div className="prix">
+                  {element.prix} {element.prix === "Tarif sur demande" ? "" : "€"}
                 </div>
               </div>
               <div className="description">
@@ -35,7 +35,7 @@ const DivWrapper = styled.div`
   background-size: cover; 
   width : 900px;
   position: relative;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   margin-left: 100px;
   margin-bottom: 120px;
   padding-top : 75px;
@@ -49,7 +49,7 @@ const DivWrapper = styled.div`
     content: '';
     background-color: white;
     opacity: 0.5;
-    filter: blur(2px);
+    filter: blur(0.25px);
   }
 
   h3.no-title{
@@ -61,7 +61,7 @@ const DivWrapper = styled.div`
     top: -50px;
     left: -50px;
 
-    &::before{
+    /* &::before{
       position: absolute;
       top: 0;
       left: 0;
@@ -70,7 +70,7 @@ const DivWrapper = styled.div`
       content: '';
       background-color: black;
       
-    }
+    } */
     &::after{
       position: absolute;
       top: 0;
@@ -78,7 +78,7 @@ const DivWrapper = styled.div`
       width: 100%;
       height: 2px;
       content: '';
-      background-color: black; 
+      /* background-color: black;  */
     }
   }
   ul{
@@ -107,9 +107,9 @@ const DivWrapper = styled.div`
         letter-spacing: 1px;
         font-weight: bold;
 
-        .temps{
+        .prix{
           padding-left: 50px;
-          min-width: 250px;
+          min-width: 150px;
           text-align: right;
         }
       }
@@ -136,7 +136,7 @@ const DivWrapper = styled.div`
       top: 0;
       width: 2px;
       height : 50px;
-      background: black;
+      /* background: black; */
     }
     .down{
       position: absolute;
@@ -144,7 +144,7 @@ const DivWrapper = styled.div`
       bottom: 0;
       width: 48px;
       height : 2px;
-      background: black;
+      /* background: black; */
     }
   }
 
