@@ -27,7 +27,7 @@ const MassageBambous = () => {
           transition={{opacity : {duration : 0.75, delay:0.8, ease:"easeOut"}, x : {duration : 1.2, delay:0.8, ease:"easeOut"}}} 
         >
           <div className="texte">
-            Fait à l'aide de bâtons de bambou chauf&shy;fés et huilés, le massage aux bam&shy;bous est un traitement intra&shy;musculaire profond puis&shy;qu'il permet d'accentuer les mouvements du masso&shy;thérapeu&shy;te. Bois léger mais ro&shy;buste, le bam&shy;bou offre de mul&shy;tiples effets thé&shy;rapeu&shy;tiques en dis&shy;persant les tensions et en li&shy;bérant les énergies.
+            Fait à l'aide de bâtons de bambou chauf&shy;fés et huilés, le massage aux bam&shy;bous est un traitement intra&shy;musculaire pro&shy;fond puis&shy;qu'il permet d'ac&shy;centuer les mouvements du masso&shy;thérapeu&shy;te. Bois léger mais ro&shy;buste, le bam&shy;bou offre de mul&shy;tiples effets thé&shy;rapeu&shy;tiques en dis&shy;persant les tensions et en li&shy;bérant les énergies.
           </div>
           <div className="bambous-img">
             <Image src="/images/massage-bambous.jpg" layout="fill"/>

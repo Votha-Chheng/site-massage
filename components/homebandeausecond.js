@@ -209,7 +209,7 @@ const HomeBandeauSecond = () => {
               <motion.div
                 className="photo-id"
                 initial={{height:600, borderRadius:"0", x:"calc(50vw - 150px)", border:"0", position:"absolute"}} 
-                animate={bandeauInView? {height:300, x:0, borderRadius:"50%", border:"4px solid whitesmoke", position:"static"} : ""} 
+                animate={bandeauInView? {height:350, x:0, borderRadius:"50%", border:"4px solid whitesmoke", position:"static"} : ""} 
                 transition={{
                   height: {delay:7.7, duration:1}, 
                   x:{delay:9, duration:1.5, ease:"easeOut"}, 
@@ -225,9 +225,10 @@ const HomeBandeauSecond = () => {
                   src="/images/portrait.jpg" 
                   height="600" 
                   width="auto" 
-                  initial={{opacity:0, x:0}} 
-                  animate={bandeauInView ? {opacity:0.75, x:"-10%"} : ""} 
-                  transition={{opacity : {delay:6.8, duration:0.1}}} />            
+                  initial={{opacity:0, x:0, y:-50}} 
+                  animate={bandeauInView ? {opacity:0.75, x:"-20%"} : ""} 
+                  transition={{opacity : {delay:6.8, duration:0.1}}} 
+                />            
               </motion.div>
             
               <div className="container-textes" ref={containerTextesRef}>

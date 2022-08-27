@@ -14,6 +14,7 @@ import PrestationLayout from "../components/prestationlayout";
 import MomentumScrollProvider from "../context/MomentumScrollContext";
 import { titleAnimation } from "../utils";
 import MassageBambous from "../components/massagebambous";
+import Image from "next/image";
 
 const prestations = () => {
 
@@ -190,6 +191,10 @@ const prestations = () => {
                 Tous les tarifs seront communiqués sur demande. N'hésitez pas à me contacter pour savoir ce qui vous conviendrait le mieux !
               </motion.div> */}
 
+              <div className="img-illustration">
+                <Image src="/images/massage-illustration.jpg" layout="responsive" width={730} height={683}/>
+              </div>
+
               <motion.div variants={slideFromRight} initial='initial' animate={firstInView? "animate":""} className="service" ref={classiques}>
                 <PrestationLayout
                   //imgUrl="/images/176246623_287598346073187_2645306858024130844_n.jpg" 
@@ -199,69 +204,70 @@ const prestations = () => {
                   tableau ={tableauClassiques}/>
                 <InView className="marker" onChange={(inView, entry)=> inView && setFirstInView(true)}/>  
               </motion.div>
-                <motion.div variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="service" ref={bougie}>
-                  <PrestationLayout
-                    imgUrl="/images/176187352_2922669511298633_3323829876291585340_n.jpg"
-                    bgPosition="10%" 
-                    titre="A la bougie" 
-                    tableau ={tableauBougie}/>              
-                  <InView className="marker" onChange={(inView, entry)=> inView && setSecondInView(true)} />
-                  <motion.h3 variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="categorie">
-                    <span>Le soin à la bougie en quelques mots</span>
-                  </motion.h3>
-                  <MassageBandeauFourth/>
-                </motion.div>
+
+              <motion.div variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="service" ref={bougie}>
+                <PrestationLayout
+                  imgUrl="/images/176187352_2922669511298633_3323829876291585340_n.jpg"
+                  bgPosition="10%" 
+                  titre="A la bougie" 
+                  tableau ={tableauBougie}/>              
+                <InView className="marker" onChange={(inView, entry)=> inView && setSecondInView(true)} />
+                <motion.h3 variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="categorie">
+                  <span>Le soin à la bougie en quelques mots</span>
+                </motion.h3>
+                <MassageBandeauFourth/>
+              </motion.div>
 
               
-                <motion.div variants={slideFromRight} initial='initial' animate={thirdInView? "animate":""} className="service" ref={babymassage}>
-                  <PrestationLayout
-                    imgUrl="/images/175586104_139909494699792_3872593976078069092_n.jpg"
-                    bgPosition="10%" 
-                    titre="Pour bébé" 
-                    tableau ={tableauBaby}
-                  />
-                  <InView className="marker" onChange={(inView, entry)=> inView && setThirdInView(true)} />
-                  <motion.h3 variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="categorie">
-                    <span>Le massage bébé en quelques mots</span>
-                  </motion.h3>
-                  <MassageBandeauThird/>
-                </motion.div>
+              <motion.div variants={slideFromRight} initial='initial' animate={thirdInView? "animate":""} className="service" ref={babymassage}>
+                <PrestationLayout
+                  imgUrl="/images/175586104_139909494699792_3872593976078069092_n.jpg"
+                  bgPosition="10%" 
+                  titre="Pour bébé" 
+                  tableau ={tableauBaby}
+                />
+                <InView className="marker" onChange={(inView, entry)=> inView && setThirdInView(true)} />
+                <motion.h3 variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="categorie">
+                  <span>Le massage bébé en quelques mots</span>
+                </motion.h3>
+                <MassageBandeauThird/>
+              </motion.div>
 
-                <motion.div variants={slideFromRight} initial='initial' animate={bambousInView? "animate":""} className="service">
-                  <PrestationLayout
-                    imgUrl="/images/massage-bambous.jpg"
-                    bgPosition="10%" 
-                    titre="Massage aux bambous" 
-                    tableau = {tableauBambous}/>
-                  <InView className="marker" onChange={(inView, entry)=> inView && setBambousInView(true)} />
-                  <motion.h3 variants={slideFromRight} initial='initial' animate={bambousInView? "animate":""} className="categorie">
-                    <span>Le massage bambou en quelques mots</span>
-                  </motion.h3>
-                  <MassageBambous/>
-                </motion.div>
+              <motion.div variants={slideFromRight} initial='initial' animate={bambousInView? "animate":""} className="service">
+                <PrestationLayout
+                  imgUrl="/images/massage-bambous.jpg"
+                  bgPosition="10%" 
+                  titre="Massage aux bambous" 
+                  tableau = {tableauBambous}/>
+                <InView className="marker" onChange={(inView, entry)=> inView && setBambousInView(true)} />
+                <motion.h3 variants={slideFromRight} initial='initial' animate={bambousInView? "animate":""} className="categorie">
+                  <span>Le massage bambou en quelques mots</span>
+                </motion.h3>
+                <MassageBambous/>
+              </motion.div>
 
-                <motion.div variants={slideFromRight} initial='initial' animate={fourthInView? "animate":""} className="service">
-                  <PrestationLayout
-                    imgUrl="/images/175659034_364152124945419_4032164191564889065_n.jpg"
-                    bgPosition="10%" 
-                    titre="Massage personnalisé" 
-                    tableau = {tableauPerso}/>
-                  <InView className="marker" onChange={(inView, entry)=> inView && setFourthInView(true)} />
-                </motion.div>
+              <motion.div variants={slideFromRight} initial='initial' animate={fourthInView? "animate":""} className="service">
+                <PrestationLayout
+                  imgUrl="/images/175659034_364152124945419_4032164191564889065_n.jpg"
+                  bgPosition="10%" 
+                  titre="Massage personnalisé" 
+                  tableau = {tableauPerso}/>
+                <InView className="marker" onChange={(inView, entry)=> inView && setFourthInView(true)} />
+              </motion.div>
                 
-                <motion.div variants={slideFromRight} initial='initial' animate={fifthInView? "animate":""} className="service" ref={pieds}>
-                  <PrestationLayout
-                    imgUrl="/images/woman-getting-foot-massage.jpg"
-                    bgPosition="10%" 
-                    titre="Réflexologie plantaire" 
-                    tableau = {tableauPieds}
-                  />
-                  <InView className="marker" onChange={(inView, entry)=> inView && setFifthInView(true)}/>
-                  <motion.h3 variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="categorie">
-                    <span>La réflexologie en quelques mots</span>
-                  </motion.h3>
-                  <MassageBandeauFifth/>
-                </motion.div>       
+              <motion.div variants={slideFromRight} initial='initial' animate={fifthInView? "animate":""} className="service" ref={pieds}>
+                <PrestationLayout
+                  imgUrl="/images/woman-getting-foot-massage.jpg"
+                  bgPosition="10%" 
+                  titre="Réflexologie plantaire" 
+                  tableau = {tableauPieds}
+                />
+                <InView className="marker" onChange={(inView, entry)=> inView && setFifthInView(true)}/>
+                <motion.h3 variants={slideFromRight} initial='initial' animate={secondInView? "animate":""} className="categorie">
+                  <span>La réflexologie en quelques mots</span>
+                </motion.h3>
+                <MassageBandeauFifth/>
+              </motion.div>       
               
               <div className="page-container">
                 
@@ -302,6 +308,9 @@ const prestations = () => {
           {/* <motion.div className="warning" variants={opacityBandeau} initial="initial" animate="animate" >
             Tous les tarifs seront communiqués sur demande. N'hésitez pas à me contacter pour savoir ce qui vous conviendrait le mieux !
           </motion.div> */}
+          <div className="img-illustration">
+            <Image src="/images/massage-illustration.jpg" layout="responsive" width={730} height={683}/>
+          </div>
 
           <InView onChange={(inView, entry)=> inView && setFirstInView(true)} >
             <motion.div variants={slideFromRight} initial='initial' animate={firstInView? "animate":""} className="service" ref={classiques}>
@@ -434,6 +443,17 @@ const DivWrapper = styled.div`
   @media (max-width : 1190px){
     min-height: 9660px !important;
   } */
+
+  .img-illustration{
+    position: relative;
+    overflow:hidden;
+    width:500px;
+    height:460px;
+    border: 4px solid whitesmoke;
+    opacity: 0.8;
+    filter: brightness(110%);
+    margin: 0 auto;
+  }
   
   .small-screen {
     display: none;
@@ -471,7 +491,7 @@ const DivWrapper = styled.div`
   }
   
   .service {
-    margin: 175px 0px;
+    margin: 50px 0px 175px;
     padding-top: 10px;
     position: relative;
 
@@ -538,6 +558,10 @@ const DivWrapper = styled.div`
     font-size: 1.2rem;
     margin-left:0px;
     letter-spacing:0;
+  }
+  .img-illustration{
+    width:340px;
+    height:300px;
   }
   
 }
