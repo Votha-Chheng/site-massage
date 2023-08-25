@@ -79,12 +79,12 @@ const prestations = () => {
   const tableauClassiques = [
     {
       service : "Massage Californien 60mn ",
-      prix : "80",
+      prix : "90",
       description : "Contribue à la relaxation, apaise le corps, libère les émotions."
     },
     {
       service : "Massage Suédois 60mn",
-      prix : "80",
+      prix : "90",
       description : "Tonifie et relaxe les muscles, favorise la circulation sanguine."
     }
   ]
@@ -92,7 +92,7 @@ const prestations = () => {
   const tableauBougie = [
     {
       service : "Massage à la bougie 60mn",
-      prix : "80",
+      prix : "90",
       description : "Idéal pour l'hiver, sensation de cocooning, profond relâchement. Massage ultra hydratant, idéal pour les peaux sèches."
     }
   ]
@@ -100,12 +100,12 @@ const prestations = () => {
   const tableauBaby = [
     {
       service : "Massage bébé/maman (dès les premiers jours) ",
-      prix : "80",
+      prix : "90",
       description : "Stimule le système immunitaire. Partagez un moment unique qui renforce le lien avec bébé. Massage à l'huile d'amande douce."
     },
     {
       service : "Massage future maman 60mn",
-      prix : "80",
+      prix : "90",
       description : "Pour les femmes enceintes, le massage permet de soulager les douleurs (dos, épaules, jambes lourdes...) et de favoriser une meilleure circulation sanguine."
     }
   ]
@@ -143,7 +143,7 @@ const prestations = () => {
   const tableauBambous = [
     {
       service : "Massage aux bambous 60mn",
-      prix : "80",
+      prix : "90",
       description : "En stimulant la circulation sanguine, le massage aux bambous permet d’assouplir les tissus et de drainer les toxines, tout en soulageant les douleurs musculo-articulaires. Contre-indications : voir ci-dessous."
     }
   ]
